@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@import url("https://use.typekit.net/nce7tge.css");
+
+body {
+  font-family: "allotrope", sans-serif;
+  color: #333;
+  background: #fff;
+}
+
+h1 {
+  font-size: 150px;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 65px;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 42px;
+  font-weight: 400;
+}
+
+p {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+.mt-100 {
+  margin-top: 100px;
+}
+
+.text-light {
+  color: #808080;
+}
+
+.text-green {
+  color: #1E503F;
+}
+
+.bg-pink {
+  background-color: #FFCFCC;
+}
+
+.btn {
+  font-size: 24px;
+  font-weight: 300;
+  padding: 8px 5px 8px 20px;
+  border-radius: 30px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary {
+  color: #000;
+  background-color: #fff;
+}
+
+.btn-secondary {
+  color: #FFFFFF;
+  background-color: #1E503F;
+}
+
+.btn.style-2 {
+  padding: 10px;
+}
+
+.btn-outline-green {
+  color: #1E503F;
+  background-color: #fff;
+  border: 1px solid #1E503F;
+}
+
+.btn-white {
+  color: #000;
+  background-color: #FFF;
+}
