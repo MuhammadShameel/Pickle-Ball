@@ -1,14 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import paddle from "../../public/assets/images/hiw-paddle-img.png";
-import btnArrow from '../../public/assets/btn-white-arrow.svg'
+import btnArrow from "../../public/assets/btn-white-arrow.svg";
 
 const HowItWorks = () => {
   return (
     <div className="container mx-auto mt-[100px] px-4">
       <h2
         className="leading-[70px] text-black"
-        style={{ letterSpacing: "-2px" }}
+        style={{ letterSpacing: "-1.3px" }}
       >
         How It Works <br /> A Simple Process
       </h2>
@@ -28,13 +28,13 @@ const HowItWorks = () => {
         <div className="w-full lg:w-5/12 rounded-lg text-center lg:text-start ">
           <div className=" flex lg:flex-row flex-col items-start gap-4 max-w-lg">
             {/* Number */}
-            <div className="text-center mx-auto [leading-trim:both] [text-edge:cap] [-webkit-text-stroke:1px_#000] font-allotrope-variable text-[100px] font-bold not-italic leading-none">
+            <div className="text-center mx-auto [leading-trim:both] [text-edge:cap] [-webkit-text-stroke:1px_#000] font-Allotrope text-[100px] font-bold not-italic leading-none">
               1
             </div>
 
             {/* Text Content */}
             <div>
-              <h3 className="text-xl text-black leading-[40px]">
+              <h3 className="text-xl font-Allotrope text-black leading-[40px]">
                 CHOOSE A PADDLE DESIGN
               </h3>
               <p className=" mt-3.5">
@@ -45,13 +45,13 @@ const HowItWorks = () => {
           <hr className="h-px bg-[rgba(0,0,0,0.2)] my-6 border-none" />
           <div className=" flex lg:flex-row flex-col items-start gap-4 max-w-lg">
             {/* Number */}
-            <div className="text-center mx-auto [leading-trim:both] [text-edge:cap] [-webkit-text-stroke:1px_#000] font-allotrope-variable text-[100px] font-bold not-italic leading-none">
+            <div className="text-center mx-auto [leading-trim:both] [text-edge:cap] [-webkit-text-stroke:1px_#000] font-Allotrope text-[100px] font-bold not-italic leading-none">
               1
             </div>
 
             {/* Text Content */}
             <div>
-              <h3 className="text-xl text-black leading-[40px]">
+              <h3 className="text-xl text-black font-Allotrope leading-[40px]">
                 CHOOSE A PADDLE DESIGN
               </h3>
               <p className=" mt-3.5">
@@ -63,13 +63,13 @@ const HowItWorks = () => {
 
           <div className=" flex lg:flex-row flex-col items-start gap-4 max-w-lg">
             {/* Number */}
-            <div className="text-center mx-auto [leading-trim:both] [text-edge:cap] [-webkit-text-stroke:1px_#000] font-allotrope-variable text-[100px] font-bold not-italic leading-none">
+            <div className="text-center mx-auto [leading-trim:both] [text-edge:cap] [-webkit-text-stroke:1px_#000] font-Allotrope text-[100px] font-bold not-italic leading-none">
               1
             </div>
 
             {/* Text Content */}
             <div>
-              <h3 className="text-xl text-black leading-[40px]">
+              <h3 className="text-xl text-black font-Allotrope leading-[40px]">
                 CHOOSE A PADDLE DESIGN
               </h3>
               <p className=" mt-3.5">

@@ -34,7 +34,7 @@ img {
 }
 
 .mt-100 {
-  margin-top: 100px ;
+  margin-top: 100px;
 }
 
 .text-light {
@@ -42,11 +42,11 @@ img {
 }
 
 .text-green {
-  color: #1E503F;
+  color: #1e503f;
 }
 
 .bg-pink {
-  background-color: #FFCFCC;
+  background-color: #ffcfcc;
 }
 
 .btn {
@@ -63,8 +63,8 @@ img {
 }
 
 .btn-secondary {
-  color: #FFFFFF;
-  background-color: #1E503F;
+  color: #ffffff;
+  background-color: #1e503f;
 }
 
 .btn.style-2 {
@@ -72,12 +72,16 @@ img {
 }
 
 .btn-outline-green {
-  color: #1E503F;
+  color: #1e503f;
   background-color: #fff;
-  border: 1px solid #1E503F;
+  border: 1px solid #1e503f;
 }
 
 .btn-white {
   color: #000;
-  background-color: #FFF;
+  background-color: #fff;
+}
+
+.font-Allotrope {
+  font-family: "allotrope-variable", sans-serif;
 }
