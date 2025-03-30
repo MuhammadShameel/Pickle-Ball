@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import paddle from "../../public/assets/images/hiw-paddle-img.png";
+import btnArrow from '../../public/assets/btn-white-arrow.svg'
 
 const HowItWorks = () => {
   return (
@@ -41,7 +42,7 @@ const HowItWorks = () => {
               </p>
             </div>
           </div>
-          <hr className="h-px bg-[rgba(0,0,0,0.2)] my-7 border-none" />
+          <hr className="h-px bg-[rgba(0,0,0,0.2)] my-6 border-none" />
           <div className=" flex lg:flex-row flex-col items-start gap-4 max-w-lg">
             {/* Number */}
             <div className="text-center mx-auto [leading-trim:both] [text-edge:cap] [-webkit-text-stroke:1px_#000] font-allotrope-variable text-[100px] font-bold not-italic leading-none">
@@ -58,7 +59,7 @@ const HowItWorks = () => {
               </p>
             </div>
           </div>
-          <hr className="h-px bg-[rgba(0,0,0,0.2)] my-7 border-none" />
+          <hr className="h-px bg-[rgba(0,0,0,0.2)] my-6 border-none" />
 
           <div className=" flex lg:flex-row flex-col items-start gap-4 max-w-lg">
             {/* Number */}
@@ -76,6 +77,17 @@ const HowItWorks = () => {
               </p>
             </div>
           </div>
+          <button className="btn btn-secondary flex mx-auto items-center gap-2.5 leading-normal mt-7 cursor-pointer">
+            Start Designing
+            <div className="icon-wrapper">
+              <Image
+                src={btnArrow}
+                alt="Arrow svg"
+                width={40} // Adjust width as needed
+                height={40} // Adjust height as needed
+              />
+            </div>
+          </button>
         </div>
       </div>
     </div>
