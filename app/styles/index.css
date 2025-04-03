@@ -1,0 +1,34 @@
+/* hero sections start */
+.hero-section {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url('../../public/assets/hero-section-bg.webp') no-repeat center center/cover;
+  padding-top: 150px;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.hero-section::before {
+  content: '';
+  background: #1E503F;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+
+/* featured section start */
+.featured-section .color {
+  display: block;
+  width: 40px;
+  height: 40px;
+  padding: 6px;
+  border-radius: 50%;
+
+}
+
+.featured-section .color.active {
+  border: 2px solid #000;
+}
