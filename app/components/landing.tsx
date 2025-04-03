@@ -1,11 +1,1392 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import "../styles/index.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination, Scrollbar } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/scrollbar";
+import BlogSlide from "./BlogSlide";
+
+import Ball from "../../public/assets/ball.png";
+import PickleBall from "../../public/assets/pickleball.png";
+import btnArrow from "../../public/assets/btn-black-arrow.svg";
+import btnArrowWhite from "../../public/assets/btn-white-arrow.svg";
+import heroImageOne from "../../public/assets/hero-image-one.png";
+import heroImageTwo from "../../public/assets/hero-image-two.png";
+import heroImageThree from "../../public/assets/hero-image-three.png";
+import heroImageFour from "../../public/assets/hero-image-four.png";
+
+import PaddlePink from "../../public/assets/paddle-pink.png";
+import Star from "../../public/assets/star.svg";
+import BlankStar from "../../public/assets/blank-star.svg";
+
+import VideoOneThumbnail from "../../public/assets/video-one-thumbnail.webp";
+
+import UserImage from "../../public/assets/user-image.png";
+import ReviewImageOne from "../../public/assets/review-image-one.png";
+import ReviewImageTwo from "../../public/assets/review-image-two.png";
+
+import TradePaddle from "../../public/assets/trade-paddle.png";
 
 const Landing = () => {
   return (
     <>
-      <section>
-        <div className="container"></div>
+      {/* hero section start */}
+      <section className="hero-section px-5">
+        <div className="container mx-auto">
+          <div className="flex flex-col items-center relative z-10">
+            <div className="relative">
+              <h1 className="uppercase text-500 text-white leading-[83.333%] text-center relative z-1">
+                Design Your Own Custom Pickleball Paddle
+              </h1>
+              <div className="img-wrapper absolute bottom-0 left-0 -z-0">
+                <Image
+                  src={Ball}
+                  alt="Pickle Ball Image"
+                  width={125} // Adjust width as needed
+                  height={125} // Adjust height as needed
+                />
+              </div>
+              <div className="img-wrapper absolute bottom-0 right-0 -z-0">
+                <Image
+                  src={PickleBall}
+                  alt="Pickle Ball Image"
+                  width={125} // Adjust width as needed
+                  height={125} // Adjust height as needed
+                />
+              </div>
+            </div>
+            <p className="mt-3.5 text-center text-[#a9b7b3] leading-[100%]">
+              Personalize your <span className="text-white">pickleball</span>{" "}
+              paddle with <span className="text-white">Paddle ID</span> and
+              stand out on the court.
+            </p>
+            <button className="btn btn-primary flex items-center gap-2.5 leading-normal mt-9 cursor-pointer">
+              Start Customizing
+              <div className="icon-wrapper">
+                <Image
+                  src={btnArrow}
+                  alt="Arrow svg"
+                  width={40} // Adjust width as needed
+                  height={40} // Adjust height as needed
+                />
+              </div>
+            </button>
+            <div className="flex items-start gap-5 w-full mt-11">
+              <div className="w-1/4  flex justify-center">
+                <Image
+                  src={heroImageOne}
+                  alt="Image One"
+                  width={264} // Adjust width as needed
+                  height={302} // Adjust height as needed
+                />
+              </div>
+              <div className="w-1/4  flex justify-center mt-12">
+                <Image
+                  src={heroImageTwo}
+                  alt="Image Two"
+                  width={264} // Adjust width as needed
+                  height={302} // Adjust height as needed
+                />
+              </div>
+              <div className="w-1/4  flex justify-center">
+                <Image
+                  src={heroImageThree}
+                  alt="Image Three"
+                  width={264} // Adjust width as needed
+                  height={302} // Adjust height as needed
+                />
+              </div>
+              <div className="w-1/4  flex justify-center mt-12">
+                <Image
+                  src={heroImageFour}
+                  alt="Image Four"
+                  width={264} // Adjust width as needed
+                  height={302} // Adjust height as needed
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* featured paddles section */}
+      <section className="mt-100 px-5 featured-section">
+        <div className="w-1/3 mx-auto">
+          <h2 className="text-center text-black leading-[107.692%] tracking-[-1.3px]">
+            Featured Paddles Our Best Sellers
+          </h2>
+        </div>
+        <div className="mt-12">
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={20}
+            slidesPerView={5}
+            navigation
+          >
+            <SwiperSlide>
+              <div className="card flex flex-col p-5 rounded-4xl border border-[#0000001a] overflow-hidden">
+                <div className="card-header relative">
+                  <div className="img-wrapper text-center">
+                    <Image
+                      className="w-full! h-full! object-contain"
+                      src={PaddlePink}
+                      alt="Paddle Pink Version"
+                      width={354} // Adjust width as needed
+                      height={354} // Adjust height as needed
+                    />
+                  </div>
+                  <div className="colors flex flex-col absolute top-1/2 right-0">
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-green block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color active cursor-pointer transition-all">
+                      <span className="bg-dark-pink block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-black block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-purple block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-sky block w-full h-full rounded-full"></span>
+                    </button>
+                  </div>
+                </div>
+                <div className="card-body mt-2.5">
+                  <div className="rating flex items-center gap-2.5">
+                    <div className="rating-stars flex items-center">
+                      <Image
+                        src={Star}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={Star}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={Star}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={BlankStar}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={BlankStar}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                    </div>
+                    <p className="text-[14px]! text-[#0009] leading-[1rem]">
+                      10 reviews
+                    </p>
+                  </div>
+                  <p className="text-black mt-2.5 leading-normal">
+                    Bread 'n Butter Paddle
+                  </p>
+                  <h3 className="text-black leading-[95.238%] mt-2.5 font-semibold!">
+                    74.99 $
+                  </h3>
+                  <div className="flex flex-col mt-6 gap-2.5">
+                    <button className="btn style-2 btn-outline-green leading-tight cursor-pointer">
+                      Customize
+                    </button>
+                    <button className="btn style-2 btn-secondary leading-tight cursor-pointer">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              {" "}
+              <div className="card flex flex-col p-5 rounded-4xl border border-[#0000001a] overflow-hidden">
+                <div className="card-header relative">
+                  <div className="img-wrapper text-center">
+                    <Image
+                      className="w-full! h-full! object-contain"
+                      src={PaddlePink}
+                      alt="Paddle Pink Version"
+                      width={354} // Adjust width as needed
+                      height={354} // Adjust height as needed
+                    />
+                  </div>
+                  <div className="colors flex flex-col absolute top-1/2 right-0">
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-green block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color active cursor-pointer transition-all">
+                      <span className="bg-dark-pink block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-black block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-purple block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-sky block w-full h-full rounded-full"></span>
+                    </button>
+                  </div>
+                </div>
+                <div className="card-body mt-2.5">
+                  <div className="rating flex items-center gap-2.5">
+                    <div className="rating-stars flex items-center">
+                      <Image
+                        src={Star}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={Star}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={Star}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={BlankStar}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={BlankStar}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                    </div>
+                    <p className="text-[14px]! text-[#0009] leading-[1rem]">
+                      10 reviews
+                    </p>
+                  </div>
+                  <p className="text-black mt-2.5 leading-normal">
+                    Bread 'n Butter Paddle
+                  </p>
+                  <h3 className="text-black leading-[95.238%] mt-2.5 font-semibold!">
+                    74.99 $
+                  </h3>
+                  <div className="flex flex-col mt-6 gap-2.5">
+                    <button className="btn style-2 btn-outline-green leading-tight cursor-pointer">
+                      Customize
+                    </button>
+                    <button className="btn style-2 btn-secondary leading-tight cursor-pointer">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card flex flex-col p-5 rounded-4xl border border-[#0000001a] overflow-hidden">
+                <div className="card-header relative">
+                  <div className="img-wrapper text-center">
+                    <Image
+                      className="w-full! h-full! object-contain"
+                      src={PaddlePink}
+                      alt="Paddle Pink Version"
+                      width={354} // Adjust width as needed
+                      height={354} // Adjust height as needed
+                    />
+                  </div>
+                  <div className="colors flex flex-col absolute top-1/2 right-0">
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-green block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color active cursor-pointer transition-all">
+                      <span className="bg-dark-pink block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-black block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-purple block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-sky block w-full h-full rounded-full"></span>
+                    </button>
+                  </div>
+                </div>
+                <div className="card-body mt-2.5">
+                  <div className="rating flex items-center gap-2.5">
+                    <div className="rating-stars flex items-center">
+                      <Image
+                        src={Star}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={Star}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={Star}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={BlankStar}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={BlankStar}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                    </div>
+                    <p className="text-[14px]! text-[#0009] leading-[1rem]">
+                      10 reviews
+                    </p>
+                  </div>
+                  <p className="text-black mt-2.5 leading-normal">
+                    Bread 'n Butter Paddle
+                  </p>
+                  <h3 className="text-black leading-[95.238%] mt-2.5 font-semibold!">
+                    74.99 $
+                  </h3>
+                  <div className="flex flex-col mt-6 gap-2.5">
+                    <button className="btn style-2 btn-outline-green leading-tight cursor-pointer">
+                      Customize
+                    </button>
+                    <button className="btn style-2 btn-secondary leading-tight cursor-pointer">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card flex flex-col p-5 rounded-4xl border border-[#0000001a] overflow-hidden">
+                <div className="card-header relative">
+                  <div className="img-wrapper text-center">
+                    <Image
+                      className="w-full! h-full! object-contain"
+                      src={PaddlePink}
+                      alt="Paddle Pink Version"
+                      width={354} // Adjust width as needed
+                      height={354} // Adjust height as needed
+                    />
+                  </div>
+                  <div className="colors flex flex-col absolute top-1/2 right-0">
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-green block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color active cursor-pointer transition-all">
+                      <span className="bg-dark-pink block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-black block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-purple block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-sky block w-full h-full rounded-full"></span>
+                    </button>
+                  </div>
+                </div>
+                <div className="card-body mt-2.5">
+                  <div className="rating flex items-center gap-2.5">
+                    <div className="rating-stars flex items-center">
+                      <Image
+                        src={Star}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={Star}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={Star}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={BlankStar}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={BlankStar}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                    </div>
+                    <p className="text-[14px]! text-[#0009] leading-[1rem]">
+                      10 reviews
+                    </p>
+                  </div>
+                  <p className="text-black mt-2.5 leading-normal">
+                    Bread 'n Butter Paddle
+                  </p>
+                  <h3 className="text-black leading-[95.238%] mt-2.5 font-semibold!">
+                    74.99 $
+                  </h3>
+                  <div className="flex flex-col mt-6 gap-2.5">
+                    <button className="btn style-2 btn-outline-green leading-tight cursor-pointer">
+                      Customize
+                    </button>
+                    <button className="btn style-2 btn-secondary leading-tight cursor-pointer">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card flex flex-col p-5 rounded-4xl border border-[#0000001a] overflow-hidden">
+                <div className="card-header relative">
+                  <div className="img-wrapper text-center">
+                    <Image
+                      className="w-full! h-full! object-contain"
+                      src={PaddlePink}
+                      alt="Paddle Pink Version"
+                      width={354} // Adjust width as needed
+                      height={354} // Adjust height as needed
+                    />
+                  </div>
+                  <div className="colors flex flex-col absolute top-1/2 right-0">
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-green block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color active cursor-pointer transition-all">
+                      <span className="bg-dark-pink block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-black block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-purple block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-sky block w-full h-full rounded-full"></span>
+                    </button>
+                  </div>
+                </div>
+                <div className="card-body mt-2.5">
+                  <div className="rating flex items-center gap-2.5">
+                    <div className="rating-stars flex items-center">
+                      <Image
+                        src={Star}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={Star}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={Star}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={BlankStar}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={BlankStar}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                    </div>
+                    <p className="text-[14px]! text-[#0009] leading-[1rem]">
+                      10 reviews
+                    </p>
+                  </div>
+                  <p className="text-black mt-2.5 leading-normal">
+                    Bread 'n Butter Paddle
+                  </p>
+                  <h3 className="text-black leading-[95.238%] mt-2.5 font-semibold!">
+                    74.99 $
+                  </h3>
+                  <div className="flex flex-col mt-6 gap-2.5">
+                    <button className="btn style-2 btn-outline-green leading-tight cursor-pointer">
+                      Customize
+                    </button>
+                    <button className="btn style-2 btn-secondary leading-tight cursor-pointer">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card flex flex-col p-5 rounded-4xl border border-[#0000001a] overflow-hidden">
+                <div className="card-header relative">
+                  <div className="img-wrapper text-center">
+                    <Image
+                      className="w-full! h-full! object-contain"
+                      src={PaddlePink}
+                      alt="Paddle Pink Version"
+                      width={354} // Adjust width as needed
+                      height={354} // Adjust height as needed
+                    />
+                  </div>
+                  <div className="colors flex flex-col absolute top-1/2 right-0">
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-green block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color active cursor-pointer transition-all">
+                      <span className="bg-dark-pink block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-black block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-purple block w-full h-full rounded-full"></span>
+                    </button>
+                    <button className="color cursor-pointer transition-all">
+                      <span className="bg-sky block w-full h-full rounded-full"></span>
+                    </button>
+                  </div>
+                </div>
+                <div className="card-body mt-2.5">
+                  <div className="rating flex items-center gap-2.5">
+                    <div className="rating-stars flex items-center">
+                      <Image
+                        src={Star}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={Star}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={Star}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={BlankStar}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src={BlankStar}
+                        alt="Star"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                    </div>
+                    <p className="text-[14px]! text-[#0009] leading-[1rem]">
+                      10 reviews
+                    </p>
+                  </div>
+                  <p className="text-black mt-2.5 leading-normal">
+                    Bread 'n Butter Paddle
+                  </p>
+                  <h3 className="text-black leading-[95.238%] mt-2.5 font-semibold!">
+                    74.99 $
+                  </h3>
+                  <div className="flex flex-col mt-6 gap-2.5">
+                    <button className="btn style-2 btn-outline-green leading-tight cursor-pointer">
+                      Customize
+                    </button>
+                    <button className="btn style-2 btn-secondary leading-tight cursor-pointer">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      </section>
+
+      {/* slide video section */}
+      <section className="mt-100 px-5">
+        <div className="container mx-auto">
+          <div className="flex items-center gap-16">
+            <div className="w-2/3">
+              <h2 className="text-black leading-[107.692%] tracking-[-1.3px]">
+                Why House Pickleball? It’s About Community
+              </h2>
+              <div className="pe-26">
+                <p className="mt-6">
+                  At House, it's about more than high-quality paddles—it's about
+                  joining a thriving community of players who share your
+                  passion.
+                </p>
+                <p className="mt-7">
+                  We're not just here to sell paddles; we're here to get people
+                  on the court, connecting and enjoying the game. When you
+                  choose House, you become part of something bigger - a movement
+                  obsessed with spreading the love for Pickleball.
+                </p>
+              </div>
+            </div>
+            <div className="w-1/3">
+              <Swiper
+                modules={[Scrollbar]}
+                spaceBetween={15}
+                slidesPerView={1.2}
+                scrollbar={{
+                  el: ".custom-scrollbar",
+                  draggable: true,
+                  hide: false,
+                }}
+              >
+                <SwiperSlide>
+                  <div className="relative">
+                    <div className="img-wrapper w-auto h-full aspect-[3/4]">
+                      <Image
+                        className="w-full! h-full! object-cover rounded-4xl overflow-hidden"
+                        src={VideoOneThumbnail}
+                        alt="Video Thumbnail"
+                        width={400} // Adjust width as needed
+                        height={523} // Adjust height as needed
+                      />
+                    </div>
+                    <div className="icon-wrapper absolute top-1/2 left-1/2 -translate-1/2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100"
+                        height="100"
+                        fill="none"
+                        viewBox="0 0 100 100"
+                      >
+                        <foreignObject width="118" height="118" x="-9" y="-9">
+                          <div
+                            xmlns="http://www.w3.org/1999/xhtml"
+                            clipPath="url(#bgblur_0_256_14254_clip_path)"
+                            style={{
+                              backdropFilter: "blur(4.5px)",
+                              height: "100%",
+                              width: "100%",
+                            }}
+                          ></div>
+                        </foreignObject>
+                        <circle
+                          cx="50"
+                          cy="50"
+                          r="50"
+                          fill="#fff"
+                          fillOpacity="0.3"
+                          data-figma-bg-blur-radius="9"
+                        ></circle>
+                        <path
+                          fill="#000"
+                          fillOpacity="0.5"
+                          d="M65.5 47.402c2 1.155 2 4.041 0 5.196l-21 12.124c-2 1.155-4.5-.288-4.5-2.598V37.876c0-2.31 2.5-3.753 4.5-2.598z"
+                        ></path>
+                        <defs>
+                          <clipPath
+                            id="bgblur_0_256_14254_clip_path"
+                            transform="translate(9 9)"
+                          >
+                            <circle cx="50" cy="50" r="50"></circle>
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="relative">
+                    <div className="img-wrapper w-auto h-full aspect-[3/4]">
+                      <Image
+                        className="w-full! h-full! object-cover rounded-4xl overflow-hidden"
+                        src={VideoOneThumbnail}
+                        alt="Video Thumbnail"
+                        width={400} // Adjust width as needed
+                        height={523} // Adjust height as needed
+                      />
+                    </div>
+                    <div className="icon-wrapper absolute top-1/2 left-1/2 -translate-1/2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100"
+                        height="100"
+                        fill="none"
+                        viewBox="0 0 100 100"
+                      >
+                        <foreignObject width="118" height="118" x="-9" y="-9">
+                          <div
+                            xmlns="http://www.w3.org/1999/xhtml"
+                            clipPath="url(#bgblur_0_256_14254_clip_path)"
+                            style={{
+                              backdropFilter: "blur(4.5px)",
+                              height: "100%",
+                              width: "100%",
+                            }}
+                          ></div>
+                        </foreignObject>
+                        <circle
+                          cx="50"
+                          cy="50"
+                          r="50"
+                          fill="#fff"
+                          fillOpacity="0.3"
+                          data-figma-bg-blur-radius="9"
+                        ></circle>
+                        <path
+                          fill="#000"
+                          fillOpacity="0.5"
+                          d="M65.5 47.402c2 1.155 2 4.041 0 5.196l-21 12.124c-2 1.155-4.5-.288-4.5-2.598V37.876c0-2.31 2.5-3.753 4.5-2.598z"
+                        ></path>
+                        <defs>
+                          <clipPath
+                            id="bgblur_0_256_14254_clip_path"
+                            transform="translate(9 9)"
+                          >
+                            <circle cx="50" cy="50" r="50"></circle>
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="relative">
+                    <div className="img-wrapper w-auto h-full aspect-[3/4]">
+                      <Image
+                        className="w-full! h-full! object-cover rounded-4xl overflow-hidden"
+                        src={VideoOneThumbnail}
+                        alt="Video Thumbnail"
+                        width={400} // Adjust width as needed
+                        height={523} // Adjust height as needed
+                      />
+                    </div>
+                    <div className="icon-wrapper absolute top-1/2 left-1/2 -translate-1/2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100"
+                        height="100"
+                        fill="none"
+                        viewBox="0 0 100 100"
+                      >
+                        <foreignObject width="118" height="118" x="-9" y="-9">
+                          <div
+                            xmlns="http://www.w3.org/1999/xhtml"
+                            clipPath="url(#bgblur_0_256_14254_clip_path)"
+                            style={{
+                              backdropFilter: "blur(4.5px)",
+                              height: "100%",
+                              width: "100%",
+                            }}
+                          ></div>
+                        </foreignObject>
+                        <circle
+                          cx="50"
+                          cy="50"
+                          r="50"
+                          fill="#fff"
+                          fillOpacity="0.3"
+                          data-figma-bg-blur-radius="9"
+                        ></circle>
+                        <path
+                          fill="#000"
+                          fillOpacity="0.5"
+                          d="M65.5 47.402c2 1.155 2 4.041 0 5.196l-21 12.124c-2 1.155-4.5-.288-4.5-2.598V37.876c0-2.31 2.5-3.753 4.5-2.598z"
+                        ></path>
+                        <defs>
+                          <clipPath
+                            id="bgblur_0_256_14254_clip_path"
+                            transform="translate(9 9)"
+                          >
+                            <circle cx="50" cy="50" r="50"></circle>
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
+          </div>
+          <div className="custom-scrollbar mt-12 h-3.5 rounded-[10px] bg-[#F5F5F5]"></div>
+        </div>
+      </section>
+
+      {/* testimonials section */}
+      <section className="mt-100 px-5 overflow-x-clip testimonial-section">
+        <div className="w-1/3 mx-auto">
+          <h2 className="text-center text-black leading-[107.692%] tracking-[-1.3px]">
+            Testimonials What Our Clients Say About Us
+          </h2>
+        </div>
+        <div className="mt-24">
+          <Swiper spaceBetween={20} slidesPerView={5}>
+            <SwiperSlide>
+              <div className="card rounded-[20px] bg-white shadow p-5">
+                <div className="user-image-wrapper rounded-[28px] overflow-hidden -mt-[25%]">
+                  <Image
+                    className="w-full! h-full! object-cover"
+                    src={UserImage}
+                    alt="Peter Kalua"
+                    width={132} // Adjust width as needed
+                    height={132} // Adjust height as needed
+                  />
+                </div>
+
+                <div className="flex justify-between items-center mt-6">
+                  <h4 className="text-2xl text-black">Peter Kalua</h4>
+                  <div className="rating-stars flex items-center">
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={Star}
+                      alt="Star"
+                      width={24} // Adjust width as needed
+                      height={24} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={Star}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={Star}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={BlankStar}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={BlankStar}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                  </div>
+                </div>
+                <p className="text-lg! mt-2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer eros lectus, euismod et maximus non, egestas non nunc.
+                  Integer eros lectus, euismod et maximus non, egestas .
+                </p>
+
+                <div className="review-images grid grid-cols-2 gap-2.5 mt-9">
+                  <div className="img-wrapper aspect-square w-full rounded-[10px] overflow-hidden">
+                    <Image
+                      className="w-full! h-full! object-cover"
+                      src={ReviewImageOne}
+                      alt="Review Image"
+                      width={182} // Adjust width as needed
+                      height={182} // Adjust height as needed
+                    />
+                  </div>
+                  <div className="img-wrapper aspect-square w-full rounded-[10px] overflow-hidden">
+                    <Image
+                      className="w-full! h-full! object-cover"
+                      src={ReviewImageTwo}
+                      alt="Review Image"
+                      width={182} // Adjust width as needed
+                      height={182} // Adjust height as needed
+                    />
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card rounded-[20px] bg-white shadow p-5">
+                <div className="user-image-wrapper rounded-[28px] overflow-hidden -mt-[25%]">
+                  <Image
+                    className="w-full! h-full! object-cover"
+                    src={UserImage}
+                    alt="Peter Kalua"
+                    width={132} // Adjust width as needed
+                    height={132} // Adjust height as needed
+                  />
+                </div>
+
+                <div className="flex justify-between items-center mt-6">
+                  <h4 className="text-2xl text-black">Peter Kalua</h4>
+                  <div className="rating-stars flex items-center">
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={Star}
+                      alt="Star"
+                      width={24} // Adjust width as needed
+                      height={24} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={Star}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={Star}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={BlankStar}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={BlankStar}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                  </div>
+                </div>
+                <p className="text-lg! mt-2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer eros lectus, euismod et maximus non, egestas non nunc.
+                  Integer eros lectus, euismod et maximus non, egestas .
+                </p>
+
+                <div className="review-images grid grid-cols-2 gap-2.5 mt-9">
+                  <div className="img-wrapper aspect-square w-full rounded-[10px] overflow-hidden">
+                    <Image
+                      className="w-full! h-full! object-cover"
+                      src={ReviewImageOne}
+                      alt="Review Image"
+                      width={182} // Adjust width as needed
+                      height={182} // Adjust height as needed
+                    />
+                  </div>
+                  <div className="img-wrapper aspect-square w-full rounded-[10px] overflow-hidden">
+                    <Image
+                      className="w-full! h-full! object-cover"
+                      src={ReviewImageTwo}
+                      alt="Review Image"
+                      width={182} // Adjust width as needed
+                      height={182} // Adjust height as needed
+                    />
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card rounded-[20px] bg-white shadow p-5">
+                <div className="user-image-wrapper rounded-[28px] overflow-hidden -mt-[25%]">
+                  <Image
+                    className="w-full! h-full! object-cover"
+                    src={UserImage}
+                    alt="Peter Kalua"
+                    width={132} // Adjust width as needed
+                    height={132} // Adjust height as needed
+                  />
+                </div>
+
+                <div className="flex justify-between items-center mt-6">
+                  <h4 className="text-2xl text-black">Peter Kalua</h4>
+                  <div className="rating-stars flex items-center">
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={Star}
+                      alt="Star"
+                      width={24} // Adjust width as needed
+                      height={24} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={Star}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={Star}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={BlankStar}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={BlankStar}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                  </div>
+                </div>
+                <p className="text-lg! mt-2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer eros lectus, euismod et maximus non, egestas non nunc.
+                  Integer eros lectus, euismod et maximus non, egestas .
+                </p>
+
+                <div className="review-images grid grid-cols-2 gap-2.5 mt-9">
+                  <div className="img-wrapper aspect-square w-full rounded-[10px] overflow-hidden">
+                    <Image
+                      className="w-full! h-full! object-cover"
+                      src={ReviewImageOne}
+                      alt="Review Image"
+                      width={182} // Adjust width as needed
+                      height={182} // Adjust height as needed
+                    />
+                  </div>
+                  <div className="img-wrapper aspect-square w-full rounded-[10px] overflow-hidden">
+                    <Image
+                      className="w-full! h-full! object-cover"
+                      src={ReviewImageTwo}
+                      alt="Review Image"
+                      width={182} // Adjust width as needed
+                      height={182} // Adjust height as needed
+                    />
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card rounded-[20px] bg-white shadow p-5">
+                <div className="user-image-wrapper rounded-[28px] overflow-hidden -mt-[25%]">
+                  <Image
+                    className="w-full! h-full! object-cover"
+                    src={UserImage}
+                    alt="Peter Kalua"
+                    width={132} // Adjust width as needed
+                    height={132} // Adjust height as needed
+                  />
+                </div>
+
+                <div className="flex justify-between items-center mt-6">
+                  <h4 className="text-2xl text-black">Peter Kalua</h4>
+                  <div className="rating-stars flex items-center">
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={Star}
+                      alt="Star"
+                      width={24} // Adjust width as needed
+                      height={24} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={Star}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={Star}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={BlankStar}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={BlankStar}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                  </div>
+                </div>
+                <p className="text-lg! mt-2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer eros lectus, euismod et maximus non, egestas non nunc.
+                  Integer eros lectus, euismod et maximus non, egestas .
+                </p>
+
+                <div className="review-images grid grid-cols-2 gap-2.5 mt-9">
+                  <div className="img-wrapper aspect-square w-full rounded-[10px] overflow-hidden">
+                    <Image
+                      className="w-full! h-full! object-cover"
+                      src={ReviewImageOne}
+                      alt="Review Image"
+                      width={182} // Adjust width as needed
+                      height={182} // Adjust height as needed
+                    />
+                  </div>
+                  <div className="img-wrapper aspect-square w-full rounded-[10px] overflow-hidden">
+                    <Image
+                      className="w-full! h-full! object-cover"
+                      src={ReviewImageTwo}
+                      alt="Review Image"
+                      width={182} // Adjust width as needed
+                      height={182} // Adjust height as needed
+                    />
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card rounded-[20px] bg-white shadow p-5">
+                <div className="user-image-wrapper rounded-[28px] overflow-hidden -mt-[25%]">
+                  <Image
+                    className="w-full! h-full! object-cover"
+                    src={UserImage}
+                    alt="Peter Kalua"
+                    width={132} // Adjust width as needed
+                    height={132} // Adjust height as needed
+                  />
+                </div>
+
+                <div className="flex justify-between items-center mt-6">
+                  <h4 className="text-2xl text-black">Peter Kalua</h4>
+                  <div className="rating-stars flex items-center">
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={Star}
+                      alt="Star"
+                      width={24} // Adjust width as needed
+                      height={24} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={Star}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={Star}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={BlankStar}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={BlankStar}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                  </div>
+                </div>
+                <p className="text-lg! mt-2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer eros lectus, euismod et maximus non, egestas non nunc.
+                  Integer eros lectus, euismod et maximus non, egestas .
+                </p>
+
+                <div className="review-images grid grid-cols-2 gap-2.5 mt-9">
+                  <div className="img-wrapper aspect-square w-full rounded-[10px] overflow-hidden">
+                    <Image
+                      className="w-full! h-full! object-cover"
+                      src={ReviewImageOne}
+                      alt="Review Image"
+                      width={182} // Adjust width as needed
+                      height={182} // Adjust height as needed
+                    />
+                  </div>
+                  <div className="img-wrapper aspect-square w-full rounded-[10px] overflow-hidden">
+                    <Image
+                      className="w-full! h-full! object-cover"
+                      src={ReviewImageTwo}
+                      alt="Review Image"
+                      width={182} // Adjust width as needed
+                      height={182} // Adjust height as needed
+                    />
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card rounded-[20px] bg-white shadow p-5">
+                <div className="user-image-wrapper rounded-[28px] overflow-hidden -mt-[25%]">
+                  <Image
+                    className="w-full! h-full! object-cover"
+                    src={UserImage}
+                    alt="Peter Kalua"
+                    width={132} // Adjust width as needed
+                    height={132} // Adjust height as needed
+                  />
+                </div>
+
+                <div className="flex justify-between items-center mt-6">
+                  <h4 className="text-2xl text-black">Peter Kalua</h4>
+                  <div className="rating-stars flex items-center">
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={Star}
+                      alt="Star"
+                      width={24} // Adjust width as needed
+                      height={24} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={Star}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={Star}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={BlankStar}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                    <Image
+                      className="w-[24px]! h-[24px]!"
+                      src={BlankStar}
+                      alt="Star"
+                      width={30} // Adjust width as needed
+                      height={30} // Adjust height as needed
+                    />
+                  </div>
+                </div>
+                <p className="text-lg! mt-2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer eros lectus, euismod et maximus non, egestas non nunc.
+                  Integer eros lectus, euismod et maximus non, egestas .
+                </p>
+
+                <div className="review-images grid grid-cols-2 gap-2.5 mt-9">
+                  <div className="img-wrapper aspect-square w-full rounded-[10px] overflow-hidden">
+                    <Image
+                      className="w-full! h-full! object-cover"
+                      src={ReviewImageOne}
+                      alt="Review Image"
+                      width={182} // Adjust width as needed
+                      height={182} // Adjust height as needed
+                    />
+                  </div>
+                  <div className="img-wrapper aspect-square w-full rounded-[10px] overflow-hidden">
+                    <Image
+                      className="w-full! h-full! object-cover"
+                      src={ReviewImageTwo}
+                      alt="Review Image"
+                      width={182} // Adjust width as needed
+                      height={182} // Adjust height as needed
+                    />
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      </section>
+
+      {/* our blog section */}
+      <section className="mt-100 px-5">
+        <div className="container mx-auto">
+          <div className="w-1/2">
+            <h2 className="text-black leading-[107.692%] tracking-[-1.3px]">
+              Our Blog Tips, Tournaments & Custom Paddle Insights
+            </h2>
+          </div>
+          <BlogSlide />
+        </div>
+      </section>
+
+      {/* trade your paddle section */}
+      <section className="mt-100 px-5">
+        <div className="container mx-auto">
+          <div className="flex items-center gap-18">
+            <div className="w-1/2">
+              <h2 className="text-black leading-[107.692%] tracking-[-1.3px]">
+                Trade Your Paddle, Get $75 Toward a New One.
+              </h2>
+              <ul className="mt-7 list-disc ms-7 leading-normal">
+                <li>Like New: $75 Gift Card</li>
+                <li>Used: $50 Gift Card</li>
+                <li>Heavily Used: $25 Gift Card</li>
+              </ul>
+
+              <button className="btn btn-secondary flex items-center gap-2.5 leading-normal mt-8 cursor-pointer">
+                Learn More
+                <div className="icon-wrapper">
+                  <Image
+                    src={btnArrowWhite}
+                    alt="Arrow svg"
+                    width={40} // Adjust width as needed
+                    height={40} // Adjust height as needed
+                  />
+                </div>
+              </button>
+            </div>
+            <div className="w-1/2">
+              <Image
+                src={TradePaddle}
+                alt="Trade Your Paddle"
+                width={634} // Adjust width as needed
+                height={567} // Adjust height as needed
+              />
+            </div>
+          </div>
+        </div>
       </section>
     </>
   );
