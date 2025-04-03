@@ -1,7 +1,11 @@
-import React from "react";
+import * as React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
 
 import BlogImage from "../../public/assets/blog-image.png";
 import btnArrowWhite from "../../public/assets/btn-white-arrow.svg";
@@ -13,7 +17,7 @@ const BlogSlide = () => {
         modules={[Pagination, Autoplay]}
         spaceBetween={15}
         slidesPerView={1}
-        autoplay={true}
+        autoplay={{ delay: 3000 }}
         pagination={{ clickable: true }}
       >
         <SwiperSlide>

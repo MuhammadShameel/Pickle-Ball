@@ -154,10 +154,10 @@ img {
 
 
 /* testimonial sections start */
-.testimonial-section .swiper-wrapper {
-  /* margin-top: 25px;
-  margin-bottom: 25px; */
-}
+/* .testimonial-section .swiper-wrapper {
+  margin-top: 25px;
+  margin-bottom: 25px;
+} */
 
 .testimonial-section .user-image-wrapper {
   width: 132px;
@@ -175,8 +175,8 @@ img {
   }
 }
 
-  background-color: #fff;
-}
+  /* background-color: #fff;
+} */
 
 .font-Allotrope {
   font-family: "allotrope-variable", sans-serif;

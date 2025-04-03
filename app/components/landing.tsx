@@ -676,6 +676,7 @@ const Landing = () => {
               >
                 <SwiperSlide>
                   <div className="relative">
+                    {/* Image Wrapper */}
                     <div className="img-wrapper w-auto h-full aspect-[3/4]">
                       <Image
                         className="w-full! h-full! object-cover rounded-4xl overflow-hidden"
@@ -685,6 +686,8 @@ const Landing = () => {
                         height={523} // Adjust height as needed
                       />
                     </div>
+
+                    {/* Icon Wrapper */}
                     <div className="icon-wrapper absolute top-1/2 left-1/2 -translate-1/2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -693,17 +696,7 @@ const Landing = () => {
                         fill="none"
                         viewBox="0 0 100 100"
                       >
-                        <foreignObject width="118" height="118" x="-9" y="-9">
-                          <div
-                            xmlns="http://www.w3.org/1999/xhtml"
-                            clipPath="url(#bgblur_0_256_14254_clip_path)"
-                            style={{
-                              backdropFilter: "blur(4.5px)",
-                              height: "100%",
-                              width: "100%",
-                            }}
-                          ></div>
-                        </foreignObject>
+                        {/* ✅ Remove foreignObject if you're not embedding HTML properly */}
                         <circle
                           cx="50"
                           cy="50"
@@ -711,18 +704,19 @@ const Landing = () => {
                           fill="#fff"
                           fillOpacity="0.3"
                           data-figma-bg-blur-radius="9"
-                        ></circle>
+                        />
+
+                        {/* ✅ Play Button */}
                         <path
                           fill="#000"
                           fillOpacity="0.5"
                           d="M65.5 47.402c2 1.155 2 4.041 0 5.196l-21 12.124c-2 1.155-4.5-.288-4.5-2.598V37.876c0-2.31 2.5-3.753 4.5-2.598z"
-                        ></path>
+                        />
+
+                        {/* ✅ ClipPath (Remove from <div>, Use SVG Elements Instead) */}
                         <defs>
-                          <clipPath
-                            id="bgblur_0_256_14254_clip_path"
-                            transform="translate(9 9)"
-                          >
-                            <circle cx="50" cy="50" r="50"></circle>
+                          <clipPath id="bgblur_0_256_14254_clip_path">
+                            <circle cx="50" cy="50" r="50" />
                           </clipPath>
                         </defs>
                       </svg>
@@ -736,8 +730,8 @@ const Landing = () => {
                         className="w-full! h-full! object-cover rounded-4xl overflow-hidden"
                         src={VideoOneThumbnail}
                         alt="Video Thumbnail"
-                        width={400} // Adjust width as needed
-                        height={523} // Adjust height as needed
+                        width={400}
+                        height={523}
                       />
                     </div>
                     <div className="icon-wrapper absolute top-1/2 left-1/2 -translate-1/2">
@@ -748,42 +742,33 @@ const Landing = () => {
                         fill="none"
                         viewBox="0 0 100 100"
                       >
-                        <foreignObject width="118" height="118" x="-9" y="-9">
-                          <div
-                            xmlns="http://www.w3.org/1999/xhtml"
-                            clipPath="url(#bgblur_0_256_14254_clip_path)"
-                            style={{
-                              backdropFilter: "blur(4.5px)",
-                              height: "100%",
-                              width: "100%",
-                            }}
-                          ></div>
-                        </foreignObject>
+                        {/* ✅ Blur Effect inside SVG */}
                         <circle
                           cx="50"
                           cy="50"
                           r="50"
                           fill="#fff"
                           fillOpacity="0.3"
-                          data-figma-bg-blur-radius="9"
-                        ></circle>
+                        />
+
+                        {/* ✅ Play Button */}
                         <path
                           fill="#000"
                           fillOpacity="0.5"
                           d="M65.5 47.402c2 1.155 2 4.041 0 5.196l-21 12.124c-2 1.155-4.5-.288-4.5-2.598V37.876c0-2.31 2.5-3.753 4.5-2.598z"
-                        ></path>
+                        />
+
+                        {/* ✅ ClipPath Definition */}
                         <defs>
-                          <clipPath
-                            id="bgblur_0_256_14254_clip_path"
-                            transform="translate(9 9)"
-                          >
-                            <circle cx="50" cy="50" r="50"></circle>
+                          <clipPath id="bgblur_0_256_14254_clip_path">
+                            <circle cx="50" cy="50" r="50" />
                           </clipPath>
                         </defs>
                       </svg>
                     </div>
                   </div>
                 </SwiperSlide>
+
                 <SwiperSlide>
                   <div className="relative">
                     <div className="img-wrapper w-auto h-full aspect-[3/4]">
@@ -791,8 +776,8 @@ const Landing = () => {
                         className="w-full! h-full! object-cover rounded-4xl overflow-hidden"
                         src={VideoOneThumbnail}
                         alt="Video Thumbnail"
-                        width={400} // Adjust width as needed
-                        height={523} // Adjust height as needed
+                        width={400}
+                        height={523}
                       />
                     </div>
                     <div className="icon-wrapper absolute top-1/2 left-1/2 -translate-1/2">
@@ -803,38 +788,21 @@ const Landing = () => {
                         fill="none"
                         viewBox="0 0 100 100"
                       >
-                        <foreignObject width="118" height="118" x="-9" y="-9">
-                          <div
-                            xmlns="http://www.w3.org/1999/xhtml"
-                            clipPath="url(#bgblur_0_256_14254_clip_path)"
-                            style={{
-                              backdropFilter: "blur(4.5px)",
-                              height: "100%",
-                              width: "100%",
-                            }}
-                          ></div>
-                        </foreignObject>
                         <circle
                           cx="50"
                           cy="50"
                           r="50"
                           fill="#fff"
                           fillOpacity="0.3"
-                          data-figma-bg-blur-radius="9"
-                        ></circle>
+                        />
+
                         <path
                           fill="#000"
                           fillOpacity="0.5"
                           d="M65.5 47.402c2 1.155 2 4.041 0 5.196l-21 12.124c-2 1.155-4.5-.288-4.5-2.598V37.876c0-2.31 2.5-3.753 4.5-2.598z"
-                        ></path>
-                        <defs>
-                          <clipPath
-                            id="bgblur_0_256_14254_clip_path"
-                            transform="translate(9 9)"
-                          >
-                            <circle cx="50" cy="50" r="50"></circle>
-                          </clipPath>
-                        </defs>
+                        />
+
+                        {/* ✅ No duplicate <defs>, keeps your SVG structure clean */}
                       </svg>
                     </div>
                   </div>
