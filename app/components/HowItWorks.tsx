@@ -3,6 +3,7 @@ import Image from "next/image";
 import paddle from "../../public/assets/images/hiw-paddle-img.png";
 import btnArrow from "../../public/assets/btn-white-arrow.svg";
 import btnArrowBlack from "../../public/assets/btn-black-arrow.svg";
+import Link from "next/link";
 
 const HowItWorks = () => {
   return (
@@ -200,11 +201,11 @@ const HowItWorks = () => {
           <div className="flex flex-col lg:flex-row gap-10">
             {/* About Us Section - Reduced width */}
             <div className="lg:w-1/4">
-              <a href="/" className="flex items-center">
+              <Link href="/" className="flex items-center">
                 <h3 className="self-center uppercase font-Allotrope text-2xl font-semibold whitespace-nowrap dark:text-white">
                   About Us
                 </h3>
-              </a>
+              </Link>
               <p className="text-gray-400 mt-4" style={{ fontSize: "18px" }}>
                 A job career refers to the long-term professional journey of an
                 individual, encompassing various roles,
@@ -220,19 +221,19 @@ const HowItWorks = () => {
                 </p>
                 <ul className="text-gray-500 dark:text-gray-400 font-medium space-y-4">
                   <li>
-                    <a href="#" className="hover:underline">
+                    <Link href="#" className="hover:underline">
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="hover:underline">
+                    <Link href="#" className="hover:underline">
                       About
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="hover:underline">
+                    <Link href="#" className="hover:underline">
                       Contact
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -244,19 +245,19 @@ const HowItWorks = () => {
                 </p>
                 <ul className="text-gray-500 dark:text-gray-400 font-medium space-y-4">
                   <li>
-                    <a href="#" className="hover:underline">
+                    <Link href="#" className="hover:underline">
                       Github
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="hover:underline">
+                    <Link href="#" className="hover:underline">
                       Discord
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="hover:underline">
+                    <Link href="#" className="hover:underline">
                       Twitter
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -268,19 +269,19 @@ const HowItWorks = () => {
                 </p>
                 <ul className="text-gray-500 dark:text-gray-400 font-medium space-y-4">
                   <li>
-                    <a href="#" className="hover:underline">
+                    <Link href="#" className="hover:underline">
                       Privacy Policy
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="hover:underline">
+                    <Link href="#" className="hover:underline">
                       Terms & Conditions
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="hover:underline">
+                    <Link href="#" className="hover:underline">
                       Licensing
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -292,19 +293,19 @@ const HowItWorks = () => {
                 </p>
                 <ul className="text-gray-500 dark:text-gray-400 font-medium space-y-4">
                   <li>
-                    <a href="#" className="hover:underline">
+                    <Link href="#" className="hover:underline">
                       About
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="hover:underline">
+                    <Link href="#" className="hover:underline">
                       Careers
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="hover:underline">
+                    <Link href="#" className="hover:underline">
                       Contact
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
