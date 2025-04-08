@@ -1,8 +1,24 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import Image from "next/image";
 import { storefrontClient } from "../lib/shopify";
 import Link from "next/link";
 import { ShopifyProduct } from "../types/shopify";
+
+interface Product {
+  id: string;
+  handle: string;
+  title: string;
+  featuredImage?: {
+    url: string;
+    altText?: string;
+  };
+  priceRange: {
+    minVariantPrice: {
+      currencyCode: ReactNode;
+      amount: string;
+    };
+  };
+}
 
 // import Ball from "../../public/assets/ball.png";
 // import PickleBall from "../../public/assets/pickleball.png";
@@ -13,7 +29,7 @@ import { ShopifyProduct } from "../types/shopify";
 // import heroImageThree from "../../public/assets/hero-image-three.png";
 // import heroImageFour from "../../public/assets/hero-image-four.png";
 
-import PaddlePink from "../../public/assets/paddle-pink.png";
+// import PaddlePink from "../../public/assets/paddle-pink.png";
 import Star from "../../public/assets/star.svg";
 import BlankStar from "../../public/assets/blank-star.svg";
 
@@ -276,7 +292,7 @@ const Products = async () => {
             </div>
           </div>
           <div className="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
-            {data?.products.nodes.map((product: any) => (
+            {data?.products.nodes.map((product: Product) => (
               <Link key={product.id} href={`/products/${product.handle}`}>
                 <div className="card flex flex-col p-5 rounded-4xl border border-[#0000001a] overflow-hidden">
                   <div className="card-header relative">
