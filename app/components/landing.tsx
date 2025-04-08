@@ -32,7 +32,7 @@ import ReviewImageOne from "../../public/assets/review-image-one.png";
 import ReviewImageTwo from "../../public/assets/review-image-two.png";
 
 import TradePaddle from "../../public/assets/trade-paddle.png";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 
 const Landing = () => {
   return (
