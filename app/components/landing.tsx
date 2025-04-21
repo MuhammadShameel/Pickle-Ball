@@ -87,7 +87,7 @@ const Landing = () => {
                   height={302} // Adjust height as needed
                 />
               </div>
-              <div className="w-1/4  flex justify-center mt-12">
+              <div className="w-1/4  flex justify-center mt-6">
                 <Image
                   src={heroImageTwo}
                   alt="Image Two"
@@ -103,7 +103,7 @@ const Landing = () => {
                   height={302} // Adjust height as needed
                 />
               </div>
-              <div className="w-1/4  flex justify-center mt-12">
+              <div className="w-1/4  flex justify-center mt-6">
                 <Image
                   src={heroImageFour}
                   alt="Image Four"
@@ -117,100 +117,91 @@ const Landing = () => {
       </section>
 
       {/* how it work  */}
-      <section className="mt-100 px-5">
-        <div className="container mx-auto">
-          <div className="w-1/2">
-            <h2 className="text-black leading-[107.692%] tracking-[-1.3px]">
-              How It Works A Simple Process
-            </h2>
+      <section className="mt-80 px-5">
+        <div className="flex flex-col lg:flex-row gap-6 mt-10">
+          <div className="w-full lg:w-1/2">
+            <div className="img-wrapper w-full h-auto aspect-square">
+              <Image
+                src={paddle}
+                alt="Paddle illustration"
+                className="w-full! h-full! object-cover"
+              />
+            </div>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-6 mt-10">
-            <div className="lg:w-7/12 w-12/12">
-              <div className="img-wrapper rounded-lg">
-                <Image
-                  src={paddle}
-                  alt="Paddle illustration"
-                  className="w-full h-auto object-cover"
-                />
+          <div className="w-full lg:w-1/2 bg-light-green">
+            <div className="text-center lg:text-start flex flex-col justify-center items-start h-full ">
+              <div className=" flex lg:flex-row flex-col items-start gap-5">
+                {/* Number */}
+                <span className="font-Allotrope text-[100px] font-bold leading-none text-stroke">
+                  1
+                </span>
+
+                <div>
+                  <h3 className="font-Allotrope text-black leading-[40px]">
+                    CHOOSE A PADDLE DESIGN
+                  </h3>
+                  <p className=" mt-3.5">
+                    Pick from House Pickleball’s designs or start from scratch.
+                  </p>
+                </div>
               </div>
-            </div>
+              <hr className="h-px bg-[rgba(0,0,0,0.2)] my-7 border-none" />
+              <div className="flex lg:flex-row flex-col items-start gap-5">
+                {/* Number */}
+                <span className="font-Allotrope text-[100px] font-bold leading-none text-stroke">
+                  2
+                </span>
 
-            <div className="w-full lg:w-5/12">
-              <div className="text-center lg:text-start ">
-                <div className=" flex lg:flex-row flex-col items-start gap-5">
-                  {/* Number */}
-                  <span className="font-Allotrope text-[100px] font-bold leading-none text-stroke">
-                    1
-                  </span>
-
-                  <div>
-                    <h3 className="font-Allotrope text-black leading-[40px]">
-                      CHOOSE A PADDLE DESIGN
-                    </h3>
-                    <p className=" mt-3.5">
-                      Pick from House Pickleball’s designs or start from
-                      scratch.
-                    </p>
-                  </div>
+                <div>
+                  <h3 className="text-black font-Allotrope leading-[40px]">
+                    Customize with Paddle ID
+                  </h3>
+                  <p className=" mt-3.5">Add colors, patterns, and text.</p>
                 </div>
-                <hr className="h-px bg-[rgba(0,0,0,0.2)] my-7 border-none" />
-                <div className="flex lg:flex-row flex-col items-start gap-5">
-                  {/* Number */}
-                  <span className="font-Allotrope text-[100px] font-bold leading-none text-stroke">
-                    2
-                  </span>
-
-                  <div>
-                    <h3 className="text-black font-Allotrope leading-[40px]">
-                      Customize with Paddle ID
-                    </h3>
-                    <p className=" mt-3.5">Add colors, patterns, and text.</p>
-                  </div>
-                </div>
-                <hr className="h-px bg-[rgba(0,0,0,0.2)] my-7 border-none" />
-
-                <div className="flex lg:flex-row flex-col items-start gap-5">
-                  {/* Number */}
-                  <span className="font-Allotrope text-[100px] font-bold leading-none text-stroke">
-                    3
-                  </span>
-
-                  <div>
-                    <h3 className="text-black font-Allotrope leading-[40px]">
-                      Order & Play
-                    </h3>
-                    <p className=" mt-3.5">
-                      Get your custom pickleball racquet delivered and dominate
-                      the court.
-                    </p>
-                  </div>
-                </div>
-                <button className="btn btn-secondary flex items-center gap-2.5 leading-normal mt-10 cursor-pointer">
-                  Start Designing
-                  <div className="icon-wrapper">
-                    <Image
-                      src={btnArrowWhite}
-                      alt="Arrow svg"
-                      width={40} // Adjust width as needed
-                      height={40} // Adjust height as needed
-                    />
-                  </div>
-                </button>
               </div>
+              <hr className="h-px bg-[rgba(0,0,0,0.2)] my-7 border-none" />
+
+              <div className="flex lg:flex-row flex-col items-start gap-5">
+                {/* Number */}
+                <span className="font-Allotrope text-[100px] font-bold leading-none text-stroke">
+                  3
+                </span>
+
+                <div>
+                  <h3 className="text-black font-Allotrope leading-[40px]">
+                    Order & Play
+                  </h3>
+                  <p className=" mt-3.5">
+                    Get your custom pickleball racquet delivered and dominate
+                    the court.
+                  </p>
+                </div>
+              </div>
+              <button className="btn btn-secondary flex items-center gap-2.5 leading-normal mt-10 cursor-pointer">
+                Start Designing
+                <div className="icon-wrapper">
+                  <Image
+                    src={btnArrowWhite}
+                    alt="Arrow svg"
+                    width={40} // Adjust width as needed
+                    height={40} // Adjust height as needed
+                  />
+                </div>
+              </button>
             </div>
           </div>
         </div>
       </section>
 
       {/* featured paddles section */}
-      <section className="mt-100 px-5 featured-section">
+      <section className="mt-80 px-5 featured-section">
         <div className="w-1/3 mx-auto">
           <h2 className="text-center text-black leading-[107.692%] tracking-[-1.3px]">
             Featured Paddles Our Best Sellers
           </h2>
         </div>
-        <div className="mt-12">
+        <div className="mt-6">
           <Swiper
             modules={[Navigation]}
             spaceBetween={20}
@@ -733,7 +724,7 @@ const Landing = () => {
       </section>
 
       {/* accesories section  */}
-      <section className="mt-100 px-5 accessories-section">
+      <section className="mt-80 px-5 accessories-section">
         <div className="container mx-auto">
           <div className="grid grid-cols-2 gap-6">
             <div className=" bg-black text-white  lg:px-[84px] lg:py-[164px] px-[30px] py-[92px] rounded-4xl flex flex-col items-center justify-center text-center ">
@@ -821,7 +812,7 @@ const Landing = () => {
       </section>
 
       {/* slide video section */}
-      <section className="mt-100 px-5">
+      <section className="mt-80 px-5">
         <div className="container mx-auto">
           <div className="flex items-center gap-16">
             <div className="w-2/3">
@@ -989,12 +980,12 @@ const Landing = () => {
               </Swiper>
             </div>
           </div>
-          <div className="custom-scrollbar mt-12 h-3.5 rounded-[10px] bg-[#F5F5F5]"></div>
+          <div className="custom-scrollbar mt-6 h-3.5 rounded-[10px] bg-[#F5F5F5]"></div>
         </div>
       </section>
 
       {/* testimonials section */}
-      <section className="mt-100 px-5 overflow-x-clip testimonial-section">
+      <section className="mt-80 px-5 overflow-x-clip testimonial-section">
         <div className="w-1/3 mx-auto">
           <h2 className="text-center text-black leading-[107.692%] tracking-[-1.3px]">
             Testimonials What Our Clients Say About Us
@@ -1487,7 +1478,7 @@ const Landing = () => {
       </section>
 
       {/* our blog section */}
-      <section className="mt-100 px-5">
+      <section className="mt-80 px-5">
         <div className="container mx-auto">
           <div className="w-1/2">
             <h2 className="text-black leading-[107.692%] tracking-[-1.3px]">
@@ -1499,7 +1490,7 @@ const Landing = () => {
       </section>
 
       {/* trade your paddle section */}
-      <section className="mt-100 px-5">
+      <section className="mt-80 px-5">
         <div className="container mx-auto">
           <div className="flex items-center gap-18">
             <div className="w-1/2">

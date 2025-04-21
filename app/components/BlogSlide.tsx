@@ -12,7 +12,7 @@ import btnArrowWhite from "../../public/assets/btn-white-arrow.svg";
 
 const BlogSlide = () => {
   return (
-    <div className="mt-12 blog-slide">
+    <div className="mt-6 blog-slide">
       <Swiper
         modules={[Pagination, Autoplay]}
         spaceBetween={15}
