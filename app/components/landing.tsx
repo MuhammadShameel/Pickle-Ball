@@ -10,16 +10,10 @@ import "swiper/css/scrollbar";
 import BlogSlide from "./BlogSlide";
 import FooterSection from "./Footer";
 
-import Ball from "../../public/assets/ball.png";
-import PickleBall from "../../public/assets/pickleball.png";
 import btnArrow from "../../public/assets/btn-black-arrow.svg";
 import btnArrowWhite from "../../public/assets/btn-white-arrow.svg";
-import heroImageOne from "../../public/assets/hero-image-one.png";
-import heroImageTwo from "../../public/assets/hero-image-two.png";
-import heroImageThree from "../../public/assets/hero-image-three.png";
-import heroImageFour from "../../public/assets/hero-image-four.png";
 
-import paddle from "../../public/assets/images/hiw-paddle-img.png";
+import mainVideoThumbnail from "../../public/assets/main-video-thumbnail.jpg";
 
 import PaddlePink from "../../public/assets/paddle-pink.png";
 import Star from "../../public/assets/star.svg";
@@ -39,80 +33,12 @@ const Landing = () => {
     <>
       {/* hero section start */}
       <section className="hero-section px-5">
-        <div className="container mx-auto">
-          <div className="flex flex-col items-center relative z-10">
-            <div className="relative">
-              <h1 className="uppercase text-500 text-white leading-[83.333%] text-center relative z-1">
-                Design Your Own Custom Pickleball Paddle
-              </h1>
-              <div className="img-wrapper absolute bottom-0 left-0 -z-0">
-                <Image
-                  src={Ball}
-                  alt="Pickle Ball Image"
-                  width={125} // Adjust width as needed
-                  height={125} // Adjust height as needed
-                />
-              </div>
-              <div className="img-wrapper absolute bottom-0 right-0 -z-0">
-                <Image
-                  src={PickleBall}
-                  alt="Pickle Ball Image"
-                  width={125} // Adjust width as needed
-                  height={125} // Adjust height as needed
-                />
-              </div>
-            </div>
-            <p className="mt-3.5 text-center text-[#a9b7b3] leading-[100%]">
-              Personalize your <span className="text-white">pickleball</span>{" "}
-              paddle with <span className="text-white">Paddle ID</span> and
-              stand out on the court.
-            </p>
-            <button className="btn btn-primary flex items-center gap-2.5 leading-normal mt-9 cursor-pointer">
-              Start Customizing
-              <div className="icon-wrapper">
-                <Image
-                  src={btnArrow}
-                  alt="Arrow svg"
-                  width={40} // Adjust width as needed
-                  height={40} // Adjust height as needed
-                />
-              </div>
-            </button>
-            <div className="flex items-start gap-5 w-full mt-11">
-              <div className="w-1/4  flex justify-center">
-                <Image
-                  src={heroImageOne}
-                  alt="Image One"
-                  width={264} // Adjust width as needed
-                  height={302} // Adjust height as needed
-                />
-              </div>
-              <div className="w-1/4  flex justify-center mt-6">
-                <Image
-                  src={heroImageTwo}
-                  alt="Image Two"
-                  width={264} // Adjust width as needed
-                  height={302} // Adjust height as needed
-                />
-              </div>
-              <div className="w-1/4  flex justify-center">
-                <Image
-                  src={heroImageThree}
-                  alt="Image Three"
-                  width={264} // Adjust width as needed
-                  height={302} // Adjust height as needed
-                />
-              </div>
-              <div className="w-1/4  flex justify-center mt-6">
-                <Image
-                  src={heroImageFour}
-                  alt="Image Four"
-                  width={264} // Adjust width as needed
-                  height={302} // Adjust height as needed
-                />
-              </div>
-            </div>
-          </div>
+        <div className="img-wrapper">
+          <Image
+            src={mainVideoThumbnail}
+            alt="Thumbnail"
+            className="w-full! h-full! object-cover"
+          />
         </div>
       </section>
 
@@ -121,11 +47,11 @@ const Landing = () => {
         <div className="flex flex-col lg:flex-row gap-6 mt-10">
           <div className="w-full lg:w-1/2">
             <div className="img-wrapper w-full h-auto aspect-square">
-              <Image
+              {/* <Image
                 src={paddle}
                 alt="Paddle illustration"
                 className="w-full! h-full! object-cover"
-              />
+              /> */}
             </div>
           </div>
 
