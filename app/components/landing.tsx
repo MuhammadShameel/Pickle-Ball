@@ -11,6 +11,7 @@ import BlogSlide from "./BlogSlide";
 import FooterSection from "./Footer";
 
 import btnArrow from "../../public/assets/btn-black-arrow.svg";
+import Paddle from '../../public/assets/images/subscribe-section-paddle.png'
 import btnArrowWhite from "../../public/assets/btn-white-arrow.svg";
 
 import mainVideoThumbnail from "../../public/assets/main-video-thumbnail.jpg";
@@ -712,19 +713,19 @@ const Landing = () => {
             </div>
 
             <div className="card lg:h-[500px]  h-[350px] justify-end lg:px-3 lg:py-3 md:px-3 md:py-3 px-2.5 py-2.5 rounded-[10px] flex flex-col text-center">
-            <button className="btn btn-white w-full py-2.5! text-center flex justify-center gap-2.5 leading-normal cursor-pointer">
+              <button className="btn btn-white w-full py-2.5! text-center flex justify-center gap-2.5 leading-normal cursor-pointer">
                 Paddles
               </button>
             </div>
 
             <div className="card lg:h-[500px]  h-[350px] justify-end lg:px-3 lg:py-3 md:px-3 md:py-3 px-2.5 py-2.5 rounded-[10px] flex flex-col text-center">
-            <button className="btn btn-white w-full py-2.5! text-center flex justify-center gap-2.5 leading-normal cursor-pointer">
+              <button className="btn btn-white w-full py-2.5! text-center flex justify-center gap-2.5 leading-normal cursor-pointer">
                 Paddles
               </button>
             </div>
 
             <div className="card lg:h-[500px]  h-[350px] justify-end lg:px-3 lg:py-3 md:px-3 md:py-3 px-2.5 py-2.5 rounded-[10px] flex flex-col text-center">
-            <button className="btn btn-white w-full py-2.5! text-center flex justify-center gap-2.5 leading-normal cursor-pointer">
+              <button className="btn btn-white w-full py-2.5! text-center flex justify-center gap-2.5 leading-normal cursor-pointer">
                 Paddles
               </button>
             </div>
@@ -1444,6 +1445,18 @@ const Landing = () => {
                 height={567} // Adjust height as needed
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Subscribe  */}
+      <section className="mt-80 bg-dark-green">
+        <div className="container mx-auto">
+          <div className="flex text-white">
+            <div className="py-10">  <h2 className="font-h1 leading-[105px] uppercase">Subscribe to our newsletter</h2></div>
+            <Image src={Paddle} alt=""></Image>
+            <div className="py-[107px]"> <p className="text-[#FFFFFF] font-light leading-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros lectus, euismod et maximus.</p>
+              <input type="text" className="bg-[rgba(255, 255, 255, 0.20)] " /></div>
           </div>
         </div>
       </section>
