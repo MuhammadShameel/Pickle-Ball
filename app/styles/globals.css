@@ -3,9 +3,16 @@
 
 body {
   font-family: "allotrope", sans-serif;
-  
   color: #333;
   background: #fff;
+}
+
+@font-face {
+  font-family: "allotrope-variable";
+  src: url("/fonts/allotrope-variable.woff2") format("woff2"),
+       url("/fonts/allotrope-variable.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
 }
 
 h1 {

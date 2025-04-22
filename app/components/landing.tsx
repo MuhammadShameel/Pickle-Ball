@@ -105,7 +105,7 @@ const Landing = () => {
                   </p>
                 </div>
               </div>
-              <button className="btn btn-primary flex items-center gap-2.5 leading-normal mt-2.5 cursor-pointer">
+              <button className="btn btn-primary flex items-center sm-mx-auto gap-2.5 leading-normal mt-2.5 cursor-pointer">
                 Start Designing
               </button>
               {/* <div className=" flex lg:flex-row flex-col items-start gap-5">
