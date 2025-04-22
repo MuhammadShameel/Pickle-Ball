@@ -25,10 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link
-          rel="stylesheet"
-          href="https://fonts.adobe.com/fonts/allotrope-variable?vf-font-size=66&vf-font=AllotropeVariable-CompressedThin&vf-axes=wght%2C700%2Cwdth%2C50" 
-        />
+      <link
+            rel="stylesheet"
+            href="https://use.typekit.net/nce7tge.css"
+          />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

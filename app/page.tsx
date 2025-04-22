@@ -4,6 +4,7 @@
 // import BlogSlide from "./components/BlogSlide";
 // import HowItWorks from "./components/HowItWorks";
 import Landing from "./components/landing";
+import './styles/globals.css'
 // import BlogSlide from "./components/BlogSlide";
 // import HowItWorks from "./components/Footer";
 // import Products from "./components/Products";

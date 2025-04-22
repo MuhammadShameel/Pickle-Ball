@@ -1,12 +1,23 @@
 @import url("https://use.typekit.net/nce7tge.css");
 @import "tailwindcss";
 
+/* styles/globals.css */
+@font-face {
+  font-family: "allotrope";
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "allotrope-variable";
+  font-display: swap;
+}
+
+
 body {
   font-family: "allotrope", sans-serif;
   color: #333;
   background: #fff;
 }
-
 
 h1 {
   font-size: 118px;
