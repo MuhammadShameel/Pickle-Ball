@@ -1,3 +1,4 @@
+@import url("https://use.typekit.net/nce7tge.css");
 @import "tailwindcss";
 
 body {
@@ -13,9 +14,9 @@ h1 {
 }
 
 h2 {
+  font-family: "allotrope-variable",sans-serif;
   font-size: 65px;
   font-variation-settings: 'wdth' 50, 'wght' 700;
-  font-family: "allotrope-variable",sans-serif;
 
 }
 

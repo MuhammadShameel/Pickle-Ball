@@ -44,7 +44,7 @@ const Landing = () => {
 
       {/* how it work  */}
       <section className="mt-80 ">
-      <div className=" mx-auto"><h2 className="text-center leading-0 text-black capitalize">HOW IT WORKS</h2></div>
+      <div className=" mx-auto"><h2 className="text-center leading-normal text-black capitalize">HOW IT WORKS</h2></div>
         <div className="flex flex-col lg:flex-row gap-6 mt-10">
           <div className="w-full lg:w-1/2">
             <div className="img-wrapper w-full h-auto aspect-square">
