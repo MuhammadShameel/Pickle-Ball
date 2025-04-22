@@ -36,17 +36,17 @@
 
 /* accessories section start */
 .accessories-section .grid>div:first-child {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), url('../../public/assets/paddles.jpg') no-repeat center center/cover;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url('../../public/assets/paddles.jpg') no-repeat center center/cover;
 }
 
 .accessories-section .grid>div:nth-child(2) {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), url('../../public/assets/accessories.jpg') no-repeat center center/cover;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url('../../public/assets/accessories.jpg') no-repeat center center/cover;
 }
 
 .accessories-section .grid>div:nth-child(3) {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), url('../../public/assets/sets.jpg') no-repeat center center/cover;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url('../../public/assets/sets.jpg') no-repeat center center/cover;
 }
 
 .accessories-section .grid>div:last-child {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), url('../../public/assets/gear.png') no-repeat center center/cover;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url('../../public/assets/gear.png') no-repeat center center/cover;
 }
