@@ -1456,7 +1456,8 @@ const Landing = () => {
             <div className="py-10">  <h2 className="font-h1 leading-[105px] uppercase">Subscribe to our newsletter</h2></div>
             <Image src={Paddle} alt=""></Image>
             <div className="py-[107px]"> <p className="text-[#FFFFFF] font-light leading-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros lectus, euismod et maximus.</p>
-              <input type="text" className="bg-[rgba(255, 255, 255, 0.20)] " /></div>
+              <input type="text" className="bg-red-300 w-full rounded-[6px]" /></div>
+            <button>abc</button>
           </div>
         </div>
       </section>
