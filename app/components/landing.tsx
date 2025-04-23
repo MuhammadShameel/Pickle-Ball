@@ -11,6 +11,7 @@ import BlogSlide from "./BlogSlide";
 import FooterSection from "./Footer";
 
 import btnArrow from "../../public/assets/btn-black-arrow.svg";
+import Paddle from '../../public/assets/images/subscribe-section-paddle.png'
 import btnArrowWhite from "../../public/assets/btn-white-arrow.svg";
 
 import mainVideoThumbnail from "../../public/assets/main-video-thumbnail.jpg";
@@ -106,8 +107,13 @@ const Landing = () => {
         </div>
       </section>
       {/* how it work  */}
-      <section className="mt-80 px-5">
-        <div className="flex flex-col lg:flex-row gap-6 mt-10">
+      <section className="mt-80 ">
+        <div className=" mx-auto">
+          <h2 className="text-center leading-normal text-black capitalize">
+            HOW IT WORKS
+          </h2>
+        </div>
+        <div className="flex flex-col lg:flex-row gap-6 mt-80 px-5 accessories-sectionmt-10">
           <div className="w-full lg:w-1/2">
             <div className="img-wrapper w-full h-auto aspect-square">
               {/* <Image
@@ -119,48 +125,95 @@ const Landing = () => {
           </div>
 
           <div className="w-full lg:w-1/2 bg-light-green">
-            <div className="text-center lg:text-start flex flex-col justify-center items-start h-full ">
-              <div className=" flex lg:flex-row flex-col items-start gap-5">
-                {/* Number */}
-                <span className="font-Allotrope text-[100px] font-bold leading-none text-stroke">
+            <div className="text-center py-[65px] px-[80px] lg:text-start flex flex-col justify-center items-start h-full ">
+              <div className="flex lg:flex-row flex-col items-start sm-mx-auto  gap-5 pb-6 ">
+                <div className="mx-auto">
+                  <h2 className=" mt-[-48] mb-[-48] text-[130px]! text-black font-bold">
+                    1
+                  </h2>
+                </div>
+                <div>
+                  <h2 className="font-Allotrope  font-bold text-black leading-14">
+                    CHOOSE A PADDLE DESIGN
+                  </h2>
+                  <p className="text-[rgba(0, 0, 0, 0.80)] mt-3.5">
+                    Pick from House Pickleball’s designs or start from scratch.
+                  </p>
+                </div>
+              </div>
+              <hr className="w-full text-[#00000033]" />
+              <div className="flex lg:flex-row flex-col items-start sm-mx-auto gap-5 pt-6 pb-6 ">
+                <div className="mx-auto">
+                  <h2 className=" mt-[-48] mb-[-48] text-[130px]! text-black font-bold">
+                    2
+                  </h2>
+                </div>
+                <div>
+                  <h2 className="font-Allotrope  font-bold text-black leading-14">
+                    Customize with Paddle ID
+                  </h2>
+                  <p className="text-[rgba(0, 0, 0, 0.80)] mt-3.5">
+                    Add colors, patterns, text, logos, and grips.
+                  </p>
+                </div>
+              </div>
+              <hr className="w-full text-[#00000033]" />
+              <div className="flex lg:flex-row flex-col items-start sm-mx-auto border- gap-5 pb-6 pt-6 ">
+                <div className="mx-auto">
+                  <h2 className=" mt-[-48] mb-[-48] text-[130px]! text-black font-bold">
+                    3
+                  </h2>
+                </div>
+                <div>
+                  <h2 className="font-Allotrope  font-bold text-black leading-14">
+                    Order & Play
+                  </h2>
+                  <p className="text-[rgba(0, 0, 0, 0.80)] mt-3.5">
+                    Get your custom pickleball racquet delivered & dominate.
+                  </p>
+                </div>
+              </div>
+              <button className="btn btn-primary flex items-center sm-mx-auto gap-2.5 leading-normal mt-2.5 cursor-pointer">
+                Start Designing
+              </button>
+              {/* <div className=" flex lg:flex-row flex-col items-start gap-5">
+                <span className="font-Allotrope text-[130px] font-bold leading-0 text-black">
                   1
                 </span>
 
                 <div>
-                  <h3 className="font-Allotrope text-black leading-[40px]">
+                  <h2 className="font-Allotrope  font-bold text-black leading-[40px]">
                     CHOOSE A PADDLE DESIGN
-                  </h3>
+                  </h2>
                   <p className=" mt-3.5">
                     Pick from House Pickleball’s designs or start from scratch.
                   </p>
                 </div>
               </div>
-              <hr className="h-px bg-[rgba(0,0,0,0.2)] my-7 border-none" />
-              <div className="flex lg:flex-row flex-col items-start gap-5">
-                {/* Number */}
-                <span className="font-Allotrope text-[100px] font-bold leading-none text-stroke">
+              <hr className="h-px bg-[rgba(0, 0, 0, 0.20)] my-7 border-none" /> */}
+              {/* <div className="flex lg:flex-row flex-col items-start gap-5">
+                <span className="font-Allotrope text-[130px] font-bold leading-none text-black">
                   2
                 </span>
 
                 <div>
-                  <h3 className="text-black font-Allotrope leading-[40px]">
+                  <h2 className="text-black uppercase font-Allotrope leading-[40px]">
                     Customize with Paddle ID
-                  </h3>
+                  </h2>
                   <p className=" mt-3.5">Add colors, patterns, and text.</p>
                 </div>
               </div>
               <hr className="h-px bg-[rgba(0,0,0,0.2)] my-7 border-none" />
 
               <div className="flex lg:flex-row flex-col items-start gap-5">
-                {/* Number */}
-                <span className="font-Allotrope text-[100px] font-bold leading-none text-stroke">
+                <span className="font-Allotrope text-[130px] font-bold leading-none text-black">
                   3
                 </span>
 
                 <div>
-                  <h3 className="text-black font-Allotrope leading-[40px]">
+                  <h2 className="text-black uppercase font-Allotrope leading-[40px]">
                     Order & Play
-                  </h3>
+                  </h2>
                   <p className=" mt-3.5">
                     Get your custom pickleball racquet delivered and dominate
                     the court.
@@ -177,7 +230,7 @@ const Landing = () => {
                     height={40} // Adjust height as needed
                   />
                 </div>
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -713,85 +766,28 @@ const Landing = () => {
       {/* accesories section  */}
       <section className="mt-80 px-5 accessories-section">
         <div className="container mx-auto">
-          <div className="grid grid-cols-2 gap-6">
-            <div className=" bg-black text-white  lg:px-[84px] lg:py-[164px] px-[30px] py-[92px] rounded-4xl flex flex-col items-center justify-center text-center ">
-              <h3 className="font-Allotrope uppercase leading-[95.238%] mb-[5px]">
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:gap-5 md:gap-5 gap-2.5">
+            <div className="card lg:h-[500px]  h-[350px] justify-end lg:px-3 lg:py-3 md:px-3 md:py-3 px-2.5 py-2.5 rounded-[10px] flex flex-col  text-center">
+              <button className="btn btn-white w-full py-2.5! text-center flex justify-center gap-2.5 leading-normal cursor-pointer">
                 Paddles
-              </h3>
-              <p className="text-[#d0d2d2] fs-18">
-                Our paddles are rigorously tested for quality, and we stand
-                behind every product with a hassle-free return policy.
-              </p>
-              <button className="btn btn-primary flex items-center gap-2.5 leading-normal mt-6 cursor-pointer">
-                View All
-                <div className="icon-wrapper">
-                  <Image
-                    src={btnArrow}
-                    alt="Arrow svg"
-                    width={40} // Adjust width as needed
-                    height={40} // Adjust height as needed
-                  />
-                </div>
               </button>
             </div>
-            <div className=" bg-black text-white  lg:px-[84px] lg:py-[164px] px-[30px] py-[92px] rounded-4xl flex flex-col items-center justify-center text-center ">
-              <h3 className="font-Allotrope uppercase leading-[95.238%] mb-[5px]">
-                Accessories
-              </h3>
-              <p className="text-[#d0d2d2] fs-18">
-                Our paddles are rigorously tested for quality, and we stand
-                behind every product with a hassle-free return policy.
-              </p>
-              <button className="btn btn-primary flex items-center gap-2.5 leading-normal mt-6 cursor-pointer">
-                View All
-                <div className="icon-wrapper">
-                  <Image
-                    src={btnArrow}
-                    alt="Arrow svg"
-                    width={40} // Adjust width as needed
-                    height={40} // Adjust height as needed
-                  />
-                </div>
+
+            <div className="card lg:h-[500px]  h-[350px] justify-end lg:px-3 lg:py-3 md:px-3 md:py-3 px-2.5 py-2.5 rounded-[10px] flex flex-col text-center">
+              <button className="btn btn-white w-full py-2.5! text-center flex justify-center gap-2.5 leading-normal cursor-pointer">
+                Paddles
               </button>
             </div>
-            <div className=" bg-black text-white  lg:px-[84px] lg:py-[164px] px-[30px] py-[92px] rounded-4xl flex flex-col items-center justify-center text-center ">
-              <h3 className="font-Allotrope uppercase leading-[95.238%] mb-[5px]">
-                Sets
-              </h3>
-              <p className="text-[#d0d2d2] fs-18">
-                Our paddles are rigorously tested for quality, and we stand
-                behind every product with a hassle-free return policy.
-              </p>
-              <button className="btn btn-primary flex items-center gap-2.5 leading-normal mt-6 cursor-pointer">
-                View All
-                <div className="icon-wrapper">
-                  <Image
-                    src={btnArrow}
-                    alt="Arrow svg"
-                    width={40} // Adjust width as needed
-                    height={40} // Adjust height as needed
-                  />
-                </div>
+
+            <div className="card lg:h-[500px]  h-[350px] justify-end lg:px-3 lg:py-3 md:px-3 md:py-3 px-2.5 py-2.5 rounded-[10px] flex flex-col text-center">
+              <button className="btn btn-white w-full py-2.5! text-center flex justify-center gap-2.5 leading-normal cursor-pointer">
+                Paddles
               </button>
             </div>
-            <div className=" bg-black text-white  lg:px-[84px] lg:py-[164px] px-[30px] py-[92px] rounded-4xl flex flex-col items-center justify-center text-center ">
-              <h3 className="font-Allotrope uppercase leading-[95.238%] mb-[5px]">
-                Gear
-              </h3>
-              <p className="text-[#d0d2d2] fs-18">
-                Our paddles are rigorously tested for quality, and we stand
-                behind every product with a hassle-free return policy.
-              </p>
-              <button className="btn btn-primary flex items-center gap-2.5 leading-normal mt-6 cursor-pointer">
-                View All
-                <div className="icon-wrapper">
-                  <Image
-                    src={btnArrow}
-                    alt="Arrow svg"
-                    width={40} // Adjust width as needed
-                    height={40} // Adjust height as needed
-                  />
-                </div>
+
+            <div className="card lg:h-[500px]  h-[350px] justify-end lg:px-3 lg:py-3 md:px-3 md:py-3 px-2.5 py-2.5 rounded-[10px] flex flex-col text-center">
+              <button className="btn btn-white w-full py-2.5! text-center flex justify-center gap-2.5 leading-normal cursor-pointer">
+                Paddles
               </button>
             </div>
           </div>
@@ -1509,6 +1505,20 @@ const Landing = () => {
           </div>
         </div>
       </section>
+
+
+      {/* Subscribe  */}
+      <section className="mt-80 bg-dark-green">
+        <div className="container mx-auto">
+          <div className="flex text-white">
+            <div className="py-10">  <h2 className="font-h1 leading-[105px] uppercase">Subscribe to our newsletter</h2></div>
+            <Image src={Paddle} alt=""></Image>
+            <div className="py-[107px]"> <p className="text-[#FFFFFF] font-light leading-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros lectus, euismod et maximus.</p>
+              <input type="text" className="bg-[rgba(255, 255, 255, 0.20)] " /></div>
+          </div>
+        </div>
+      </section>
+
       {/* footer start */}
       <FooterSection />
     </>
