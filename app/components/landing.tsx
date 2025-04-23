@@ -11,7 +11,7 @@ import BlogSlide from "./BlogSlide";
 import FooterSection from "./Footer";
 
 import btnArrow from "../../public/assets/btn-black-arrow.svg";
-import Paddle from '../../public/assets/images/subscribe-section-paddle.png'
+import Paddle from "../../public/assets/images/subscribe-section-paddle.png";
 import btnArrowWhite from "../../public/assets/btn-white-arrow.svg";
 
 import mainVideoThumbnail from "../../public/assets/main-video-thumbnail.jpg";
@@ -77,9 +77,12 @@ const Landing = () => {
 
       {/* IT'S BIGGER THAN PADDLES */}
       <section className="mt-80">
-        <h2 className="uppercase text-center leading-normal">
-          It's Bigger than paddles
-        </h2>
+        <div className="mb-3.5 sm:mb-6">
+          <h2 className="uppercase text-black text-center leading-[100%]">
+            It's Bigger than paddles
+          </h2>
+        </div>
+
         <div className="flex flex-col lg:flex-row">
           <div className="w-full lg:w-1/2 flex flex-col justify-center bg-dark-green border border-red-500">
             <div className="xl:w-4/5 2xl:w-3/5 px-5 lg:ps-16 xl:ps-20 py-20 sm:py-22 md:py-24 lg:py-0 text-center lg:text-left">
@@ -108,12 +111,12 @@ const Landing = () => {
       </section>
       {/* how it work  */}
       <section className="mt-80 ">
-        <div className=" mx-auto">
-          <h2 className="text-center leading-normal text-black capitalize">
+        <div className="mx-auto mb-3.5 sm:mb-6">
+          <h2 className="text-center leading-[100%] text-black capitalize">
             HOW IT WORKS
           </h2>
         </div>
-        <div className="flex flex-col lg:flex-row gap-6 mt-80 px-5 accessories-sectionmt-10">
+        <div className="flex flex-col lg:flex-row gap-6 px-5 accessories-section">
           <div className="w-full lg:w-1/2">
             <div className="img-wrapper w-full h-auto aspect-square">
               {/* <Image
@@ -237,12 +240,12 @@ const Landing = () => {
       </section>
       {/* featured paddles section */}
       <section className="mt-80 px-5 featured-section">
-        <div className="w-1/3 mx-auto">
-          <h2 className="text-center text-black leading-[107.692%] tracking-[-1.3px]">
-            Featured Paddles Our Best Sellers
+        <div className="mb-3.5 sm:mb-6">
+          <h2 className="text-center text-black leading-[100%] uppercase">
+            Our Best Sellers
           </h2>
         </div>
-        <div className="mt-6">
+        <div className="">
           <Swiper
             modules={[Navigation]}
             spaceBetween={20}
@@ -763,9 +766,15 @@ const Landing = () => {
           </Swiper>
         </div>
       </section>
+
       {/* accesories section  */}
       <section className="mt-80 px-5 accessories-section">
         <div className="container mx-auto">
+          <div className="mb-3.5 sm:mb-6">
+            <h2 className="text-center leading-[100%] text-black uppercase">
+              Explore All Categories
+            </h2>
+          </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:gap-5 md:gap-5 gap-2.5">
             <div className="card lg:h-[500px]  h-[350px] justify-end lg:px-3 lg:py-3 md:px-3 md:py-3 px-2.5 py-2.5 rounded-[10px] flex flex-col  text-center">
               <button className="btn btn-white w-full py-2.5! text-center flex justify-center gap-2.5 leading-normal cursor-pointer">
@@ -968,7 +977,7 @@ const Landing = () => {
       {/* testimonials section */}
       <section className="mt-80 px-5 overflow-x-clip testimonial-section">
         <div className="w-1/3 mx-auto">
-          <h2 className="text-center text-black leading-[107.692%] tracking-[-1.3px]">
+          <h2 className="text-center text-black leading-[100%]">
             Testimonials What Our Clients Say About Us
           </h2>
         </div>
@@ -1506,15 +1515,25 @@ const Landing = () => {
         </div>
       </section>
 
-
       {/* Subscribe  */}
       <section className="mt-80 bg-dark-green">
         <div className="container mx-auto">
           <div className="flex text-white">
-            <div className="py-10">  <h2 className="font-h1 leading-[105px] uppercase">Subscribe to our newsletter</h2></div>
+            <div className="py-10">
+              {" "}
+              <h2 className="font-h1 leading-[105px] uppercase">
+                Subscribe to our newsletter
+              </h2>
+            </div>
             <Image src={Paddle} alt=""></Image>
-            <div className="py-[107px]"> <p className="text-[#FFFFFF] font-light leading-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros lectus, euismod et maximus.</p>
-              <input type="text" className="bg-[rgba(255, 255, 255, 0.20)] " /></div>
+            <div className="py-[107px]">
+              {" "}
+              <p className="text-[#FFFFFF] font-light leading-normal">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                eros lectus, euismod et maximus.
+              </p>
+              <input type="text" className="bg-[rgba(255, 255, 255, 0.20)] " />
+            </div>
           </div>
         </div>
       </section>
