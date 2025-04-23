@@ -15,6 +15,8 @@ import btnArrowWhite from "../../public/assets/btn-white-arrow.svg";
 
 import mainVideoThumbnail from "../../public/assets/main-video-thumbnail.jpg";
 
+import pickleBall from "../../public/assets/pickle-ball.png";
+
 import PaddlePink from "../../public/assets/paddle-pink.png";
 import Star from "../../public/assets/star.svg";
 import BlankStar from "../../public/assets/blank-star.svg";
@@ -31,17 +33,78 @@ import TradePaddle from "../../public/assets/trade-paddle.png";
 const Landing = () => {
   return (
     <>
-      {/* hero section start */}
-      <section className="hero-section px-5">
-        <div className="img-wrapper">
-          <Image
-            src={mainVideoThumbnail}
-            alt="Thumbnail"
-            className="w-full! h-full! object-cover"
-          />
+      {/* HERO VIDEO SECTION */}
+      <section>
+        <div className="relative">
+          <div className="video-thumbnail">
+            <Image
+              src={mainVideoThumbnail}
+              alt="Thumbnail"
+              className="w-full! h-full! object-cover"
+            />
+          </div>
+        </div>
+      </section>
+      {/* YOUR PADDLE YOUR RULES */}
+      <section>
+        <div className="flex flex-col lg:flex-row">
+          <div className="w-full lg:w-1/2 flex flex-col justify-center bg-dark-green border border-red-500">
+            <div className="xl:w-4/5 2xl:w-3/5 px-5 lg:ps-16 xl:ps-20 py-20 sm:py-22 md:py-24 lg:py-0 text-center lg:text-left">
+              <h1 className="text-white uppercase leading-[80.769%]">
+                Your paddle, Your Rules
+              </h1>
+              <p className="leading-normal text-light mt-2.5 md:mt-3.5">
+                Personalize your{" "}
+                <span className="text-white"> pickleball paddle </span> with
+                <span className="text-white"> Paddle ID </span> and stand out on
+                the court.
+              </p>
+              <button className="btn btn-secondary  leading-normal mt-6 sm:mt-7 md:mt-9 cursor-pointer">
+                Let's Cook
+              </button>
+            </div>
+          </div>
+          <div className="w-full lg:w-1/2 p-3  border border-red-500 bg-pink">
+            <Image
+              className="mx-auto"
+              src={pickleBall}
+              alt="Paddle illustration"
+            />
+          </div>
         </div>
       </section>
 
+      {/* IT'S BIGGER THAN PADDLES */}
+      <section className="mt-80">
+        <h2 className="uppercase text-center leading-normal">
+          It's Bigger than paddles
+        </h2>
+        <div className="flex flex-col lg:flex-row">
+          <div className="w-full lg:w-1/2 flex flex-col justify-center bg-dark-green border border-red-500">
+            <div className="xl:w-4/5 2xl:w-3/5 px-5 lg:ps-16 xl:ps-20 py-20 sm:py-22 md:py-24 lg:py-0 text-center lg:text-left">
+              <h1 className="text-white uppercase leading-[80.769%]">
+                Your paddle, Your Rules
+              </h1>
+              <p className="leading-normal text-light mt-2.5 md:mt-3.5">
+                Personalize your{" "}
+                <span className="text-white"> pickleball paddle </span> with
+                <span className="text-white"> Paddle ID </span> and stand out on
+                the court.
+              </p>
+              <button className="btn btn-secondary  leading-normal mt-6 sm:mt-7 md:mt-9 cursor-pointer">
+                Let's Cook
+              </button>
+            </div>
+          </div>
+          <div className="w-full lg:w-1/2 p-3  border border-red-500 bg-pink">
+            <Image
+              className="mx-auto"
+              src={pickleBall}
+              alt="Paddle illustration"
+            />
+          </div>
+        </div>
+      </section>
       {/* how it work  */}
       <section className="mt-80 px-5">
         <div className="flex flex-col lg:flex-row gap-6 mt-10">
@@ -119,7 +182,6 @@ const Landing = () => {
           </div>
         </div>
       </section>
-
       {/* featured paddles section */}
       <section className="mt-80 px-5 featured-section">
         <div className="w-1/3 mx-auto">
@@ -648,7 +710,6 @@ const Landing = () => {
           </Swiper>
         </div>
       </section>
-
       {/* accesories section  */}
       <section className="mt-80 px-5 accessories-section">
         <div className="container mx-auto">
@@ -736,7 +797,6 @@ const Landing = () => {
           </div>
         </div>
       </section>
-
       {/* slide video section */}
       <section className="mt-80 px-5">
         <div className="container mx-auto">
@@ -909,7 +969,6 @@ const Landing = () => {
           <div className="custom-scrollbar mt-6 h-3.5 rounded-[10px] bg-[#F5F5F5]"></div>
         </div>
       </section>
-
       {/* testimonials section */}
       <section className="mt-80 px-5 overflow-x-clip testimonial-section">
         <div className="w-1/3 mx-auto">
@@ -1402,7 +1461,6 @@ const Landing = () => {
           </Swiper>
         </div>
       </section>
-
       {/* our blog section */}
       <section className="mt-80 px-5">
         <div className="container mx-auto">
@@ -1414,7 +1472,6 @@ const Landing = () => {
           <BlogSlide />
         </div>
       </section>
-
       {/* trade your paddle section */}
       <section className="mt-80 px-5">
         <div className="container mx-auto">
@@ -1452,7 +1509,6 @@ const Landing = () => {
           </div>
         </div>
       </section>
-
       {/* footer start */}
       <FooterSection />
     </>
