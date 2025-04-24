@@ -8,93 +8,75 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 
 import BlogImage from "../../public/assets/blog-image.png";
-import btnArrowWhite from "../../public/assets/btn-white-arrow.svg";
 
 const BlogSlide = () => {
   return (
-    <div className="mt-6 blog-slide">
+    <div className="featured-blog-section">
       <Swiper
+        className="h-full"
         modules={[Pagination, Autoplay]}
         spaceBetween={15}
         slidesPerView={1}
         autoplay={{ delay: 3000 }}
         pagination={{ clickable: true }}
       >
-        <SwiperSlide>
-          <div className="bg-pink p-5 rounded-4xl flex justify-center items-center gap-12">
-            <div className=" flex-1/3">
-              <div className="img-wrapper rounded-4xl overflow-hidden aspect-1/1">
-                <Image
-                  className="w-full! h-full! object-cover"
-                  src={BlogImage}
-                  alt="Blog Image"
-                  width={487} // Adjust width as needed
-                  height={510} // Adjust height as needed
-                />
-              </div>
-            </div>
-            <div className=" flex-2/3">
-              <h2 className="text-black leading-[107.692%] tracking-[-1.3px]">
-                Top 10 Pickleball Tips for Beginners
-              </h2>
-              <p className="mt-6 fs-18">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                eros lectus, euismod et maximus non, egestas non nunc.Lorem
-                ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
-                lectus, euismod et maximus non, egestas non nunc.Lorem ipsum
-                dolor sit amet, consectetur adipiscing elit. Integer eros
-                lectus, euismod et maximus non, egestas non nunc.
-              </p>
-              <button className="btn btn-secondary flex items-center gap-2.5 leading-normal mt-11 cursor-pointer">
-                Read More
-                <div className="icon-wrapper">
+        <SwiperSlide className="h-full">
+          <div className="flex flex-col lg:flex-row">
+            <div className="w-full lg:w-1/2 border border-red-500">
+              <div className="h-full">
+                <div className="img-wrapper h-full overflow-hidden aspect-1/1">
                   <Image
-                    src={btnArrowWhite}
-                    alt="Arrow svg"
-                    width={40} // Adjust width as needed
-                    height={40} // Adjust height as needed
+                    className="w-full! h-full! object-cover"
+                    src={BlogImage}
+                    alt="It's About Community"
                   />
                 </div>
-              </button>
+              </div>
+            </div>
+            <div className="w-full lg:w-1/2 flex flex-col justify-center bg-light-green border border-red-500">
+              <div className="xl:w-5/5 2xl:w-4/5 px-5 lg:ps-10 xl:ps-20 py-20 sm:py-22 md:py-24 lg:py-12 text-center lg:text-left">
+                <h2 className="font-h1 text-black uppercase leading-[80.769%]">
+                  Top 10 Pickleball Tips for Beginners
+                </h2>
+                <p className="leading-normal text-grey mt-2.5 md:mt-3.5">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer eros lectus, euismod et maximus non, egestas non
+                  nunc.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+                <button className="btn btn-primary  leading-normal mt-6 sm:mt-7 md:mt-9 cursor-pointer">
+                  Read More
+                </button>
+              </div>
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          <div className="bg-pink p-5 rounded-4xl flex justify-center items-center gap-12">
-            <div className=" flex-1/3">
-              <div className="img-wrapper rounded-4xl overflow-hidden aspect-1/1">
-                <Image
-                  className="w-full! h-full! object-cover"
-                  src={BlogImage}
-                  alt="Blog Image"
-                  width={487} // Adjust width as needed
-                  height={510} // Adjust height as needed
-                />
-              </div>
-            </div>
-            <div className=" flex-2/3">
-              <h2 className="text-black leading-[107.692%] tracking-[-1.3px]">
-                Top 10 Pickleball Tips for Beginners
-              </h2>
-              <p className="mt-6 fs-18">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                eros lectus, euismod et maximus non, egestas non nunc.Lorem
-                ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
-                lectus, euismod et maximus non, egestas non nunc.Lorem ipsum
-                dolor sit amet, consectetur adipiscing elit. Integer eros
-                lectus, euismod et maximus non, egestas non nunc.
-              </p>
-              <button className="btn btn-secondary flex items-center gap-2.5 leading-normal mt-11 cursor-pointer">
-                Read More
-                <div className="icon-wrapper">
+        <SwiperSlide className="h-full">
+          <div className="flex flex-col lg:flex-row">
+            <div className="w-full lg:w-1/2 border border-red-500">
+              <div className="h-full">
+                <div className="img-wrapper h-full overflow-hidden aspect-1/1">
                   <Image
-                    src={btnArrowWhite}
-                    alt="Arrow svg"
-                    width={40} // Adjust width as needed
-                    height={40} // Adjust height as needed
+                    className="w-full! h-full! object-cover"
+                    src={BlogImage}
+                    alt="It's About Community"
                   />
                 </div>
-              </button>
+              </div>
+            </div>
+            <div className="w-full lg:w-1/2 flex flex-col justify-center bg-light-green border border-red-500">
+              <div className="xl:w-5/5 2xl:w-4/5 px-5 lg:ps-10 xl:ps-20 py-20 sm:py-22 md:py-24 lg:py-12 text-center lg:text-left">
+                <h2 className="font-h1 text-black uppercase leading-[80.769%]">
+                  Top 10 Pickleball Tips for Beginners
+                </h2>
+                <p className="leading-normal text-grey mt-2.5 md:mt-3.5">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer eros lectus, euismod et maximus non, egestas non
+                  nunc.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+                <button className="btn btn-primary  leading-normal mt-6 sm:mt-7 md:mt-9 cursor-pointer">
+                  Read More
+                </button>
+              </div>
             </div>
           </div>
         </SwiperSlide>
