@@ -15,7 +15,7 @@ import FooterSection from "./Footer";
 
 import btnArrow from "../../public/assets/btn-black-arrow.svg";
 import Paddle from "../../public/assets/images/subscribe-section-paddle.png";
-import ArrowRight from '../../public/assets/images/arrow-right.svg'
+import ArrowRight from "../../public/assets/images/arrow-right.svg";
 import btnArrowWhite from "../../public/assets/btn-white-arrow.svg";
 
 import mainVideoThumbnail from "../../public/assets/main-video-thumbnail.jpg";
@@ -43,7 +43,7 @@ import TradePickleBall from "../../public/assets/images/trade-pickle-ball.png";
 // import Footer from "./Footer";
 
 const Landing = () => {
-  const productVariantId = 'gid://shopify/ProductVariant/1234567890'; // replace with your real variant ID
+  const productVariantId = "gid://shopify/ProductVariant/1234567890"; // replace with your real variant ID
 
   return (
     <>
