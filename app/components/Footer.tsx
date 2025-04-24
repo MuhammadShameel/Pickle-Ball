@@ -4,7 +4,7 @@ import React from "react";
 const FooterSection = () => {
   return (
     <>
-      <footer className="mt-80 py-12 px-5 bg-green">
+      <footer className="py-12 px-5 bg-green">
         <div className="container mx-auto">
           <div className="flex flex-row flex-wrap gap-10">
             {/* About Us Section - Reduced width */}
