@@ -59,24 +59,21 @@ const Landing = () => {
 
       {/* YOUR PADDLE YOUR RULES */}
       <section>
-        <div className="flex flex-col lg:flex-row">
-          <div className="w-full lg:w-1/2 flex flex-col justify-center bg-dark-green border border-red-500">
-            <div className="xl:w-4/5 2xl:w-3/5 px-5 lg:ps-10 xl:ps-20 py-20 sm:py-22 md:py-24 lg:py-12 text-center lg:text-left">
-              <h1 className="text-white uppercase leading-[80.769%]">
-                Your paddle, Your Rules
+        <div className="flex flex-col lg:flex-row lg:items-center">
+          <div className="w-full xl:w-1/2 flex flex-col justify-center border border-red-500">
+            <div className="xl:w-5/5 2xl:w-4/5 px-5 lg:pe-0 lg:ps-5 xl:ps-20 py-20 sm:py-22 md:py-24 lg:py-12 text-center lg:text-left">
+              <h1 className="text-green uppercase leading-[80.769%]">
+                YOUR HOUSE FOR ALL THINGS PICKLEBALL
               </h1>
-              <p className="leading-normal text-light mt-2.5 md:mt-3.5">
-                Personalize your{" "}
-                <span className="text-white"> pickleball paddle </span> with
-                <span className="text-white"> Paddle ID </span> and stand out on
-                the court.
+              <p className="leading-normal mt-2.5 md:mt-3.5">
+                CUSTOM DESIGNS WELCOME
               </p>
-              <button className="btn btn-secondary  leading-normal mt-6 sm:mt-7 md:mt-9 cursor-pointer">
+              <button className="btn btn-primary  leading-normal mt-6 sm:mt-7 md:mt-9 cursor-pointer">
                 Let's Cook
               </button>
             </div>
           </div>
-          <div className="w-full lg:w-1/2 p-3  border border-red-500 bg-pink">
+          <div className="w-full xl:w-1/2 p-3  border border-red-500">
             <Image
               className="mx-auto"
               src={pickleBall}
@@ -87,7 +84,7 @@ const Landing = () => {
       </section>
 
       {/* how it work  */}
-      <section className="mt-80 ">
+      <section className="mt-100 ">
         <div className="mx-auto mb-3.5 sm:mb-6">
           <h2 className="text-center leading-[100%] text-black capitalize">
             HOW IT WORKS
@@ -162,7 +159,7 @@ const Landing = () => {
       </section>
 
       {/* featured paddles section */}
-      <section className="mt-80 px-3 sm:px-3.5 md:px-5 featured-section">
+      <section className="mt-100 px-3 sm:px-3.5 md:px-5 featured-section">
         <div className="mb-3.5 sm:mb-6">
           <h2 className="text-center text-black leading-[100%] uppercase">
             Our Best Sellers
@@ -691,7 +688,7 @@ const Landing = () => {
       </section>
 
       {/* accesories section  */}
-      <section className="mt-80 px-3 sm:px-3.5 md:px-5 accessories-section">
+      <section className="mt-100 px-3 sm:px-3.5 md:px-5 accessories-section">
         <div className="container mx-auto">
           <div className="mb-3.5 sm:mb-6">
             <h2 className="text-center leading-[100%] text-black uppercase">
@@ -727,7 +724,7 @@ const Landing = () => {
       </section>
 
       {/* IT'S BIGGER THAN PADDLES */}
-      <section className="mt-80 bigger-section">
+      <section className="mt-100 bigger-section">
         <div className="mb-3.5 sm:mb-6">
           <h2 className="uppercase text-black text-center leading-[100%]">
             It's Bigger than paddles
@@ -736,7 +733,7 @@ const Landing = () => {
 
         <div className="flex flex-col lg:flex-row">
           <div className="w-full lg:w-1/2 flex flex-col justify-center bg-pink border border-red-500">
-            <div className="xl:w-5/5 2xl:w-4/5 px-5 lg:ps-10 xl:ps-20 py-20 sm:py-22 md:py-24 lg:py-12 text-center lg:text-left">
+            <div className="xl:w-5/5 2xl:w-4/5 px-5  xl:ps-20 py-20 sm:py-22 md:py-24 lg:py-12 text-center lg:text-left">
               <h2 className="font-h1 text-black uppercase leading-[80.769%]">
                 It’s About Community
               </h2>
@@ -790,7 +787,7 @@ const Landing = () => {
       </section>
 
       {/* testimonials section */}
-      <section className="mt-80 px-3 sm:px-3.5 md:px-5 testimonial-section">
+      <section className="mt-100 px-3 sm:px-3.5 md:px-5 testimonial-section">
         <div className="container mx-auto">
           <div className="mb-3.5 sm:mb-6">
             <h2 className="uppercase text-black text-center leading-[100%]">
@@ -1154,7 +1151,7 @@ const Landing = () => {
       </section>
 
       {/* our blog section */}
-      <section className="mt-80">
+      <section className="mt-100">
         <div className="mb-3.5 sm:mb-6">
           <h2 className="uppercase text-black text-center leading-[100%]">
             Our Blog
@@ -1164,10 +1161,10 @@ const Landing = () => {
       </section>
 
       {/* trade your paddle section */}
-      <section className="mt-80">
+      <section className="mt-100">
         <div className="flex flex-col lg:flex-row">
           <div className="w-full lg:w-1/2 flex flex-col justify-center bg-dark-green border border-red-500">
-            <div className="xl:w-5/5 2xl:w-4/5 px-5 lg:ps-10 xl:ps-20 py-20 sm:py-22 md:py-24 lg:py-12 text-center lg:text-left">
+            <div className="xl:w-5/5 2xl:w-4/5 px-5 xl:ps-20 py-20 sm:py-22 md:py-24 lg:py-12 text-center lg:text-left">
               <h2 className="font-h1 text-white uppercase leading-[80.769%]">
                 Trade Your Paddle, Get $50 Toward a New One.
               </h2>
@@ -1188,7 +1185,7 @@ const Landing = () => {
       </section>
 
       {/* Subscribe  */}
-      {/* <section className="mt-80 bg-dark-green">
+      {/* <section className="mt-100 bg-dark-green">
         <div className="container mx-auto">
           <div className="flex text-white">
             <div className="py-10">

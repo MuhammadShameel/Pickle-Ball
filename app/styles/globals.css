@@ -70,6 +70,10 @@ img {
   margin-top: 80px;
 }
 
+.mt-100 {
+  margin-top: 100px !important;
+}
+
 .text-light {
   color: #A5B9B2 !important;
 }
