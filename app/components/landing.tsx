@@ -15,6 +15,7 @@ import FooterSection from "./Footer";
 
 import btnArrow from "../../public/assets/btn-black-arrow.svg";
 import Paddle from "../../public/assets/images/subscribe-section-paddle.png";
+import ArrowRight from '../../public/assets/images/arrow-right.svg'
 import btnArrowWhite from "../../public/assets/btn-white-arrow.svg";
 
 import mainVideoThumbnail from "../../public/assets/main-video-thumbnail.jpg";
@@ -42,6 +43,8 @@ import TradePickleBall from "../../public/assets/images/trade-pickle-ball.png";
 // import Footer from "./Footer";
 
 const Landing = () => {
+  const productVariantId = 'gid://shopify/ProductVariant/1234567890'; // replace with your real variant ID
+
   return (
     <>
       {/* HERO VIDEO SECTION */}
@@ -1194,6 +1197,7 @@ const Landing = () => {
                 Subscribe to our newsletter
               </h2>
             </div>
+
             <Image src={Paddle} alt=""></Image>
             <div className="py-[107px]">
               {" "}
@@ -1204,13 +1208,22 @@ const Landing = () => {
               <input type="text" className="bg-red-300 w-full rounded-[6px]" />
             </div>
             <button>abc</button>
+
+            <Image src={Paddle} className="w-full" alt=""></Image>
+
             <div className="py-[107px]">
-              {" "}
               <p className="text-[#FFFFFF] font-light leading-normal">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
                 eros lectus, euismod et maximus.
               </p>
-              <input type="text" className="bg-[rgba(255, 255, 255, 0.20)] " />
+              <div className="flex mt-6">
+                <input
+                  type="text"
+                  className="w-full shadow-none! rounded-tl-[6px] focus: rounded-bl-[6px]"
+                  style={{ background: 'rgba(255, 255, 255, 0.20)' }}
+                />
+                <button className="btn btn-white shadow-none! cursor-pointer p-4! rounded-tl-none! rounded-bl-none!"><Image src={ArrowRight} alt=""></Image></button>
+              </div>
             </div>
           </div>
         </div>
