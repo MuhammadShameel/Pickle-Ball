@@ -22,9 +22,8 @@ body {
 h1 {
   font-size: 130px;
   font-family: "allotrope-variable", sans-serif;
-  font-variation-settings: 'wdth' 50, 'wght' 500;
+  font-variation-settings: "wdth" 50, "wght" 500;
 }
-
 
 h2 {
   font-size: 66px;
@@ -47,7 +46,7 @@ ul {
 .font-h1 {
   font-family: "allotrope-variable", sans-serif;
   font-size: 130px;
-  font-variation-settings: 'wdth' 50, 'wght' 500;
+  font-variation-settings: "wdth" 50, "wght" 500;
 }
 
 .fs-18 {
@@ -59,7 +58,6 @@ img {
   height: auto;
   max-width: 100%;
 }
-
 
 .font-Allotrope {
   font-variation-settings: "wdth" 50, "wght" 700;
@@ -75,7 +73,7 @@ img {
 }
 
 .text-light {
-  color: #A5B9B2 !important;
+  color: #a5b9b2 !important;
 }
 
 .text-green {
@@ -153,7 +151,7 @@ img {
 }
 
 .shadow {
-  box-shadow: 2px 2px 24px 0px rgba(0, 0, 0, 0.10);
+  box-shadow: 2px 2px 24px 0px rgba(0, 0, 0, 0.1);
 }
 
 .swiper-scrollbar-drag {
@@ -198,7 +196,6 @@ img {
   height: 132px;
 }
 
-
 /* IT'S BIGGER THAN PADDLES SECTION */
 .bigger-section .swiper-pagination {
   position: absolute !important;
@@ -209,10 +206,8 @@ img {
 }
 
 .bigger-section .swiper-pagination-bullet-active {
-  background-color: #FFCFCC !important;
+  background-color: #ffcfcc !important;
 }
-
-
 
 @media (width >=1280px) {
   .container {
@@ -221,7 +216,6 @@ img {
 }
 
 @media (max-width: 1023.97px) {
-
   h1,
   .font-h1 {
     font-size: 100px !important;
@@ -251,7 +245,6 @@ img {
 }
 
 @media (max-width: 767.97px) {
-
   h1,
   .font-h1 {
     font-size: 80px !important;
@@ -281,7 +274,6 @@ img {
 }
 
 @media (max-width: 767.97px) {
-
   h1,
   .font-h1 {
     font-size: 80px !important;
@@ -306,7 +298,6 @@ img {
 }
 
 @media (max-width: 639.97px) {
-
   h1,
   .font-h1 {
     font-size: 60px !important;
@@ -345,7 +336,6 @@ img {
     margin-top: 14px !important;
   }
 }
-
 
 .border-bottom {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);

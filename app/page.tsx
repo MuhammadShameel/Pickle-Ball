@@ -17,13 +17,13 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      {/* <Products products={[]} />
-      <ProductsServer /> */}
+      <Products products={[]} />
+      <ProductsServer />
       {/* <Cart isOpen={false} onClose={function (): void {
         throw new Error('Function not implemented.');
       }} /> */}
       {/* <ProductDetail /> */}
-      <Landing />
+      {/* <Landing /> */}
     </>
   );
 }
