@@ -76,13 +76,45 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             </button>
             <div className="quantity-counter flex flex-row rounded-[6px] overflow-hidden">
               <button className="increment flex items-center justify-center text-white bg-dark-green cursor-pointer">
-                +
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 17 17"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.33203 1L8.33203 15.6667"
+                    stroke="white"
+                    strokeWidth="1.33333"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M1 8.33398L15.6667 8.33398"
+                    stroke="white"
+                    strokeWidth="1.33333"
+                    strokeLinecap="round"
+                  />
+                </svg>
               </button>
               <span className="quantity-value bg-[#F5F5F5] leading-normal text-black px-6">
                 1
               </span>
               <button className="decrement flex items-center justify-center text-white bg-dark-green cursor-pointer">
-                -
+                <svg
+                  width="16"
+                  height="2"
+                  viewBox="0 0 16 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 1L15.3 1"
+                    stroke="white"
+                    strokeWidth="1.3"
+                    strokeLinecap="round"
+                  />
+                </svg>
               </button>
             </div>
           </div>
@@ -123,13 +155,45 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             </button>
             <div className="quantity-counter flex flex-row rounded-[6px] overflow-hidden">
               <button className="increment flex items-center justify-center text-white bg-dark-green cursor-pointer">
-                +
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 17 17"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.33203 1L8.33203 15.6667"
+                    stroke="white"
+                    strokeWidth="1.33333"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M1 8.33398L15.6667 8.33398"
+                    stroke="white"
+                    strokeWidth="1.33333"
+                    strokeLinecap="round"
+                  />
+                </svg>
               </button>
               <span className="quantity-value bg-[#F5F5F5] leading-normal text-black px-6">
                 1
               </span>
               <button className="decrement flex items-center justify-center text-white bg-dark-green cursor-pointer">
-                -
+                <svg
+                  width="16"
+                  height="2"
+                  viewBox="0 0 16 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 1L15.3 1"
+                    stroke="white"
+                    strokeWidth="1.3"
+                    strokeLinecap="round"
+                  />
+                </svg>
               </button>
             </div>
           </div>
@@ -170,13 +234,45 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             </button>
             <div className="quantity-counter flex flex-row rounded-[6px] overflow-hidden">
               <button className="increment flex items-center justify-center text-white bg-dark-green cursor-pointer">
-                +
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 17 17"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.33203 1L8.33203 15.6667"
+                    stroke="white"
+                    strokeWidth="1.33333"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M1 8.33398L15.6667 8.33398"
+                    stroke="white"
+                    strokeWidth="1.33333"
+                    strokeLinecap="round"
+                  />
+                </svg>
               </button>
               <span className="quantity-value bg-[#F5F5F5] leading-normal text-black px-6">
                 1
               </span>
               <button className="decrement flex items-center justify-center text-white bg-dark-green cursor-pointer">
-                -
+                <svg
+                  width="16"
+                  height="2"
+                  viewBox="0 0 16 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 1L15.3 1"
+                    stroke="white"
+                    strokeWidth="1.3"
+                    strokeLinecap="round"
+                  />
+                </svg>
               </button>
             </div>
           </div>

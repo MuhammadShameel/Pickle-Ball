@@ -171,6 +171,46 @@ img {
   height: 40px;
 }
 
+.checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #333;
+  border-color: #333;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✔";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 12px;
+  line-height: 1;
+}
+
+/* 5) Hover / focus states */
+input[type="checkbox"]:hover {
+  border-color: #666;
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(51, 51, 51, 0.3);
+}
+
 
 /* our blog section start */
 
@@ -224,6 +264,7 @@ img {
 }
 
 @media (max-width: 1023.97px) {
+
   h1,
   .font-h1 {
     font-size: 100px !important;
@@ -254,6 +295,7 @@ img {
 }
 
 @media (max-width: 767.97px) {
+
   h1,
   .font-h1 {
     font-size: 80px !important;
@@ -284,6 +326,7 @@ img {
 }
 
 @media (max-width: 767.97px) {
+
   h1,
   .font-h1 {
     font-size: 80px !important;
@@ -309,6 +352,7 @@ img {
 }
 
 @media (max-width: 639.97px) {
+
   h1,
   .font-h1 {
     font-size: 60px !important;

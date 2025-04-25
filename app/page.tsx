@@ -12,18 +12,20 @@ import Products from "./components/Products";
 import Cart from "./components/Cart";
 import ProductsServer from "./components/ProductsServer";
 import Navbar from "./components/Navbar";
+import CartDetail from "./components/CartDetail";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <Products products={[]} />
-      <ProductsServer />
+      {/* <Products products={[]} />
+      <ProductsServer /> */}
       {/* <Cart isOpen={false} onClose={function (): void {
         throw new Error('Function not implemented.');
       }} /> */}
       {/* <ProductDetail /> */}
       {/* <Landing /> */}
+      <CartDetail />
     </>
   );
 }
