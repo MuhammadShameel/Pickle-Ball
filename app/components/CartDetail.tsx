@@ -6,7 +6,7 @@ import Link from "next/link";
 const CartDetail = () => {
   return (
     <>
-      <section>
+      <section className="px-3 sm:px-3.5 md:px-5">
         <div className="container mx-auto">
           <div className="text-center">
             <h2 className="text-black uppercase font-h1 leading-[80.769%]">
@@ -15,29 +15,29 @@ const CartDetail = () => {
           </div>
           <div className="cart mt-12">
             <table className="w-full">
-              <thead>
+              <thead className="py-2.5">
                 <tr className="text-left">
-                  <th>
+                  <th className="py-2.5">
                     <span className="fs-18 text-black leading-normal">
                       Product
                     </span>
                   </th>
-                  <th>
+                  <th className="py-2.5">
                     <span className="fs-18 text-black leading-normal">
                       Price
                     </span>
                   </th>
-                  <th>
+                  <th className="py-2.5">
                     <span className="fs-18 text-black leading-normal">
                       Quantity
                     </span>
                   </th>
-                  <th>
+                  <th className="py-2.5">
                     <span className="fs-18 text-black leading-normal">
                       Total
                     </span>
                   </th>
-                  <th>
+                  <th className="py-2.5">
                     <span className="fs-18 text-black leading-normal">
                       Select
                     </span>
@@ -45,8 +45,8 @@ const CartDetail = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="w-[25%] border border-red-500">
+                <tr className="border-t border-[#E5E5E5]">
+                  <td className="w-[25%] py-5">
                     <div className="flex flex-row gap-3 items-center justify-start">
                       <div className="img-wrapper min-w-[112px] aspect-square rounded-[10px] overflow-hidden">
                         <Image
@@ -55,7 +55,7 @@ const CartDetail = () => {
                           className="w-full! h-full! object-cover"
                         />
                       </div>
-                      <div className="border border-red-500">
+                      <div className="">
                         <Link href={"#"}>
                           <p className="cart-item_name text-black leading-normal">
                             Bread 'n Butter Paddle
@@ -67,12 +67,12 @@ const CartDetail = () => {
                       </div>
                     </div>
                   </td>
-                  <td className="w-[25%] align-text-top border border-red-500">
+                  <td className="w-[25%] py-5 align-text-top ">
                     <span className="cart-item_price text-black leading-normal">
                       74.99 $
                     </span>
                   </td>
-                  <td className="w-[25%] align-text-top border border-red-500">
+                  <td className="w-[25%] py-5 align-text-top ">
                     <div className="quantity-counter inline-flex flex-row rounded-[6px] overflow-hidden">
                       <button className="increment flex items-center justify-center text-white bg-dark-green cursor-pointer">
                         <svg
@@ -117,17 +117,216 @@ const CartDetail = () => {
                       </button>
                     </div>
                   </td>
-                  <td className="w-[25%] align-text-top border border-red-500">
+                  <td className="w-[25%] py-5 align-text-top ">
                     <span className="cart-item_total text-black leading-normal">
                       74.99 $
                     </span>
                   </td>
-                  <td className="align-text-top text-center border border-red-500">
-                    <input className="checkbox" type="checkbox" name="" id="" />
+                  <td className="py-5 align-text-top text-center ">
+                    <input
+                      className="checkbox primary"
+                      type="checkbox"
+                      name=""
+                      id=""
+                    />
+                  </td>
+                </tr>
+                <tr className="border-t border-[#E5E5E5]">
+                  <td className="w-[25%] py-5">
+                    <div className="flex flex-row gap-3 items-center justify-start">
+                      <div className="img-wrapper min-w-[112px] aspect-square rounded-[10px] overflow-hidden">
+                        <Image
+                          src={CartExample}
+                          alt="Cart Example Product"
+                          className="w-full! h-full! object-cover"
+                        />
+                      </div>
+                      <div className="">
+                        <Link href={"#"}>
+                          <p className="cart-item_name text-black leading-normal">
+                            Bread 'n Butter Paddle
+                          </p>
+                        </Link>
+                        <button className="text-green underline cursor-pointer leading-normal">
+                          <span>Remove</span>
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="w-[25%] py-5 align-text-top ">
+                    <span className="cart-item_price text-black leading-normal">
+                      74.99 $
+                    </span>
+                  </td>
+                  <td className="w-[25%] py-5 align-text-top ">
+                    <div className="quantity-counter inline-flex flex-row rounded-[6px] overflow-hidden">
+                      <button className="increment flex items-center justify-center text-white bg-dark-green cursor-pointer">
+                        <svg
+                          width="17"
+                          height="17"
+                          viewBox="0 0 17 17"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8.33203 1L8.33203 15.6667"
+                            stroke="white"
+                            strokeWidth="1.33333"
+                            strokeLinecap="round"
+                          />
+                          <path
+                            d="M1 8.33398L15.6667 8.33398"
+                            stroke="white"
+                            strokeWidth="1.33333"
+                            strokeLinecap="round"
+                          />
+                        </svg>
+                      </button>
+                      <span className="quantity-value bg-[#F5F5F5] leading-normal text-black px-6">
+                        1
+                      </span>
+                      <button className="decrement flex items-center justify-center text-white bg-dark-green cursor-pointer">
+                        <svg
+                          width="16"
+                          height="2"
+                          viewBox="0 0 16 2"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1 1L15.3 1"
+                            stroke="white"
+                            strokeWidth="1.3"
+                            strokeLinecap="round"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                  <td className="w-[25%] py-5 align-text-top ">
+                    <span className="cart-item_total text-black leading-normal">
+                      74.99 $
+                    </span>
+                  </td>
+                  <td className="py-5 align-text-top text-center ">
+                    <input
+                      className="checkbox primary"
+                      type="checkbox"
+                      name=""
+                      id=""
+                    />
+                  </td>
+                </tr>
+                <tr className="border-t border-[#E5E5E5]">
+                  <td className="w-[25%] py-5">
+                    <div className="flex flex-row gap-3 items-center justify-start">
+                      <div className="img-wrapper min-w-[112px] aspect-square rounded-[10px] overflow-hidden">
+                        <Image
+                          src={CartExample}
+                          alt="Cart Example Product"
+                          className="w-full! h-full! object-cover"
+                        />
+                      </div>
+                      <div className="">
+                        <Link href={"#"}>
+                          <p className="cart-item_name text-black leading-normal">
+                            Bread 'n Butter Paddle
+                          </p>
+                        </Link>
+                        <button className="text-green underline cursor-pointer leading-normal">
+                          <span>Remove</span>
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="w-[25%] py-5 align-text-top ">
+                    <span className="cart-item_price text-black leading-normal">
+                      74.99 $
+                    </span>
+                  </td>
+                  <td className="w-[25%] py-5 align-text-top ">
+                    <div className="quantity-counter inline-flex flex-row rounded-[6px] overflow-hidden">
+                      <button className="increment flex items-center justify-center text-white bg-dark-green cursor-pointer">
+                        <svg
+                          width="17"
+                          height="17"
+                          viewBox="0 0 17 17"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8.33203 1L8.33203 15.6667"
+                            stroke="white"
+                            strokeWidth="1.33333"
+                            strokeLinecap="round"
+                          />
+                          <path
+                            d="M1 8.33398L15.6667 8.33398"
+                            stroke="white"
+                            strokeWidth="1.33333"
+                            strokeLinecap="round"
+                          />
+                        </svg>
+                      </button>
+                      <span className="quantity-value bg-[#F5F5F5] leading-normal text-black px-6">
+                        1
+                      </span>
+                      <button className="decrement flex items-center justify-center text-white bg-dark-green cursor-pointer">
+                        <svg
+                          width="16"
+                          height="2"
+                          viewBox="0 0 16 2"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1 1L15.3 1"
+                            stroke="white"
+                            strokeWidth="1.3"
+                            strokeLinecap="round"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                  <td className="w-[25%] py-5 align-text-top ">
+                    <span className="cart-item_total text-black leading-normal">
+                      74.99 $
+                    </span>
+                  </td>
+                  <td className="py-5 align-text-top text-center ">
+                    <input
+                      className="checkbox primary"
+                      type="checkbox"
+                      name=""
+                      id=""
+                    />
                   </td>
                 </tr>
               </tbody>
             </table>
+            <div className="mt-12 ">
+              <p className="text-[#808080] leading-normal mb-3.5">
+                Frequently bought With{" "}
+              </p>
+            </div>
+
+            <div className="mt-12 ">
+              <div className="w-full md:w-[50%] border-t border-[#E5E5E5]">
+                <div className="mt-2.5 flex flex-row justify-between items-center">
+                  <span>Grand Total</span>
+                  <h3 className="font-bold! text-black leading-[95.238%]">
+                    74.99 $
+                  </h3>
+                </div>
+                <p className="fs-18 text-[#808080] leading-normal">
+                  Taxes and Shipping calculated at checkout
+                </p>
+                <button className="btn style-2 btn-primary  leading-normal cursor-pointer w-full mt-7">
+                  Checkout
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
