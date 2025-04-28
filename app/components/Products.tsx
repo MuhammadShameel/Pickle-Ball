@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Product } from "./ProductsServer";
-import Sidebar from "./Sidebar"; // Sidebar component
+import Sidebar from "../components/Sidebar"; // Sidebar component
 import AddToCartButton from "./AddToCartButton";
 import { useCart } from "../context/CartContext"; // Use the CartContext hook
 

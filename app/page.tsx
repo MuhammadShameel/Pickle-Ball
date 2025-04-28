@@ -16,16 +16,8 @@ import CartDetail from "./components/CartDetail";
 export default function Home() {
   return (
     <>
-
-      {/* <Products products={[]} />
-      <ProductsServer /> */}
-      {/* <Cart isOpen={false} onClose={function (): void {
-        throw new Error('Function not implemented.');
-      }} /> */}
-      {/* <ProductDetail /> */}
       <ProductsServer />
 
-      <CartDetail />
     </>
   );
 }
