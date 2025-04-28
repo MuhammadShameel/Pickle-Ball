@@ -185,6 +185,23 @@ img {
   transition: background-color 0.2s, border-color 0.2s;
 }
 
+
+.checkbox.primary {
+  background-color: #E9EEEC;
+}
+
+.checkbox:checked::after {
+  content: "";
+  position: absolute;
+  background: url('../../public/assets/images/tick.svg') no-repeat center center;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+}
+
+
+
 input[type="checkbox"]:checked {
   background-color: #333;
   border-color: #333;
@@ -210,6 +227,7 @@ input[type="checkbox"]:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(51, 51, 51, 0.3);
 }
+
 
 /* our blog section start */
 
@@ -263,6 +281,7 @@ input[type="checkbox"]:focus {
 }
 
 @media (max-width: 1023.97px) {
+
   h1,
   .font-h1 {
     font-size: 100px !important;
@@ -293,6 +312,7 @@ input[type="checkbox"]:focus {
 }
 
 @media (max-width: 767.97px) {
+
   h1,
   .font-h1 {
     font-size: 80px !important;
@@ -323,6 +343,7 @@ input[type="checkbox"]:focus {
 }
 
 @media (max-width: 767.97px) {
+
   h1,
   .font-h1 {
     font-size: 80px !important;
@@ -348,6 +369,7 @@ input[type="checkbox"]:focus {
 }
 
 @media (max-width: 639.97px) {
+
   h1,
   .font-h1 {
     font-size: 60px !important;

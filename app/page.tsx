@@ -10,12 +10,22 @@ import "./styles/globals.css";
 // import HowItWorks from "./components/Footer";
 import ProductsServer from "./components/ProductsServer";
 
+import CartDetail from "./components/CartDetail";
+
+
 export default function Home() {
   return (
     <>
+
+      {/* <Products products={[]} />
+      <ProductsServer /> */}
+      {/* <Cart isOpen={false} onClose={function (): void {
+        throw new Error('Function not implemented.');
+      }} /> */}
+      {/* <ProductDetail /> */}
       <ProductsServer />
 
-      {/* <Landing /> */}
+      <CartDetail />
     </>
   );
 }
