@@ -31,7 +31,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 
   // Handle incrementing and decrementing product quantities
   const handleIncrement = (productId: string) => {
-    const product = cartProducts.find(item => item.id === productId);
+    const product = cartProducts.find((item) => item.id === productId);
     if (product) {
       const updatedQuantity = Number(product.quantity) + 1; // Ensure the quantity is a number
       updateQuantity(productId, updatedQuantity);
@@ -39,7 +39,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   };
 
   const handleDecrement = (productId: string) => {
-    const product = cartProducts.find(item => item.id === productId);
+    const product = cartProducts.find((item) => item.id === productId);
     if (product && Number(product.quantity) > 1) {
       const updatedQuantity = Number(product.quantity) - 1; // Ensure the quantity is a number
       updateQuantity(productId, updatedQuantity);
@@ -48,8 +48,9 @@ const Sidebar: React.FC<SidebarProps> = ({
 
   return (
     <div
-      className={`cart-sidebar fixed top-0 right-0 overflow-y-auto w-[50%] h-full bg-white p-7 pt-12 z-50 transition-transform transform ${isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+      className={`cart-sidebar fixed top-0 right-0 overflow-y-auto w-[50%] h-full bg-white p-7 pt-12 z-50 transition-transform transform ${
+        isOpen ? "translate-x-0" : "translate-x-full"
+      }`}
     >
       <div className="flex items-center justify-between">
         <h2 className="leading-[100%] text-black capitalize">Your cart</h2>
@@ -185,13 +186,25 @@ const Sidebar: React.FC<SidebarProps> = ({
       </div>
 
       <div className="mt-7 flex flex-row gap-x-2.5">
-        <Link className="btn style-2 btn-outline-green leading-normal cursor-pointer w-full" href="/cart">
+        <Link
+          className="btn style-2 btn-outline-green text-center leading-normal cursor-pointer w-full"
+          href="/cart"
+        >
           View Cart
         </Link>
 
-        <Link className="btn style-2 btn-primary leading-normal cursor-pointer w-full" href={"/"}>
+        <Link
+          className="btn style-2 btn-primary text-center leading-normal cursor-pointer w-full"
+          href={"/"}
+        >
           Checkout
         </Link>
+        {/* <button className="btn style-2 btn-outline-green  leading-normal cursor-pointer w-full">
+          View Cart
+        </button>
+        <button className="btn style-2 btn-primary  leading-normal cursor-pointer w-full">
+          Checkout
+        </button> */}
       </div>
     </div>
   );
