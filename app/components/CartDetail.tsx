@@ -46,7 +46,7 @@ const CartDetail = () => {
               </thead>
               <tbody>
                 <tr className="border-t border-[#E5E5E5]">
-                  <td className="w-[25%] py-5">
+                  <td className="w-[35%] lg:w-[30%] xl:w-[30%] 2xl:w-[25%] py-5">
                     <div className="flex flex-row gap-3 items-center justify-start">
                       <div className="img-wrapper min-w-[112px] aspect-square rounded-[10px] overflow-hidden">
                         <Image
@@ -67,12 +67,12 @@ const CartDetail = () => {
                       </div>
                     </div>
                   </td>
-                  <td className="w-[25%] py-5 align-text-top ">
+                  <td className="w-[15%] lg:w-[20%] xl:w-[20%] 2xl:w-[25%] py-5 align-text-top ">
                     <span className="cart-item_price text-black leading-normal">
                       74.99 $
                     </span>
                   </td>
-                  <td className="w-[25%] py-5 align-text-top ">
+                  <td className="w-[15%] lg:w-[20%] xl:w-[20%] 2xl:w-[25%] py-5 align-text-top ">
                     <div className="quantity-counter inline-flex flex-row rounded-[6px] overflow-hidden">
                       <button className="increment flex items-center justify-center text-white bg-dark-green cursor-pointer">
                         <svg
@@ -117,7 +117,7 @@ const CartDetail = () => {
                       </button>
                     </div>
                   </td>
-                  <td className="w-[25%] py-5 align-text-top ">
+                  <td className="w-[15%] lg:w-[20%] xl:w-[20%] 2xl:w-[25%] py-5 align-text-top ">
                     <span className="cart-item_total text-black leading-normal">
                       74.99 $
                     </span>
@@ -132,7 +132,7 @@ const CartDetail = () => {
                   </td>
                 </tr>
                 <tr className="border-t border-[#E5E5E5]">
-                  <td className="w-[25%] py-5">
+                  <td className="w-[35%] lg:w-[30%] xl:w-[30%] 2xl:w-[25%] py-5">
                     <div className="flex flex-row gap-3 items-center justify-start">
                       <div className="img-wrapper min-w-[112px] aspect-square rounded-[10px] overflow-hidden">
                         <Image
@@ -153,12 +153,12 @@ const CartDetail = () => {
                       </div>
                     </div>
                   </td>
-                  <td className="w-[25%] py-5 align-text-top ">
+                  <td className="w-[15%] lg:w-[20%] xl:w-[20%] 2xl:w-[25%] py-5 align-text-top ">
                     <span className="cart-item_price text-black leading-normal">
                       74.99 $
                     </span>
                   </td>
-                  <td className="w-[25%] py-5 align-text-top ">
+                  <td className="w-[15%] lg:w-[20%] xl:w-[20%] 2xl:w-[25%] py-5 align-text-top ">
                     <div className="quantity-counter inline-flex flex-row rounded-[6px] overflow-hidden">
                       <button className="increment flex items-center justify-center text-white bg-dark-green cursor-pointer">
                         <svg
@@ -203,7 +203,7 @@ const CartDetail = () => {
                       </button>
                     </div>
                   </td>
-                  <td className="w-[25%] py-5 align-text-top ">
+                  <td className="w-[15%] lg:w-[20%] xl:w-[20%] 2xl:w-[25%] py-5 align-text-top ">
                     <span className="cart-item_total text-black leading-normal">
                       74.99 $
                     </span>
@@ -218,7 +218,7 @@ const CartDetail = () => {
                   </td>
                 </tr>
                 <tr className="border-t border-[#E5E5E5]">
-                  <td className="w-[25%] py-5">
+                  <td className="w-[35%] lg:w-[30%] xl:w-[30%] 2xl:w-[25%] py-5">
                     <div className="flex flex-row gap-3 items-center justify-start">
                       <div className="img-wrapper min-w-[112px] aspect-square rounded-[10px] overflow-hidden">
                         <Image
@@ -239,12 +239,12 @@ const CartDetail = () => {
                       </div>
                     </div>
                   </td>
-                  <td className="w-[25%] py-5 align-text-top ">
+                  <td className="w-[15%] lg:w-[20%] xl:w-[20%] 2xl:w-[25%] py-5 align-text-top ">
                     <span className="cart-item_price text-black leading-normal">
                       74.99 $
                     </span>
                   </td>
-                  <td className="w-[25%] py-5 align-text-top ">
+                  <td className="w-[15%] lg:w-[20%] xl:w-[20%] 2xl:w-[25%] py-5 align-text-top ">
                     <div className="quantity-counter inline-flex flex-row rounded-[6px] overflow-hidden">
                       <button className="increment flex items-center justify-center text-white bg-dark-green cursor-pointer">
                         <svg
@@ -289,7 +289,7 @@ const CartDetail = () => {
                       </button>
                     </div>
                   </td>
-                  <td className="w-[25%] py-5 align-text-top ">
+                  <td className="w-[15%] lg:w-[20%] xl:w-[20%] 2xl:w-[25%] py-5 align-text-top ">
                     <span className="cart-item_total text-black leading-normal">
                       74.99 $
                     </span>
