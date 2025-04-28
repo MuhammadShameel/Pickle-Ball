@@ -2,13 +2,14 @@
 
 import React from "react";
 import Image from "next/image";
-import { Product } from "./ProductsServer"; // Import Product type
+import { Product } from "./ProductsServer"; // Make sure the Product type is imported
+import { useCart } from "../context/CartContext";
 
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
-  cartProducts: Product[]; // Pass cartProducts to Sidebar
-  onRemoveFromCart: (productId: string) => void; // Function to remove a product by its ID
+  cartProducts: Product[]; // This should accept the cartProducts prop
+  onRemoveFromCart: (productId: string) => void; // This is the function to remove product from cart
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
@@ -17,10 +18,38 @@ const Sidebar: React.FC<SidebarProps> = ({
   cartProducts,
   onRemoveFromCart,
 }) => {
-  if (!isOpen) return null; // If the sidebar is not open, don't render it
+  const { updateQuantity } = useCart();
+  if (!isOpen) return null; // Don't render if sidebar is not open
+
+  // Calculate the grand total by summing up the prices of all products in the cart
+  const grandTotal = cartProducts.reduce((total, product) => {
+    const amount = parseFloat(product.priceRange.minVariantPrice.amount || "0");
+    const quantity = Number(product.quantity) || 0; // Ensures quantity is a number
+    return total + amount * quantity;
+  }, 0);
+
+  // Handle incrementing and decrementing product quantities
+  const handleIncrement = (productId: string) => {
+    const product = cartProducts.find(item => item.id === productId);
+    if (product) {
+      const updatedQuantity = Number(product.quantity) + 1; // Ensure the quantity is a number
+      updateQuantity(productId, updatedQuantity);
+    }
+  };
+
+  const handleDecrement = (productId: string) => {
+    const product = cartProducts.find(item => item.id === productId);
+    if (product && Number(product.quantity) > 1) {
+      const updatedQuantity = Number(product.quantity) - 1; // Ensure the quantity is a number
+      updateQuantity(productId, updatedQuantity);
+    }
+  };
 
   return (
-    <div className="cart-sidebar fixed top-0 right-0 overflow-y-auto w-[50%] h-full bg-white p-7 pt-12 z-50 transition-transform transform ${isOpen ? 'translate-x-0 active' : '-translate-x-full'}">
+    <div
+      className={`cart-sidebar fixed top-0 right-0 overflow-y-auto w-[50%] h-full bg-white p-7 pt-12 z-50 transition-transform transform ${isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+    >
       <div className="flex items-center justify-between">
         <h2 className="leading-[100%] text-black capitalize">Your cart</h2>
         <button className="cursor-pointer p-2" onClick={onClose}>
@@ -42,8 +71,8 @@ const Sidebar: React.FC<SidebarProps> = ({
 
       {/* CART PRODUCTS */}
       <div className="mt-7 flex flex-col gap-y-5">
-        {cartProducts.map((product, index) => (
-          <div key={index} className="flex flex-row justify-between">
+        {cartProducts.map((product) => (
+          <div key={product.id} className="flex flex-row justify-between">
             <div className="flex flex-row gap-3.5 items-center justify-start">
               <div className="img-wrapper w-[100px] aspect-square rounded-[10px] overflow-hidden">
                 <Image
@@ -64,10 +93,11 @@ const Sidebar: React.FC<SidebarProps> = ({
                 </h3>
               </div>
             </div>
+
             <div className="flex flex-col justify-between">
               <button
                 className="cursor-pointer p-2 cancel-product self-end"
-                onClick={() => onRemoveFromCart(product.id)} // Use product.id to remove the item
+                onClick={() => onRemoveFromCart(product.id)} // Remove product from cart
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -83,8 +113,35 @@ const Sidebar: React.FC<SidebarProps> = ({
                   />
                 </svg>
               </button>
+
+              {/* Quantity Adjustment */}
               <div className="quantity-counter flex flex-row rounded-[6px] overflow-hidden">
-                <button className="increment flex items-center justify-center text-white bg-dark-green cursor-pointer">
+                <button
+                  className="decrement flex items-center justify-center text-white bg-dark-green cursor-pointer"
+                  onClick={() => handleDecrement(product.id)}
+                >
+                  <svg
+                    width="16"
+                    height="2"
+                    viewBox="0 0 16 2"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1L15.3 1"
+                      stroke="white"
+                      strokeWidth="1.3"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </button>
+                <span className="quantity-value bg-[#F5F5F5] leading-normal text-black px-6">
+                  {product.quantity}
+                </span>
+                <button
+                  className="increment flex items-center justify-center text-white bg-dark-green cursor-pointer"
+                  onClick={() => handleIncrement(product.id)}
+                >
                   <svg
                     width="17"
                     height="17"
@@ -106,25 +163,6 @@ const Sidebar: React.FC<SidebarProps> = ({
                     />
                   </svg>
                 </button>
-                <span className="quantity-value bg-[#F5F5F5] leading-normal text-black px-6">
-                  1
-                </span>
-                <button className="decrement flex items-center justify-center text-white bg-dark-green cursor-pointer">
-                  <svg
-                    width="16"
-                    height="2"
-                    viewBox="0 0 16 2"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M1 1L15.3 1"
-                      stroke="white"
-                      strokeWidth="1.3"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </button>
               </div>
             </div>
           </div>
@@ -136,15 +174,8 @@ const Sidebar: React.FC<SidebarProps> = ({
         <div className="mt-2.5 flex flex-row justify-between items-center">
           <span>Grand Total</span>
           <h3 className="font-bold! text-black leading-[95.238%]">
-            {cartProducts
-              .reduce(
-                (total, product) =>
-                  total +
-                  parseFloat(product.priceRange.minVariantPrice.amount || "0"),
-                0
-              )
-              .toFixed(2)}{" "}
-            {cartProducts[0]?.priceRange.minVariantPrice.currencyCode}
+            {grandTotal.toFixed(2)}{" "}
+            {cartProducts[0]?.priceRange?.minVariantPrice.currencyCode}
           </h3>
         </div>
         <p className="fs-18 text-[#808080] leading-normal">

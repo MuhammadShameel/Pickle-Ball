@@ -8,19 +8,22 @@ import Profile from '../../public/assets/images/profile.svg';
 import Bag from '../../public/assets/images/bag.svg';
 import Menu from '../../public/assets/images/menu.svg';
 import Sidebar from './Sidebar';
-import { Product } from './ProductsServer'; // Product type
+import { useCart } from '../context/CartContext'; // Use the CartContext hook
+import { Product } from './ProductsServer';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const [cartProducts, setCartProducts] = useState<Product[]>([]); // Track cart products
+
+    // Get cart state and actions from context
+    const { cartProducts, addToCart, removeFromCart } = useCart();
 
     const handleSidebarToggle = () => {
-        setIsSidebarOpen(!isSidebarOpen); // Toggle the sidebar
+        setIsSidebarOpen(!isSidebarOpen);
     };
 
     const closeSidebar = () => {
-        setIsSidebarOpen(false); // Close the sidebar
+        setIsSidebarOpen(false);
     };
 
     const handleMenuClick = () => {
@@ -28,13 +31,9 @@ const Navbar = () => {
     };
 
     const handleAddToCart = (product: Product) => {
-        setCartProducts((prevProducts) => [...prevProducts, product]); // Add product to the cart
-        handleSidebarToggle(); // Open the sidebar when a product is added
-    };
-
-    // Handle removing the product based on its id
-    const handleRemoveFromCart = (productId: string) => {
-        setCartProducts((prevProducts) => prevProducts.filter((product) => product.id !== productId)); // Remove product by id
+        console.log('Adding product to cart:', product); // Debugging: Log product being added
+        addToCart(product);
+        handleSidebarToggle(); // Open sidebar when a product is added
     };
 
     return (
@@ -72,12 +71,12 @@ const Navbar = () => {
                 </div>
             </header>
 
-            {/* Sidebar component with cartProducts */}
+            {/* Sidebar component with cartProducts and removeFromCart */}
             <Sidebar
                 isOpen={isSidebarOpen}
                 onClose={closeSidebar}
-                cartProducts={cartProducts}
-                onRemoveFromCart={handleRemoveFromCart} // Pass the function here
+                cartProducts={cartProducts} // Pass cartProducts to Sidebar
+                onRemoveFromCart={removeFromCart} // Pass removeFromCart to Sidebar
             />
         </>
     );
