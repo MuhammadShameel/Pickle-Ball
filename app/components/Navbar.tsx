@@ -8,15 +8,14 @@ import Profile from '../../public/assets/images/profile.svg';
 import Bag from '../../public/assets/images/bag.svg';
 import Menu from '../../public/assets/images/menu.svg';
 import Sidebar from './Sidebar';
-import { useCart } from '../context/CartContext'; // Use the CartContext hook
+import { useCart } from '../context/CartContext';
 import { Product } from './ProductsServer';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-    // Get cart state and actions from context
-    const { cartProducts, addToCart, removeFromCart } = useCart();
+    const { addToCart } = useCart();
 
     const handleSidebarToggle = () => {
         setIsSidebarOpen(!isSidebarOpen);
@@ -31,9 +30,8 @@ const Navbar = () => {
     };
 
     const handleAddToCart = (product: Product) => {
-        console.log('Adding product to cart:', product); // Debugging: Log product being added
         addToCart(product);
-        handleSidebarToggle(); // Open sidebar when a product is added
+        handleSidebarToggle();
     };
 
     return (
@@ -71,12 +69,9 @@ const Navbar = () => {
                 </div>
             </header>
 
-            {/* Sidebar component with cartProducts and removeFromCart */}
             <Sidebar
                 isOpen={isSidebarOpen}
                 onClose={closeSidebar}
-                cartProducts={cartProducts} // Pass cartProducts to Sidebar
-                onRemoveFromCart={removeFromCart} // Pass removeFromCart to Sidebar
             />
         </>
     );

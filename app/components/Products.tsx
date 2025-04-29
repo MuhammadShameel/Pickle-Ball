@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import { Product } from "./ProductsServer";
-import Sidebar from "../components/Sidebar"; // Sidebar component
+import Sidebar from "../components/Sidebar";
 import AddToCartButton from "./AddToCartButton";
-import { useCart } from "../context/CartContext"; // Use the CartContext hook
+import { useCart } from "../context/CartContext";
 
 interface ProductsProps {
   products: Product[];
@@ -12,13 +12,13 @@ interface ProductsProps {
 }
 
 const Products: React.FC<ProductsProps> = ({ products, errorMessage }) => {
-  const { cartProducts, addToCart, removeFromCart } = useCart(); // Use CartContext
+  const { cartProducts, addToCart } = useCart();
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [tooltipProductId, setTooltipProductId] = useState<string | null>(null);
 
   const handleAddToCart = (product: Product) => {
     addToCart(product);
-    setSidebarOpen(true); // Open sidebar when a product is added
+    setSidebarOpen(true);
     setTooltipProductId(product.id);
 
     setTimeout(() => {
@@ -31,17 +31,17 @@ const Products: React.FC<ProductsProps> = ({ products, errorMessage }) => {
   };
 
   useEffect(() => {
-    console.log("Current cart products:", cartProducts); // Debugging: Log cart state
   }, [cartProducts]);
 
   return (
     <div>
       {errorMessage && <div className="error-message text-red-500">{errorMessage}</div>}
-      <section className="bg-gray-50 py-8 antialiased md:py-12">
+      <section className=" py-8 antialiased md:py-12">
         <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
           <div className="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
             {products.map((product) => (
-              <div key={product.id} className="relative card flex flex-col p-5 rounded-4xl border border-[#0000001a] overflow-hidden">
+              <div key={product.id} className="relative card flex flex-col p-5 rounded-[10px] border border-[#0000001a] overflow-hidden">
+
                 <div className="card-header relative">
                   <div className="img-wrapper text-center">
                     {product.featuredImage && (
@@ -72,16 +72,14 @@ const Products: React.FC<ProductsProps> = ({ products, errorMessage }) => {
                 )}
               </div>
             ))}
+
           </div>
         </div>
       </section>
 
-      {/* Sidebar with cart */}
       <Sidebar
         isOpen={isSidebarOpen}
         onClose={closeSidebar}
-        cartProducts={cartProducts} // Pass cartProducts from CartContext
-        onRemoveFromCart={removeFromCart} // Pass removeFromCart to Sidebar
       />
     </div>
   );

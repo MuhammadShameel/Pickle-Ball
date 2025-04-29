@@ -13,7 +13,7 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({ product, onAddToCart 
     return (
         <button
             onClick={() => onAddToCart(product)}
-            className="btn style-2 btn-secondary leading-tight cursor-pointer"
+            className="btn style-2 btn-primary leading-tight cursor-pointer"
         >
             Add to Cart
         </button>
