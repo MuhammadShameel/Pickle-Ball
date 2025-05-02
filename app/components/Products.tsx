@@ -8,6 +8,7 @@ import AddToCartButton from "./AddToCartButton";
 import { useCart } from "../context/CartContext"; // Use the CartContext hook
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 interface ProductsProps {
   products: Product[];
@@ -433,7 +434,7 @@ const Products: React.FC<ProductsProps> = ({ products, errorMessage }) => {
                           <div className="card-header relative">
                             <div className="img-wrapper w-[100%] aspect-square">
                               {product.featuredImage && (
-                                <img
+                                <Image
                                   className="w-full! h-full! object-cover"
                                   src={product.featuredImage.url}
                                   alt={
@@ -492,7 +493,7 @@ const Products: React.FC<ProductsProps> = ({ products, errorMessage }) => {
                           <div className="card-header relative">
                             <div className="img-wrapper text-center">
                               {product.featuredImage && (
-                                <img
+                                <Image
                                   className="w-full h-full object-contain"
                                   src={product.featuredImage.url}
                                   alt={
@@ -551,7 +552,7 @@ const Products: React.FC<ProductsProps> = ({ products, errorMessage }) => {
                           <div className="card-header relative">
                             <div className="img-wrapper text-center">
                               {product.featuredImage && (
-                                <img
+                                <Image
                                   className="w-full h-full object-contain"
                                   src={product.featuredImage.url}
                                   alt={
@@ -610,7 +611,7 @@ const Products: React.FC<ProductsProps> = ({ products, errorMessage }) => {
                           <div className="card-header relative">
                             <div className="img-wrapper text-center">
                               {product.featuredImage && (
-                                <img
+                                <Image
                                   className="w-full h-full object-contain"
                                   src={product.featuredImage.url}
                                   alt={
