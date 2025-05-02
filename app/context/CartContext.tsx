@@ -4,6 +4,7 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 import { Product } from "../components/ProductsServer";
 
 interface CartItem extends Product {
+    // variantId: any;
     quantity: number; // Track quantity for each product in the cart
 }
 

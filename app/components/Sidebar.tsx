@@ -109,7 +109,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           View Cart
         </Link>
 
-        <Link className="btn style-2 btn-primary text-center leading-normal cursor-pointer w-full" href={"/"}>
+        <Link className="btn style-2 btn-primary text-center leading-normal cursor-pointer w-full" href={'/checkout'}>
           Checkout
         </Link>
       </div>
