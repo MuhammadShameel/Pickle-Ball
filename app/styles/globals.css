@@ -38,6 +38,13 @@ h3 {
   font-weight: 400;
 }
 
+h4 {
+  font-family: "allotrope-variable", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  /* font-variation-settings: "wdth" 50, "wght" 400; */
+}
+
 p,
 ul,
 span {
@@ -113,6 +120,7 @@ img {
 .bg-sky {
   background-color: #408fe9;
 }
+
 
 .btn {
   font-size: 24px;
@@ -199,6 +207,13 @@ img {
   height: 100%;
 }
 
+.input-field {
+  padding: 14px;
+  border: 1px solid #E5E5E5 !important;
+  border-radius: 6px;
+  outline: none !important;
+}
+
 
 
 /* our blog section start */
@@ -267,6 +282,10 @@ img {
     font-size: 36px;
   }
 
+  h4 {
+    font-size: 28px;
+  }
+
   p,
   ul,
   span {
@@ -298,6 +317,10 @@ img {
     font-size: 28px;
   }
 
+  h4 {
+    font-size: 24px;
+  }
+
   p,
   ul,
   span {
@@ -314,31 +337,6 @@ img {
   }
 }
 
-@media (max-width: 767.97px) {
-
-  h1,
-  .font-h1 {
-    font-size: 80px !important;
-  }
-
-  h2 {
-    font-size: 50px;
-  }
-
-  h3 {
-    font-size: 28px;
-  }
-
-  p,
-  ul,
-  span {
-    font-size: 18px;
-  }
-
-  .fs-18 {
-    font-size: 15px;
-  }
-}
 
 @media (max-width: 639.97px) {
 
@@ -353,6 +351,10 @@ img {
 
   h3 {
     font-size: 22px;
+  }
+
+  h4 {
+    font-size: 20px;
   }
 
   p,
@@ -379,6 +381,11 @@ img {
   .swiper-pagination {
     gap: 6px;
     margin-top: 14px !important;
+  }
+
+  .input-field {
+    padding: 8px 12px;
+    font-size: 12px;
   }
 }
 
