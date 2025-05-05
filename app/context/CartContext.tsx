@@ -1,9 +1,10 @@
 "use client";
 
-import React, { createContext, useContext, useState, ReactNode } from "react";
-import { Product } from "../components/ProductsServer"; // Adjust path as needed
+import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { Product } from "../components/ProductsServer";
 
 interface CartItem extends Product {
+    // variantId: any;
     quantity: number; // Track quantity for each product in the cart
 }
 
@@ -29,28 +30,40 @@ interface CartProviderProps {
 }
 
 export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
-    const [cartProducts, setCartProducts] = useState<CartItem[]>([]);
+    // Load the initial cart from localStorage
+    const [cartProducts, setCartProducts] = useState<CartItem[]>(() => {
+        if (typeof window !== "undefined") {
+            const savedCart = localStorage.getItem("cart");
+            return savedCart ? JSON.parse(savedCart) : [];
+        }
+        return [];
+    });
 
-    // Function to add product to cart or update its quantity if already in cart
+    // Save the cart to localStorage whenever cartProducts changes
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            localStorage.setItem("cart", JSON.stringify(cartProducts));
+        }
+    }, [cartProducts]);
+
+    // Function to add a product to the cart or update its quantity if it's already in the cart
     const addToCart = (product: Product) => {
         setCartProducts((prevProducts) => {
             const existingProduct = prevProducts.find((item) => item.id === product.id);
 
             if (existingProduct) {
-                // If the product already exists in the cart, increment the quantity
+                // If the product is already in the cart, increase the quantity
                 return prevProducts.map((item) =>
-                    item.id === product.id
-                        ? { ...item, quantity: item.quantity + 1 }
-                        : item
+                    item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
                 );
             } else {
-                // If the product is not in the cart, add it with a quantity of 1
+                // If the product is not in the cart, add it with quantity 1
                 return [...prevProducts, { ...product, quantity: 1 }];
             }
         });
     };
 
-    // Function to remove product from the cart
+    // Function to remove a product from the cart
     const removeFromCart = (productId: string) => {
         setCartProducts((prevProducts) => prevProducts.filter((item) => item.id !== productId));
     };
@@ -58,7 +71,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     // Function to update the quantity of a product in the cart
     const updateQuantity = (productId: string, quantity: number) => {
         if (quantity <= 0) {
-            // If quantity is zero or negative, remove the item from the cart
+            // If the quantity is zero or negative, remove the product from the cart
             removeFromCart(productId);
         } else {
             setCartProducts((prevProducts) =>

@@ -11,12 +11,15 @@ import Sidebar from "./Sidebar";
 import { useCart } from "../context/CartContext"; // Use the CartContext hook
 import { Product } from "./ProductsServer";
 
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+
   // Get cart state and actions from context
   const { cartProducts, addToCart, removeFromCart } = useCart();
+
 
   const handleSidebarToggle = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -35,6 +38,7 @@ const Navbar = () => {
     addToCart(product);
     handleSidebarToggle(); // Open sidebar when a product is added
   };
+
 
   return (
     <>
@@ -105,6 +109,7 @@ const Navbar = () => {
       />
     </>
   );
+
 };
 
 export default Navbar;

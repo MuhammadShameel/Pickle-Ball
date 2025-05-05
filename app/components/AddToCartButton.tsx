@@ -9,6 +9,7 @@ interface AddToCartButtonProps {
   onAddToCart: (product: Product) => void;
 }
 
+
 const AddToCartButton: React.FC<AddToCartButtonProps> = ({
   product,
   onAddToCart,
@@ -21,6 +22,8 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({
       Add to Cart
     </button>
   );
+
+
 };
 
 export default AddToCartButton;
