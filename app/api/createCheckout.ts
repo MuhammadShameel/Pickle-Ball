@@ -1,31 +1,42 @@
 import { NextResponse } from "next/server";
 import fetch from "node-fetch";
 
+interface LineItem {
+  variantId: string;
+  quantity: number;
+}
+
+interface CreateCheckoutRequest {
+  lineItems: LineItem[];
+  email?: string;
+}
+
 interface CheckoutCreateResponse {
   data: {
     cartCreate: {
       cart: {
         id: string;
-        checkoutUrl: string; // Shopify's hosted checkout URL
+        checkoutUrl: string;
       };
       userErrors: {
         field: string[];
         message: string;
-      }[]; // Errors if any
+      }[];
     };
   };
-  errors?: { message: string }[]; // General errors from the API
+  errors?: { message: string }[];
 }
 
 export async function POST(request: Request) {
-  const { lineItems, email } = await request.json();
+  const { lineItems, email }: CreateCheckoutRequest = await request.json();
 
   const SHOPIFY_API_URL =
-    "https://xemf5u-v1.myshopify.com/api/2025-07/graphql.json"; // Correct API version
-  const SHOPIFY_ACCESS_TOKEN = "3ad7462358644621f36d7ec7c109732e"; // Replace with your Storefront Access Token
+    "https://xemf5u-v1.myshopify.com/api/2025-07/graphql.json";
+  const SHOPIFY_ACCESS_TOKEN = "3ad7462358644621f36d7ec7c109732e";
 
+  // Correct GraphQL mutation using CartInput and lines
   const query = `
-    mutation cartCreate($input: CartCreateInput!) {
+    mutation cartCreate($input: CartInput!) {
       cartCreate(input: $input) {
         cart {
           id
@@ -39,16 +50,14 @@ export async function POST(request: Request) {
     }
   `;
 
-  // Ensure lineItems are formatted properly: Shopify expects each lineItem to have a variantId and quantity
+  // Corrected variables with lines and merchandiseId
   const variables = {
     input: {
-      lineItems: lineItems.map(
-        (item: { variantId: string; quantity: number }) => ({
-          variantId: `gid://shopify/ProductVariant/${item.variantId}`, // Correct global ID format
-          quantity: item.quantity,
-        })
-      ),
-      email: email || "mshameelkz@gmail.com", // Optional email
+      lines: lineItems.map((item: LineItem) => ({
+        quantity: item.quantity,
+        merchandiseId: `gid://shopify/ProductVariant/${item.variantId}`,
+      })),
+      email: email || "khanzadashameel2@gmail.com", // Optional email address
     },
   };
 
@@ -64,10 +73,16 @@ export async function POST(request: Request) {
 
     const data = (await response.json()) as CheckoutCreateResponse;
 
-    // Handle any errors from the Shopify API
-    if (data.errors || data.data.cartCreate.userErrors.length > 0) {
+    if (response.ok) {
+      // Return the checkout URL if the request was successful
+      return NextResponse.json(
+        { checkoutUrl: data.data.cartCreate.cart.checkoutUrl },
+        { status: 200 }
+      );
+    } else {
+      // Handle the case where Shopify's API returns an error
       console.error(
-        "GraphQL Error:",
+        "Shopify API error:",
         data.errors || data.data.cartCreate.userErrors
       );
       return NextResponse.json(
@@ -78,14 +93,9 @@ export async function POST(request: Request) {
         { status: 500 }
       );
     }
-
-    // Return the checkout URL to redirect the user to Shopify's hosted checkout page
-    return NextResponse.json(
-      { checkoutUrl: data.data.cartCreate.cart.checkoutUrl },
-      { status: 200 }
-    );
   } catch (error) {
-    console.error("Server Error:", error);
+    // Handle unexpected errors
+    console.error("Error creating checkout:", error);
     return NextResponse.json(
       { error: "Error creating checkout", details: error },
       { status: 500 }

@@ -53,9 +53,8 @@ const Navbar = () => {
 
           {/* Desktop Links */}
           <nav
-            className={`md:ml-auto md:mr-auto lg:order-3 md:order-3 order-1 lg:flex md:flex flex-wrap items-center text-base hidden justify-center ${
-              isMenuOpen ? "hidden" : ""
-            }`}
+            className={`md:ml-auto md:mr-auto lg:order-3 md:order-3 order-1 lg:flex md:flex flex-wrap items-center text-base hidden justify-center ${isMenuOpen ? "hidden" : ""
+              }`}
           >
             <Link className="px-[17.5px] hover:text-[#1E503F]" href={""}>
               Custom Paddles
@@ -104,8 +103,8 @@ const Navbar = () => {
       <Sidebar
         isOpen={isSidebarOpen}
         onClose={closeSidebar}
-        cartProducts={cartProducts} // Pass cartProducts to Sidebar
-        onRemoveFromCart={removeFromCart} // Pass removeFromCart to Sidebar
+      // cartProducts={cartProducts} // Pass cartProducts to Sidebar
+      // onRemoveFromCart={removeFromCart} // Pass removeFromCart to Sidebar
       />
     </>
   );

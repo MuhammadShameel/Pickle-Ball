@@ -18,8 +18,8 @@ export default function Home() {
   return (
     <>
       {/* <Landing /> */}
-      {/* <ProductsServer /> */}
-      <ProductDetails />
+      <ProductsServer />
+      {/* <ProductDetails /> */}
 
       {/* <Checkout /> */}
     </>

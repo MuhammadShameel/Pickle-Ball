@@ -39,6 +39,37 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     }
   };
 
+  const handleCheckout = async () => {
+    const lineItems = cartProducts.map((product) => ({
+      variantId: product.variantId,
+      quantity: product.quantity,
+    }));
+
+    try {
+      const res = await fetch('/api/create-checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ lineItems }),
+      });
+
+      console.log("Response:", res); // Log the response to inspect
+
+      if (!res.ok) {
+        const text = await res.text();
+        console.error('Failed to create checkout:', text); // Log the response text if not ok
+        throw new Error('Failed to create checkout');
+      }
+
+      const data = await res.json();
+      const checkoutUrl = data.checkoutUrl;
+      window.location.href = checkoutUrl; // Redirect to Shopify checkout
+    } catch (error) {
+      console.error('Checkout failed:', error);
+    }
+  };
+
   return (
     <div className={`cart-sidebar fixed top-0 right-0 overflow-y-auto w-[50%] h-full bg-white p-7 pt-12 z-50 transition-transform transform ${isOpen ? "translate-x-0" : "translate-x-full"}`}>
       <div className="flex items-center justify-between">
@@ -109,7 +140,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           View Cart
         </Link>
 
-        <Link className="btn style-2 btn-primary text-center leading-normal cursor-pointer w-full" href={'/checkout'}>
+        <Link className="btn style-2 btn-primary text-center leading-normal cursor-pointer w-full" onClick={handleCheckout} href={""}>
           Checkout
         </Link>
       </div>

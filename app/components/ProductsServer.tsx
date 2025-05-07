@@ -5,6 +5,8 @@ import Products from "./Products";
 
 // Define the Product type
 export type Product = {
+  descriptionHtml: string | TrustedHTML;
+  variants: any;
   quantity: ReactNode;
   id: string;
   handle: string;
