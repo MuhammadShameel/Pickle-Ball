@@ -1,0 +1,3 @@
+.image-carousel .swiper-wrapper {
+  transition-timing-function: linear !important;
+}

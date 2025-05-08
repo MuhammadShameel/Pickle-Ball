@@ -1,10 +1,10 @@
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
 
-const FooterSection = () => {
+const FooterSection = ({ className = "" }) => {
   return (
     <>
-      <footer className="py-12 px-5 bg-green">
+      <footer className={`py-12 px-5 bg-green ${className}`}>
         <div className="container mx-auto">
           <div className="flex flex-row flex-wrap gap-10">
             {/* About Us Section - Reduced width */}

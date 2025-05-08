@@ -30,7 +30,7 @@
 }
 
 .featured-section .color.active {
-  border: 2px solid #000;
+  border: 1px solid #000;
 }
 
 
@@ -49,4 +49,13 @@
 
 .accessories-section .grid>div:last-child {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url('../../public/assets/gear.png') no-repeat center center/cover;
+}
+
+
+@media (max-width: 767.97px) {
+  .featured-section .color {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+  }
 }

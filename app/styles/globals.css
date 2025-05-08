@@ -32,17 +32,26 @@ h2 {
   font-variation-settings: "wdth" 50, "wght" 700;
 }
 
-h3 {
+/* h3 {
   font-family: "allotrope-variable", sans-serif;
   font-size: 42px;
   font-weight: 400;
+} */
+
+h3 {
+  font-family: "allotrope-variable", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
 }
 
-h4 {
+/* h4 {
   font-family: "allotrope-variable", sans-serif;
   font-size: 30px;
   font-weight: 400;
-  /* font-variation-settings: "wdth" 50, "wght" 400; */
+} */
+h5 {
+  font-size: 24px;
+  font-weight: 300;
 }
 
 p,
@@ -52,10 +61,14 @@ span {
   font-weight: 300;
 }
 
+.font-wide {
+  font-variation-settings: "wdth" 125;
+}
+
 .font-h1 {
   font-family: "allotrope-variable", sans-serif;
   font-size: 130px;
-  font-variation-settings: "wdth" 50, "wght" 500;
+  font-variation-settings: "wdth" 50;
 }
 
 .fs-18 {
@@ -66,6 +79,7 @@ img {
   width: auto;
   height: auto;
   max-width: 100%;
+  user-select: none;
 }
 
 .font-Allotrope {
@@ -87,6 +101,10 @@ img {
 
 .text-green {
   color: #1e503f;
+}
+
+.text-light-green {
+  color: #b2ffa9;
 }
 
 .text-grey {
@@ -128,6 +146,7 @@ img {
   padding: 20px 40px;
   border-radius: 6px;
   /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
+
 }
 
 .btn .icon-wrapper {
@@ -160,8 +179,8 @@ img {
   border: 1px solid #1e503f;
 }
 
-.shadow {
-  box-shadow: 2px 2px 24px 0px rgba(0, 0, 0, 0.1);
+.shadow-sm {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .swiper-scrollbar-drag {
@@ -214,6 +233,11 @@ img {
   outline: none !important;
 }
 
+.textarea-field {
+  padding: 14px;
+  border-radius: 6px;
+  outline: none !important;
+}
 
 
 /* our blog section start */
@@ -279,11 +303,16 @@ img {
   }
 
   h3 {
-    font-size: 36px;
+    font-size: 28px;
   }
 
-  h4 {
+  /* h4 {
     font-size: 28px;
+  } */
+
+  h5 {
+    font-size: 20px;
+    font-weight: 300;
   }
 
   p,
@@ -314,11 +343,16 @@ img {
   }
 
   h3 {
-    font-size: 28px;
+    font-size: 24px;
   }
 
-  h4 {
+  /* h4 {
     font-size: 24px;
+  } */
+
+  h5 {
+    font-size: 18px;
+    font-weight: 300;
   }
 
   p,
@@ -350,11 +384,16 @@ img {
   }
 
   h3 {
-    font-size: 22px;
+    font-size: 20px;
   }
 
-  h4 {
+  /* h4 {
     font-size: 20px;
+  } */
+
+  h5 {
+    font-size: 14px;
+    font-weight: 300;
   }
 
   p,
@@ -383,7 +422,8 @@ img {
     margin-top: 14px !important;
   }
 
-  .input-field {
+  .input-field,
+  .textarea-field {
     padding: 8px 12px;
     font-size: 12px;
   }
@@ -403,5 +443,5 @@ img {
 .font-h1 {
   font-family: "allotrope-variable", sans-serif;
   font-size: 130px;
-  font-variation-settings: "wdth" 50, "wght" 500;
+  font-variation-settings: "wdth" 50;
 }

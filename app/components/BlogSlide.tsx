@@ -22,7 +22,7 @@ const BlogSlide = () => {
       >
         <SwiperSlide className="h-full">
           <div className="flex flex-col lg:flex-row">
-            <div className="w-full lg:w-1/2 border border-red-500">
+            <div className="w-full lg:w-1/2 ">
               <div className="h-full">
                 <div className="img-wrapper h-full overflow-hidden aspect-1/1">
                   <Image
@@ -33,7 +33,7 @@ const BlogSlide = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full lg:w-1/2 flex flex-col justify-center bg-light-green border border-red-500">
+            <div className="w-full lg:w-1/2 flex flex-col justify-center bg-light-green ">
               <div className="xl:w-5/5 2xl:w-4/5 px-5 lg:ps-10 xl:ps-20 py-20 sm:py-22 md:py-24 lg:py-12 text-center lg:text-left">
                 <h2 className="font-h1 text-black uppercase leading-[80.769%]">
                   Top 10 Pickleball Tips for Beginners
@@ -52,7 +52,7 @@ const BlogSlide = () => {
         </SwiperSlide>
         <SwiperSlide className="h-full">
           <div className="flex flex-col lg:flex-row">
-            <div className="w-full lg:w-1/2 border border-red-500">
+            <div className="w-full lg:w-1/2 ">
               <div className="h-full">
                 <div className="img-wrapper h-full overflow-hidden aspect-1/1">
                   <Image
@@ -63,7 +63,7 @@ const BlogSlide = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full lg:w-1/2 flex flex-col justify-center bg-light-green border border-red-500">
+            <div className="w-full lg:w-1/2 flex flex-col justify-center bg-light-green ">
               <div className="xl:w-5/5 2xl:w-4/5 px-5 lg:ps-10 xl:ps-20 py-20 sm:py-22 md:py-24 lg:py-12 text-center lg:text-left">
                 <h2 className="font-h1 text-black uppercase leading-[80.769%]">
                   Top 10 Pickleball Tips for Beginners
