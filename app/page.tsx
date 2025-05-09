@@ -10,7 +10,7 @@ import "./styles/globals.css";
 // import HowItWorks from "./components/Footer";
 import ProductsServer from "./components/ProductsServer";
 
-import CartDetail from "./components/CartDetail";
+// import CartDetail from "./components/CartDetail";
 import Checkout from "./components/Checkout";
 // import ProductDetails from "./components/ProductDetails";
 
