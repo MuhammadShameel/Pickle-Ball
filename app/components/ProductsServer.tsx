@@ -31,25 +31,38 @@ const ProductsServer = async () => {
     const { data } = await storefrontClient.request<{
       products: { nodes: Product[] };
     }>(`
-            query {
-                products(first: 10) {
-                    nodes {
-                        id
-                        title
-                        handle
-                        featuredImage {
-                            url
-                            altText
-                        }
-                        priceRange {
-                            minVariantPrice {
-                                amount
-                                currencyCode
-                            }
-                        }
-                    }
-                }
+          query {
+  products(first: 10) {
+    nodes {
+      id
+      title
+      handle
+      featuredImage {
+        url
+        altText
+      }
+      priceRange {
+        minVariantPrice {
+          amount
+          currencyCode
+        }
+      }
+      variants(first: 10) {
+        edges {
+          node {
+            id  
+            title
+            priceV2 {
+              amount
+              currencyCode
             }
+          }
+        }
+      }
+    }
+  }
+}
+
         `);
 
     products = data?.products.nodes || [];

@@ -12,10 +12,12 @@ import ProductsServer from "./components/ProductsServer";
 
 import CartDetail from "./components/CartDetail";
 import Checkout from "./components/Checkout";
-import ProductDetails from "./components/ProductDetails";
+// import ProductDetails from "./components/ProductDetails";
 
 export default function Home() {
+
   return (
+
     <>
       {/* <Landing /> */}
       <ProductsServer />

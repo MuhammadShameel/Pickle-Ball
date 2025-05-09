@@ -10,6 +10,7 @@ import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
+import { KickflipEmbed } from "./KickflipEmbed";
 
 interface ProductsProps {
   products: Product[];
@@ -485,6 +486,8 @@ const Products: React.FC<ProductsProps> = ({ products, errorMessage }) => {
                     </div>
                   </div>
                 </div>
+                <KickflipEmbed productId="your_kickflip_product_id_here" />
+
               </div>
             </div>
           </section>

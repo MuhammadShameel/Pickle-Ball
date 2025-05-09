@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { useCart } from "../context/CartContext";
 import Link from "next/link";
+import { createCart } from '../api/createCheckout'
 
 interface SidebarProps {
   isOpen: boolean;
@@ -40,34 +41,48 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   };
 
   const handleCheckout = async () => {
-    const lineItems = cartProducts.map((product) => ({
-      variantId: product.variantId,
-      quantity: product.quantity,
-    }));
+    // let lineItems = cartProducts.map((product) => {
+    //   console.log('product', product)
+    //   return {
 
-    try {
-      const res = await fetch('/api/create-checkout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ lineItems }),
-      });
+    //     merchandiseId: product.id,
+    //     quantity: product.quantity,
+    //   }
+    // });
+    const checkoutUrl = await createCart(cartProducts);
+    console.log(checkoutUrl)
+    // try {
+    //   const res = await fetch('/api/2025-04/graphql.json', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify({
+    //       lineItems,
+    //       email: 'customer@example.com',  // Optional, if you want to capture email
+    //       shippingAddress: {
+    //         address1: '123 Main St',
+    //         city: 'City',
+    //         country: 'US',
+    //         zip: '12345',
+    //       },
+    //     }),
+    //   });
 
-      console.log("Response:", res); // Log the response to inspect
+    //   console.log("Response:", res); // Log the response to inspect
 
-      if (!res.ok) {
-        const text = await res.text();
-        console.error('Failed to create checkout:', text); // Log the response text if not ok
-        throw new Error('Failed to create checkout');
-      }
+    //   if (!res.ok) {
+    //     const text = await res.text();
+    //     console.error('Failed to create checkout:', text); // Log the response text if not ok
+    //     throw new Error('Failed to create checkout');
+    //   }
 
-      const data = await res.json();
-      const checkoutUrl = data.checkoutUrl;
-      window.location.href = checkoutUrl; // Redirect to Shopify checkout
-    } catch (error) {
-      console.error('Checkout failed:', error);
-    }
+    //   const data = await res.json();
+    //   const checkoutUrl = data.checkoutUrl;
+    //   window.location.href = checkoutUrl; // Redirect to Shopify checkout
+    // } catch (error) {
+    //   console.error('Checkout failed:', error);
+    // }
   };
 
   return (
@@ -149,3 +164,5 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 };
 
 export default Sidebar;
+
+
