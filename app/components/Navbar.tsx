@@ -580,8 +580,8 @@ const Navbar = () => {
       <Sidebar
         isOpen={isSidebarOpen}
         onClose={closeSidebar}
-        cartProducts={cartProducts}
-        onRemoveFromCart={removeFromCart}
+        // cartProducts={cartProducts}
+        // onRemoveFromCart={removeFromCart}
       />
     </>
   );
