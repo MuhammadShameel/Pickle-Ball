@@ -23,7 +23,7 @@ export default function Home() {
       {/* <ProductsServer /> */}
       <ProductDetails />
       {/* <Blogs /> */}
-      <ProductsServer />
+      {/* <ProductsServer /> */}
       {/* <ProductDetails /> */}
 
       {/* <Checkout /> */}

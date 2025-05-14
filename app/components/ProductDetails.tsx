@@ -3,12 +3,15 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar } from "swiper/modules";
+import RatingDistribution from "./RatingDistribution";
 import "swiper/css";
-// import "flowbite";
+
+import "../styles/product-details.css";
 
 import ProductPreview from "../../public/assets/images/product-preview.png";
 import Star from "../../public/assets/star.svg";
 import BlankStar from "../../public/assets/blank-star.svg";
+import Avatar from "../../public/assets/images/avatar.png";
 
 const colorVariants = [
   "FD85C8",
@@ -48,6 +51,8 @@ const reviews = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros lectus, euismod et maximus non, egestas non nunc. Integer eros lectus, euismod et maximus non, egestas non nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros lectus, euismod et maximus non, egestas non nunc. Integer eros lectus, euismod et maximus non, egestas non nunc.",
   },
 ];
+
+const starCounts: [number, number, number, number, number] = [0, 0, 0, 7, 80];
 
 const ProductDetails = () => {
   const [activeColorIndex, setActiveColorIndex] = useState<number | null>(null);
@@ -165,14 +170,14 @@ const ProductDetails = () => {
                       <p className="text-black leading-normal">
                         <button
                           type="button"
-                          className="flex items-center justify-between w-full cursor-pointer py-7 border-b border-[#CCCCCC]"
+                          className="flex items-center justify-between w-full cursor-pointer py-5 md:py-7 border-b border-[#CCCCCC]"
                           onClick={() => toggleAccordion(item.id)}
                           aria-expanded={openAccordion === item.id}
                           aria-controls={`accordion-collapse-body-${item.id}`}
                         >
                           {item.header}
                           <svg
-                            className={`transition-transform duration-200 ${
+                            className={`transition-transform duration-200 w-[16px] md:w-[20px] ${
                               openAccordion === item.id ? "rotate-45" : ""
                             }`}
                             xmlns="http://www.w3.org/2000/svg"
@@ -231,101 +236,174 @@ const ProductDetails = () => {
       {/* REVIEW SECTION */}
       <section className="px-3 sm:px-3.5 md:px-5 mt-100">
         <div className="container mx-auto">
-          <h2 className="text-black leading-[100%] uppercase ">
-            Reviews and Rating
-          </h2>
-          <div className="mt-8">
-            <div className="rounded-[10px] bg-[#F6F6F6] p-8">
-              <p className="text-black leading-normal font-bold!">
-                Rate this Backer and tell others what you think
-              </p>
-              <div className="flex gap-2 mt-6">
-                <div className="cursor-pointer">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="70"
-                    height="70"
-                    viewBox="0 0 70 70"
-                    fill="none"
-                  >
-                    <path
-                      d="M39.5171 10.3368L44.5791 20.4608C45.2693 21.8701 47.1101 23.2219 48.6632 23.4807L57.838 25.0051C63.7053 25.983 65.0858 30.2396 60.8579 34.4388L53.7252 41.5716C52.5172 42.7795 51.8557 45.1092 52.2296 46.7774L54.2716 55.6071C55.8822 62.5961 52.172 65.2996 45.9884 61.6469L37.3888 56.5562C35.8357 55.6358 33.2759 55.6358 31.694 56.5562L23.0944 61.6469C16.9395 65.2996 13.2005 62.5673 14.8112 55.6071L16.8532 46.7774C17.2271 45.1092 16.5656 42.7795 15.3576 41.5716L8.22484 34.4388C4.0257 30.2396 5.37748 25.983 11.2448 25.0051L20.4196 23.4807C21.944 23.2219 23.7847 21.8701 24.475 20.4608L29.5369 10.3368C32.298 4.84345 36.7848 4.84345 39.5171 10.3368Z"
-                      stroke="#292D32"
-                      strokeWidth="3.23564"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <div className="cursor-pointer">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="70"
-                    height="70"
-                    viewBox="0 0 70 70"
-                    fill="none"
-                  >
-                    <path
-                      d="M39.5171 10.3368L44.5791 20.4608C45.2693 21.8701 47.1101 23.2219 48.6632 23.4807L57.838 25.0051C63.7053 25.983 65.0858 30.2396 60.8579 34.4388L53.7252 41.5716C52.5172 42.7795 51.8557 45.1092 52.2296 46.7774L54.2716 55.6071C55.8822 62.5961 52.172 65.2996 45.9884 61.6469L37.3888 56.5562C35.8357 55.6358 33.2759 55.6358 31.694 56.5562L23.0944 61.6469C16.9395 65.2996 13.2005 62.5673 14.8112 55.6071L16.8532 46.7774C17.2271 45.1092 16.5656 42.7795 15.3576 41.5716L8.22484 34.4388C4.0257 30.2396 5.37748 25.983 11.2448 25.0051L20.4196 23.4807C21.944 23.2219 23.7847 21.8701 24.475 20.4608L29.5369 10.3368C32.298 4.84345 36.7848 4.84345 39.5171 10.3368Z"
-                      stroke="#292D32"
-                      strokeWidth="3.23564"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <div className="cursor-pointer">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="70"
-                    height="70"
-                    viewBox="0 0 70 70"
-                    fill="none"
-                  >
-                    <path
-                      d="M39.5171 10.3368L44.5791 20.4608C45.2693 21.8701 47.1101 23.2219 48.6632 23.4807L57.838 25.0051C63.7053 25.983 65.0858 30.2396 60.8579 34.4388L53.7252 41.5716C52.5172 42.7795 51.8557 45.1092 52.2296 46.7774L54.2716 55.6071C55.8822 62.5961 52.172 65.2996 45.9884 61.6469L37.3888 56.5562C35.8357 55.6358 33.2759 55.6358 31.694 56.5562L23.0944 61.6469C16.9395 65.2996 13.2005 62.5673 14.8112 55.6071L16.8532 46.7774C17.2271 45.1092 16.5656 42.7795 15.3576 41.5716L8.22484 34.4388C4.0257 30.2396 5.37748 25.983 11.2448 25.0051L20.4196 23.4807C21.944 23.2219 23.7847 21.8701 24.475 20.4608L29.5369 10.3368C32.298 4.84345 36.7848 4.84345 39.5171 10.3368Z"
-                      stroke="#292D32"
-                      strokeWidth="3.23564"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <div className="cursor-pointer">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="70"
-                    height="70"
-                    viewBox="0 0 70 70"
-                    fill="none"
-                  >
-                    <path
-                      d="M39.5171 10.3368L44.5791 20.4608C45.2693 21.8701 47.1101 23.2219 48.6632 23.4807L57.838 25.0051C63.7053 25.983 65.0858 30.2396 60.8579 34.4388L53.7252 41.5716C52.5172 42.7795 51.8557 45.1092 52.2296 46.7774L54.2716 55.6071C55.8822 62.5961 52.172 65.2996 45.9884 61.6469L37.3888 56.5562C35.8357 55.6358 33.2759 55.6358 31.694 56.5562L23.0944 61.6469C16.9395 65.2996 13.2005 62.5673 14.8112 55.6071L16.8532 46.7774C17.2271 45.1092 16.5656 42.7795 15.3576 41.5716L8.22484 34.4388C4.0257 30.2396 5.37748 25.983 11.2448 25.0051L20.4196 23.4807C21.944 23.2219 23.7847 21.8701 24.475 20.4608L29.5369 10.3368C32.298 4.84345 36.7848 4.84345 39.5171 10.3368Z"
-                      stroke="#292D32"
-                      strokeWidth="3.23564"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <div className="cursor-pointer">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="70"
-                    height="70"
-                    viewBox="0 0 70 70"
-                    fill="none"
-                  >
-                    <path
-                      d="M39.5171 10.3368L44.5791 20.4608C45.2693 21.8701 47.1101 23.2219 48.6632 23.4807L57.838 25.0051C63.7053 25.983 65.0858 30.2396 60.8579 34.4388L53.7252 41.5716C52.5172 42.7795 51.8557 45.1092 52.2296 46.7774L54.2716 55.6071C55.8822 62.5961 52.172 65.2996 45.9884 61.6469L37.3888 56.5562C35.8357 55.6358 33.2759 55.6358 31.694 56.5562L23.0944 61.6469C16.9395 65.2996 13.2005 62.5673 14.8112 55.6071L16.8532 46.7774C17.2271 45.1092 16.5656 42.7795 15.3576 41.5716L8.22484 34.4388C4.0257 30.2396 5.37748 25.983 11.2448 25.0051L20.4196 23.4807C21.944 23.2219 23.7847 21.8701 24.475 20.4608L29.5369 10.3368C32.298 4.84345 36.7848 4.84345 39.5171 10.3368Z"
-                      stroke="#292D32"
-                      strokeWidth="3.23564"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+          <div>
+            <h2 className="text-black leading-[100%] uppercase ">
+              Reviews and Rating
+            </h2>
+            <div className="mt-5 md:mt-7 lg:mt-8.5">
+              <div className="rounded-[10px] bg-[#F6F6F6] p-5 md:p-9 lg:p-11 xl:px-15 xl:py-12.5">
+                <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-y-7.5">
+                  <div className="lg:border-r border-[#C5C5C5] flex-1 flex items-center lg:pe-5">
+                    <div className="flex items-center gap-1 md:gap-4 2xl:gap-5">
+                      <h2 className="font-h1 text-black leading-[80.769%]">
+                        4.9
+                      </h2>
+                      <div className="flex flex-col  gap-1 md:gap-3">
+                        <div className="total-rating-stars flex items-center gap-1 md:gap-1.5 2xl:gap-2.5">
+                          <div className="star-wrapper">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="50"
+                              height="50"
+                              viewBox="0 0 50 50"
+                              fill="none"
+                            >
+                              <path
+                                d="M28.6052 7.3125L32.2719 14.6458C32.7719 15.6667 34.1052 16.6458 35.2302 16.8333L41.876 17.9375C46.126 18.6458 47.126 21.7292 44.0635 24.7708L38.8969 29.9375C38.0219 30.8125 37.5427 32.5 37.8135 33.7083L39.2927 40.1042C40.4594 45.1667 37.7719 47.125 33.2927 44.4792L27.0635 40.7917C25.9385 40.125 24.0844 40.125 22.9385 40.7917L16.7094 44.4792C12.251 47.125 9.5427 45.1458 10.7094 40.1042L12.1885 33.7083C12.4594 32.5 11.9802 30.8125 11.1052 29.9375L5.93853 24.7708C2.89686 21.7292 3.87603 18.6458 8.12603 17.9375L14.7719 16.8333C15.876 16.6458 17.2094 15.6667 17.7094 14.6458L21.376 7.3125C23.376 3.33333 26.626 3.33333 28.6052 7.3125Z"
+                                fill="#FF9900"
+                              />
+                            </svg>
+                          </div>
+                          <div className="star-wrapper">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="50"
+                              height="50"
+                              viewBox="0 0 50 50"
+                              fill="none"
+                            >
+                              <path
+                                d="M28.6052 7.3125L32.2719 14.6458C32.7719 15.6667 34.1052 16.6458 35.2302 16.8333L41.876 17.9375C46.126 18.6458 47.126 21.7292 44.0635 24.7708L38.8969 29.9375C38.0219 30.8125 37.5427 32.5 37.8135 33.7083L39.2927 40.1042C40.4594 45.1667 37.7719 47.125 33.2927 44.4792L27.0635 40.7917C25.9385 40.125 24.0844 40.125 22.9385 40.7917L16.7094 44.4792C12.251 47.125 9.5427 45.1458 10.7094 40.1042L12.1885 33.7083C12.4594 32.5 11.9802 30.8125 11.1052 29.9375L5.93853 24.7708C2.89686 21.7292 3.87603 18.6458 8.12603 17.9375L14.7719 16.8333C15.876 16.6458 17.2094 15.6667 17.7094 14.6458L21.376 7.3125C23.376 3.33333 26.626 3.33333 28.6052 7.3125Z"
+                                fill="#FF9900"
+                              />
+                            </svg>
+                          </div>
+                          <div className="star-wrapper">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="50"
+                              height="50"
+                              viewBox="0 0 50 50"
+                              fill="none"
+                            >
+                              <path
+                                d="M28.6052 7.3125L32.2719 14.6458C32.7719 15.6667 34.1052 16.6458 35.2302 16.8333L41.876 17.9375C46.126 18.6458 47.126 21.7292 44.0635 24.7708L38.8969 29.9375C38.0219 30.8125 37.5427 32.5 37.8135 33.7083L39.2927 40.1042C40.4594 45.1667 37.7719 47.125 33.2927 44.4792L27.0635 40.7917C25.9385 40.125 24.0844 40.125 22.9385 40.7917L16.7094 44.4792C12.251 47.125 9.5427 45.1458 10.7094 40.1042L12.1885 33.7083C12.4594 32.5 11.9802 30.8125 11.1052 29.9375L5.93853 24.7708C2.89686 21.7292 3.87603 18.6458 8.12603 17.9375L14.7719 16.8333C15.876 16.6458 17.2094 15.6667 17.7094 14.6458L21.376 7.3125C23.376 3.33333 26.626 3.33333 28.6052 7.3125Z"
+                                fill="#FF9900"
+                              />
+                            </svg>
+                          </div>
+                          <div className="star-wrapper">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="50"
+                              height="50"
+                              viewBox="0 0 50 50"
+                              fill="none"
+                            >
+                              <path
+                                d="M28.6052 7.3125L32.2719 14.6458C32.7719 15.6667 34.1052 16.6458 35.2302 16.8333L41.876 17.9375C46.126 18.6458 47.126 21.7292 44.0635 24.7708L38.8969 29.9375C38.0219 30.8125 37.5427 32.5 37.8135 33.7083L39.2927 40.1042C40.4594 45.1667 37.7719 47.125 33.2927 44.4792L27.0635 40.7917C25.9385 40.125 24.0844 40.125 22.9385 40.7917L16.7094 44.4792C12.251 47.125 9.5427 45.1458 10.7094 40.1042L12.1885 33.7083C12.4594 32.5 11.9802 30.8125 11.1052 29.9375L5.93853 24.7708C2.89686 21.7292 3.87603 18.6458 8.12603 17.9375L14.7719 16.8333C15.876 16.6458 17.2094 15.6667 17.7094 14.6458L21.376 7.3125C23.376 3.33333 26.626 3.33333 28.6052 7.3125Z"
+                                fill="#FF9900"
+                              />
+                            </svg>
+                          </div>
+                          <div className="star-wrapper">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="50"
+                              height="50"
+                              viewBox="0 0 50 50"
+                              fill="none"
+                            >
+                              <path
+                                d="M28.6052 7.3125L32.2719 14.6458C32.7719 15.6667 34.1052 16.6458 35.2302 16.8333L41.876 17.9375C46.126 18.6458 47.126 21.7292 44.0635 24.7708L38.8969 29.9375C38.0219 30.8125 37.5427 32.5 37.8135 33.7083L39.2927 40.1042C40.4594 45.1667 37.7719 47.125 33.2927 44.4792L27.0635 40.7917C25.9385 40.125 24.0844 40.125 22.9385 40.7917L16.7094 44.4792C12.251 47.125 9.5427 45.1458 10.7094 40.1042L12.1885 33.7083C12.4594 32.5 11.9802 30.8125 11.1052 29.9375L5.93853 24.7708C2.89686 21.7292 3.87603 18.6458 8.12603 17.9375L14.7719 16.8333C15.876 16.6458 17.2094 15.6667 17.7094 14.6458L21.376 7.3125C23.376 3.33333 26.626 3.33333 28.6052 7.3125Z"
+                                fill="#FF9900"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                        <p className="text-black">87 reviews</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="lg:border-r border-[#C5C5C5] flex-1 self-stretch  lg:px-5">
+                    <div className="max-w-[260px] mx-auto">
+                      <RatingDistribution
+                        counts={starCounts}
+                        barSize="h-2"
+                        barColor="bg-dark-green"
+                        trackColor="bg-[#EAEAEA]"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex-1 flex items-center justify-end lg:ps-5">
+                    <div>
+                      <button className="btn btn-primary leading-normal  cursor-pointer">
+                        Write A Review
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="mt-7.5 sm:mt-9 md:mt-12.5">
+            <div className="p-8.5 review border border-red-500">
+              <div className="review-header">
+                <div className="border border-red-500 flex flex-row items-center gap-x-4">
+                  <div className="img-wrapper rounded-full overflow-hidden border border-red-500">
+                    <Image
+                      src={Avatar}
+                      width={70}
+                      height={70}
+                      alt="Avatar Image"
+                      className="w-full! h-full! object-cover"
+                    />
+                  </div>
+                  <div className="border border-red-500 flex flex-row items-center gap-4">
+                    <div className="username">
+                      <p className="text-[#323232] leading-normal">
+                        CatLover92
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="5"
+                        height="6"
+                        viewBox="0 0 5 6"
+                        fill="none"
+                      >
+                        <circle
+                          cx="2.20983"
+                          cy="3.02672"
+                          r="2.15709"
+                          fill="#323232"
+                        />
+                      </svg>
+                    </div>
+                    <div className="review-date">
+                      <p className="text-[#323232] leading-normal"> 22 Jul</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="review-stars">
+                  <div className="star-wrapper">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="50"
+                      height="50"
+                      viewBox="0 0 50 50"
+                      fill="none"
+                    >
+                      <path
+                        d="M28.6052 7.3125L32.2719 14.6458C32.7719 15.6667 34.1052 16.6458 35.2302 16.8333L41.876 17.9375C46.126 18.6458 47.126 21.7292 44.0635 24.7708L38.8969 29.9375C38.0219 30.8125 37.5427 32.5 37.8135 33.7083L39.2927 40.1042C40.4594 45.1667 37.7719 47.125 33.2927 44.4792L27.0635 40.7917C25.9385 40.125 24.0844 40.125 22.9385 40.7917L16.7094 44.4792C12.251 47.125 9.5427 45.1458 10.7094 40.1042L12.1885 33.7083C12.4594 32.5 11.9802 30.8125 11.1052 29.9375L5.93853 24.7708C2.89686 21.7292 3.87603 18.6458 8.12603 17.9375L14.7719 16.8333C15.876 16.6458 17.2094 15.6667 17.7094 14.6458L21.376 7.3125C23.376 3.33333 26.626 3.33333 28.6052 7.3125Z"
+                        fill="#FF9900"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div></div>
             </div>
           </div>
         </div>
