@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./styles/globals.css";
 import { CartProvider } from "./context/CartContext";
 import Navbar from "./components/Navbar";
+// import { CartProvider } from '@shopify/hydrogen';
+
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",

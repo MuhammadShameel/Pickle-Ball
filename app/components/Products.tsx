@@ -2,13 +2,15 @@
 
 import React, { useState, useEffect } from "react";
 
-import { Product } from "./ProductsServer";
+import { Product } from "../components/ProductsServer";
 import Sidebar from "../components/Sidebar"; // Sidebar component
-import AddToCartButton from "./AddToCartButton";
+import AddToCartButton from "../components/AddToCartButton";
 import { useCart } from "../context/CartContext"; // Use the CartContext hook
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import Link from "next/link";
+import { KickflipEmbed } from "./KickflipEmbed";
 
 interface ProductsProps {
   products: Product[];
@@ -65,9 +67,13 @@ const Products: React.FC<ProductsProps> = ({ products, errorMessage }) => {
     setSidebarOpen(true); // Open sidebar when a product is added
     setTooltipProductId(product.id);
 
-    setTimeout(() => {
-      setTooltipProductId(null);
-    }, 2000);
+    useEffect(() => {
+      if (tooltipProductId) {
+        setTimeout(() => {
+          setTooltipProductId(null);
+        }, 2000);
+      }
+    }, [tooltipProductId]);
   };
 
   const closeSidebar = () => {
@@ -77,6 +83,8 @@ const Products: React.FC<ProductsProps> = ({ products, errorMessage }) => {
   useEffect(() => {
     console.log("Current cart products:", cartProducts); // Debugging: Log cart state
   }, [cartProducts]);
+
+
 
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
@@ -417,245 +425,75 @@ const Products: React.FC<ProductsProps> = ({ products, errorMessage }) => {
                 </div>
 
                 {/* Tabs content */}
-                <div className="mt-5 lg:ps-3.5">
-                  <div
-                    className="hidden opacity-100 transition-opacity duration-150 ease-linear data-[twe-tab-active]:block"
-                    id="tabs-home"
-                    role="tabpanel"
-                    aria-labelledby="tabs-home-tab"
-                    data-twe-tab-active
-                  >
-                    <div className="grid grid-cols-2 lg:grid-cols-3  gap-y-2.5 sm:gap-y-5 md:gap-y-6 lg:gap-y-7 gap-x-2.5 md:gap-x-4 xl:gap-x-5">
-                      {products.map((product) => (
-                        <div
-                          key={product.id}
-                          className="card relative rounded-[6px] sm:rounded-[10px] flex flex-col p-2.5 sm:p-5  border border-[#E5E5E5] overflow-hidden"
-                        >
-                          <div className="card-header relative">
-                            <div className="img-wrapper w-[100%] aspect-square">
-                              {product.featuredImage && (
-                                <Image
-                                  className="w-full! h-full! object-cover"
-                                  src={product.featuredImage.url}
-                                  alt={
-                                    product.featuredImage.altText ||
-                                    product.title
-                                  }
-                                  width={100}
-                                  height={100}
+                <div className="card">
+                  <div className="mt-5 lg:ps-3.5">
+                    <div
+                      className="hidden opacity-100 transition-opacity duration-150 ease-linear data-[twe-tab-active]:block"
+                      id="tabs-home"
+                      role="tabpanel"
+                      aria-labelledby="tabs-home-tab"
+                      data-twe-tab-active
+                    >
+                      <div className="grid grid-cols-2 lg:grid-cols-3  gap-y-2.5 sm:gap-y-5 md:gap-y-6 lg:gap-y-7 gap-x-2.5 md:gap-x-4 xl:gap-x-5">
+                        {products.map((product) => (
+                          <div
+                            key={product.id}
+                            className="card relative rounded-[6px] sm:rounded-[10px] flex flex-col p-2.5 sm:p-5  border border-[#E5E5E5] overflow-hidden"
+                          >
+                            <div className="card-header relative">
+                              <div className="img-wrapper w-[100%] aspect-square">
+                                {product.featuredImage && (
+                                  <Image
+                                    className="w-full! h-full! object-cover"
+                                    src={product.featuredImage.url}
+                                    alt={
+                                      product.featuredImage.altText ||
+                                      product.title
+                                    }
+                                    width={100}
+                                    height={100}
+                                  />
+                                )}
+                              </div>
+                            </div>
+
+                            <div className="card-body mt-3.5 md:mt-5">
+                              <p className="text-black leading-normal">
+                                {product.title}
+                              </p>
+                              <h4 className="text-black leading-[100%] mt-2.5 md:mt-5">
+                                {product.priceRange.minVariantPrice.amount}{" "}
+                                {product.priceRange.minVariantPrice.currencyCode}
+                              </h4>
+
+                              <div className="flex flex-col mt-3 sm:mt-4 md:mt-6 lg:mt-10 gap-1 sm:gap-2">
+                                <Link href={`/products/${product.handle}`} className="btn style-2 btn-outline-green leading-tight cursor-pointer">
+                                  View Details
+                                </Link>
+                                <button className="btn style-2 btn-outline-green leading-tight cursor-pointer">
+                                  Customize
+                                </button>
+                                <AddToCartButton
+                                  product={product}
+                                  onAddToCart={handleAddToCart}
                                 />
-                              )}
+                              </div>
                             </div>
+
+                            {/* Tooltip for each product individually */}
+                            {tooltipProductId === product.id && (
+                              <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-sm px-4 py-2 rounded-lg z-10">
+                                Product added to cart!
+                              </div>
+                            )}
                           </div>
-
-                          <div className="card-body mt-3.5 md:mt-5">
-                            <p className="text-black leading-normal">
-                              {product.title}
-                            </p>
-                            <h4 className="text-black leading-[100%] mt-2.5 md:mt-5">
-                              {product.priceRange.minVariantPrice.amount}{" "}
-                              {product.priceRange.minVariantPrice.currencyCode}
-                            </h4>
-
-                            <div className="flex flex-col mt-3 sm:mt-4 md:mt-6 lg:mt-10 gap-1 sm:gap-2">
-                              <button className="btn style-2 btn-outline-green leading-tight cursor-pointer">
-                                Customize
-                              </button>
-                              <AddToCartButton
-                                product={product}
-                                onAddToCart={handleAddToCart}
-                              />
-                            </div>
-                          </div>
-
-                          {/* Tooltip for each product individually */}
-                          {tooltipProductId === product.id && (
-                            <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-sm px-4 py-2 rounded-lg z-10">
-                              Product added to cart!
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div
-                    className="hidden opacity-0 transition-opacity duration-150 ease-linear data-[twe-tab-active]:block"
-                    id="tabs-profile"
-                    role="tabpanel"
-                    aria-labelledby="tabs-profile-tab"
-                  >
-                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-y-2.5 sm:gap-y-5 md:gap-y-6 lg:gap-y-7 gap-x-2.5 md:gap-x-4 xl:gap-x-5">
-                      {products.map((product) => (
-                        <div
-                          key={product.id}
-                          className="relative card flex flex-col p-5 rounded-4xl border border-[#0000001a] overflow-hidden"
-                        >
-                          <div className="card-header relative">
-                            <div className="img-wrapper text-center">
-                              {product.featuredImage && (
-                                <Image
-                                  className="w-full h-full object-contain"
-                                  src={product.featuredImage.url}
-                                  alt={
-                                    product.featuredImage.altText ||
-                                    product.title
-                                  }
-                                  width={100}
-                                  height={100}
-                                />
-                              )}
-                            </div>
-                          </div>
-
-                          <div className="card-body mt-3.5 md:mt-5">
-                            <p className="text-black leading-normal">
-                              {product.title}
-                            </p>
-                            <h4 className="text-black leading-[100%] mt-2.5 md:mt-5">
-                              {product.priceRange.minVariantPrice.amount}{" "}
-                              {product.priceRange.minVariantPrice.currencyCode}
-                            </h4>
-
-                            <div className="flex flex-col mt-3 sm:mt-4 md:mt-6 lg:mt-10 gap-1 sm:gap-2">
-                              <button className="btn style-2 btn-outline-green leading-tight cursor-pointer">
-                                Customize
-                              </button>
-                              <AddToCartButton
-                                product={product}
-                                onAddToCart={handleAddToCart}
-                              />
-                            </div>
-                          </div>
-
-                          {/* Tooltip for each product individually */}
-                          {tooltipProductId === product.id && (
-                            <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-sm px-4 py-2 rounded-lg z-10">
-                              Product added to cart!
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div
-                    className="hidden opacity-0 transition-opacity duration-150 ease-linear data-[twe-tab-active]:block"
-                    id="tabs-messages"
-                    role="tabpanel"
-                    aria-labelledby="tabs-messages-tab"
-                  >
-                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-y-2.5 sm:gap-y-5 md:gap-y-6 lg:gap-y-7 gap-x-2.5 md:gap-x-4 xl:gap-x-5">
-                      {products.map((product) => (
-                        <div
-                          key={product.id}
-                          className="relative card flex flex-col p-5 rounded-4xl border border-[#0000001a] overflow-hidden"
-                        >
-                          <div className="card-header relative">
-                            <div className="img-wrapper text-center">
-                              {product.featuredImage && (
-                                <Image
-                                  className="w-full h-full object-contain"
-                                  src={product.featuredImage.url}
-                                  alt={
-                                    product.featuredImage.altText ||
-                                    product.title
-                                  }
-                                  width={100}
-                                  height={100}
-                                />
-                              )}
-                            </div>
-                          </div>
-
-                          <div className="card-body mt-3.5 md:mt-5">
-                            <p className="text-black  leading-normal">
-                              {product.title}
-                            </p>
-                            <h4 className="text-black leading-[100%] mt-2.5 md:mt-5">
-                              {product.priceRange.minVariantPrice.amount}{" "}
-                              {product.priceRange.minVariantPrice.currencyCode}
-                            </h4>
-
-                            <div className="flex flex-col mt-3 sm:mt-4 md:mt-6 lg:mt-10 gap-1 sm:gap-2">
-                              <button className="btn style-2 btn-outline-green leading-tight cursor-pointer">
-                                Customize
-                              </button>
-                              <AddToCartButton
-                                product={product}
-                                onAddToCart={handleAddToCart}
-                              />
-                            </div>
-                          </div>
-
-                          {/* Tooltip for each product individually */}
-                          {tooltipProductId === product.id && (
-                            <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-sm px-4 py-2 rounded-lg z-10">
-                              Product added to cart!
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div
-                    className="hidden opacity-0 transition-opacity duration-150 ease-linear data-[twe-tab-active]:block"
-                    id="tabs-contact"
-                    role="tabpanel"
-                    aria-labelledby="tabs-contact-tab"
-                  >
-                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-y-2.5 sm:gap-y-5 md:gap-y-6 lg:gap-y-7 gap-x-2.5 md:gap-x-4 xl:gap-x-5">
-                      {products.map((product) => (
-                        <div
-                          key={product.id}
-                          className="relative card flex flex-col p-5 rounded-4xl border border-[#0000001a] overflow-hidden"
-                        >
-                          <div className="card-header relative">
-                            <div className="img-wrapper text-center">
-                              {product.featuredImage && (
-                                <Image
-                                  className="w-full h-full object-contain"
-                                  src={product.featuredImage.url}
-                                  alt={
-                                    product.featuredImage.altText ||
-                                    product.title
-                                  }
-                                  width={100}
-                                  height={100}
-                                />
-                              )}
-                            </div>
-                          </div>
-
-                          <div className="card-body mt-3.5 md:mt-5">
-                            <p className="text-black  leading-normal">
-                              {product.title}
-                            </p>
-                            <h4 className="text-black leading-[100%] mt-2.5 md:mt-5">
-                              {product.priceRange.minVariantPrice.amount}{" "}
-                              {product.priceRange.minVariantPrice.currencyCode}
-                            </h4>
-
-                            <div className="flex flex-col mt-3 sm:mt-4 md:mt-6 lg:mt-10 gap-1 sm:gap-2">
-                              <button className="btn style-2 btn-outline-green leading-tight cursor-pointer">
-                                Customize
-                              </button>
-                              <AddToCartButton
-                                product={product}
-                                onAddToCart={handleAddToCart}
-                              />
-                            </div>
-                          </div>
-
-                          {/* Tooltip for each product individually */}
-                          {tooltipProductId === product.id && (
-                            <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-sm px-4 py-2 rounded-lg z-10">
-                              Product added to cart!
-                            </div>
-                          )}
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
+                <KickflipEmbed productId="your_kickflip_product_id_here" />
+
               </div>
             </div>
           </section>
@@ -666,8 +504,8 @@ const Products: React.FC<ProductsProps> = ({ products, errorMessage }) => {
       <Sidebar
         isOpen={isSidebarOpen}
         onClose={closeSidebar}
-        cartProducts={cartProducts} // Pass cartProducts from CartContext
-        onRemoveFromCart={removeFromCart} // Pass removeFromCart to Sidebar
+      // cartProducts={cartProducts} // Pass cartProducts from CartContext
+      // onRemoveFromCart={removeFromCart} // Pass removeFromCart to Sidebar
       />
     </>
   );
