@@ -13,6 +13,7 @@ import "flowbite";
 import ProductPreview from "../../public/assets/images/product-preview.png";
 import Star from "../../public/assets/star.svg";
 import BlankStar from "../../public/assets/blank-star.svg";
+import { createCart } from "../api/createCheckout";
 
 const colorVariants = [
     "FD85C8",
@@ -58,12 +59,33 @@ const ProductClient = ({ product }: { product: Product }) => {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
     const [tooltipProductId, setTooltipProductId] = useState<string | null>(null);
     const [activeColorIndex, setActiveColorIndex] = useState<number | null>(null);
-
     const [openAccordion, setOpenAccordion] = useState<number | null>(null);
-    const toggleAccordion = (id: number) =>
-        setOpenAccordion((prev) => (prev === id ? null : id));
+    const toggleAccordion = (id: number) => setOpenAccordion((prev) => (prev === id ? null : id));
+
+    // const handleAddToCart = (product: Product) => {
+    //     addToCart(product);
+    //     setSidebarOpen(true); // Open sidebar when a product is added
+    //     setTooltipProductId(product.id);
+
+    //     setTimeout(() => {
+    //         setTooltipProductId(null);
+    //     }, 2000);
+    // };
 
     const handleAddToCart = (product: Product) => {
+        // Ensure the product variant ID (merchandiseId) is not null or undefined
+        const productVariantId = product?.variants?.edges?.[0]?.node?.id;
+
+        // Check if the product variant ID exists
+        if (!productVariantId) {
+            console.error("Error: product variant ID (merchandiseId) is missing.");
+            return;
+        }
+
+        // Call createCart with the variantId
+        createCart(productVariantId);
+
+        // Update UI
         addToCart(product);
         setSidebarOpen(true); // Open sidebar when a product is added
         setTooltipProductId(product.id);
@@ -72,6 +94,7 @@ const ProductClient = ({ product }: { product: Product }) => {
             setTooltipProductId(null);
         }, 2000);
     };
+    console.log(product?.variants?.edges);
 
     return (
         <div>
@@ -184,8 +207,8 @@ const ProductClient = ({ product }: { product: Product }) => {
                             <div className="mt-7 accordion-container">
                                 <div id="accordion-collapse">
                                     {accordionData.map((item) => (
-                                        <div key={item.id} className="accordion">
-                                            <p className="text-black leading-normal">
+                                        <div className="accordion" key={item.id}>
+                                            <div className="text-black leading-normal">
                                                 <button
                                                     type="button"
                                                     className="flex items-center justify-between w-full cursor-pointer py-7 border-b border-[#CCCCCC]"
@@ -195,8 +218,7 @@ const ProductClient = ({ product }: { product: Product }) => {
                                                 >
                                                     {item.header}
                                                     <svg
-                                                        className={`transition-transform duration-200 ${openAccordion === item.id ? "rotate-45" : ""
-                                                            }`}
+                                                        className={`transition-transform duration-200 ${openAccordion === item.id ? "rotate-45" : ""}`}
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         width="24"
                                                         height="24"
@@ -217,24 +239,20 @@ const ProductClient = ({ product }: { product: Product }) => {
                                                         />
                                                     </svg>
                                                 </button>
-                                            </p>
+                                            </div>
 
                                             <div
                                                 id={`accordion-collapse-body-${item.id}`}
-                                                className={`grid transition-all duration-300 ease-in-out ${openAccordion === item.id
-                                                    ? "grid-rows-[1fr] opacity-100"
-                                                    : "grid-rows-[0fr] opacity-0"
-                                                    }`}
+                                                className={`grid transition-all duration-300 ease-in-out ${openAccordion === item.id ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
                                             >
                                                 <div className="overflow-hidden">
                                                     <div className="pt-3.5">
-                                                        <p className="fs-18 text-black leading-normal">
-                                                            <div dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
-                                                        </p>
+                                                        <div dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
                                     ))}
                                 </div>
                             </div>

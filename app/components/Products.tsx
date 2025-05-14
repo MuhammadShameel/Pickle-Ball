@@ -67,9 +67,13 @@ const Products: React.FC<ProductsProps> = ({ products, errorMessage }) => {
     setSidebarOpen(true); // Open sidebar when a product is added
     setTooltipProductId(product.id);
 
-    setTimeout(() => {
-      setTooltipProductId(null);
-    }, 2000);
+    useEffect(() => {
+      if (tooltipProductId) {
+        setTimeout(() => {
+          setTooltipProductId(null);
+        }, 2000);
+      }
+    }, [tooltipProductId]);
   };
 
   const closeSidebar = () => {
@@ -79,6 +83,8 @@ const Products: React.FC<ProductsProps> = ({ products, errorMessage }) => {
   useEffect(() => {
     console.log("Current cart products:", cartProducts); // Debugging: Log cart state
   }, [cartProducts]);
+
+
 
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 

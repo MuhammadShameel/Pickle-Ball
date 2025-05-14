@@ -105,17 +105,40 @@
 // shopify.js
 import { GraphQLClient, gql } from "graphql-request";
 
+// Shopify API client setup
 const client = new GraphQLClient(
   "https://xemf5u-v1.myshopify.com/api/2024-01/graphql.json",
   {
     headers: {
-      "X-Shopify-Storefront-Access-Token": "3ad7462358644621f36d7ec7c109732e",
+      "X-Shopify-Storefront-Access-Token": "1b9850233ad391ff93d541c513f7de01",
       "Content-Type": "application/json",
     },
   }
 );
 
 export async function createCart(items) {
+  // Ensure items are formatted correctly
+  const lines = items.map((item) => {
+    // Ensure the item has a valid variantId
+    const variantId = item.variants?.edges[0]?.node?.id;
+
+    if (!variantId) {
+      throw new Error(`Invalid variantId for product ${item.title}`);
+    }
+
+    return {
+      quantity: item.quantity,
+      merchandiseId: variantId, // Shopify expects 'merchandiseId' (which is 'variantId')
+    };
+  });
+
+  const variables = {
+    input: {
+      lines: lines, // Pass lines as a variable
+    },
+  };
+
+  // GraphQL mutation to create the cart
   const query = gql`
     mutation cartCreate($input: CartInput!) {
       cartCreate(input: $input) {
@@ -126,18 +149,6 @@ export async function createCart(items) {
       }
     }
   `;
-
-  // Prepare items with the correct structure
-  const lines = items.map((item) => ({
-    quantity: item.quantity,
-    merchandiseId: item.id, // Replace with variantId if using variantId
-  }));
-
-  const variables = {
-    input: {
-      lines: lines, // Pass lines as a variable
-    },
-  };
 
   try {
     // Make the request to create the cart

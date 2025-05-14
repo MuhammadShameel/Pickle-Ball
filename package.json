@@ -18,6 +18,7 @@
     "flowbite": "^3.1.2",
     "flowbite-react": "^0.11.7",
     "graphql": "^16.11.0",
+    "graphql-request": "^7.1.2",
     "heroicons": "^2.2.0",
     "hydrogen": "github:shopify/hydrogen",
     "hydrogen-react": "github:shopify/hydrogen-react",
