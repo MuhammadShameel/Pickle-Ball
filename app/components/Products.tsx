@@ -84,8 +84,6 @@ const Products: React.FC<ProductsProps> = ({ products, errorMessage }) => {
     console.log("Current cart products:", cartProducts); // Debugging: Log cart state
   }, [cartProducts]);
 
-
-
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   return (
@@ -457,19 +455,27 @@ const Products: React.FC<ProductsProps> = ({ products, errorMessage }) => {
                               </div>
                             </div>
 
-                            <div className="card-body mt-3.5 md:mt-5">
-                              <p className="text-black leading-normal">
-                                {product.title}
-                              </p>
-                              <h4 className="text-black leading-[100%] mt-2.5 md:mt-5">
-                                {product.priceRange.minVariantPrice.amount}{" "}
-                                {product.priceRange.minVariantPrice.currencyCode}
-                              </h4>
+                            <div className="card-body mt-3.5 md:mt-5 h-full">
+                              <Link
+                                href={`/products/${product.handle}`}
+                                className="cursor-pointer transition-all hover:underline"
+                              >
+                                <p className="text-black leading-normal">
+                                  {product.title}
+                                </p>
+                              </Link>
 
+                              <h3 className="font-normal! text-black leading-[100%] mt-2.5 md:mt-5 font-wide">
+                                {product.priceRange.minVariantPrice.amount}{" "}
+                                {
+                                  product.priceRange.minVariantPrice
+                                    .currencyCode
+                                }
+                              </h3>
+                            </div>
+
+                            <div className="card-footer">
                               <div className="flex flex-col mt-3 sm:mt-4 md:mt-6 lg:mt-10 gap-1 sm:gap-2">
-                                <Link href={`/products/${product.handle}`} className="btn style-2 btn-outline-green leading-tight cursor-pointer">
-                                  View Details
-                                </Link>
                                 <button className="btn style-2 btn-outline-green leading-tight cursor-pointer">
                                   Customize
                                 </button>
@@ -492,8 +498,7 @@ const Products: React.FC<ProductsProps> = ({ products, errorMessage }) => {
                     </div>
                   </div>
                 </div>
-                <KickflipEmbed productId="your_kickflip_product_id_here" />
-
+                {/* <KickflipEmbed productId="your_kickflip_product_id_here" /> */}
               </div>
             </div>
           </section>
@@ -504,8 +509,8 @@ const Products: React.FC<ProductsProps> = ({ products, errorMessage }) => {
       <Sidebar
         isOpen={isSidebarOpen}
         onClose={closeSidebar}
-      // cartProducts={cartProducts} // Pass cartProducts from CartContext
-      // onRemoveFromCart={removeFromCart} // Pass removeFromCart to Sidebar
+        // cartProducts={cartProducts} // Pass cartProducts from CartContext
+        // onRemoveFromCart={removeFromCart} // Pass removeFromCart to Sidebar
       />
     </>
   );

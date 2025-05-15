@@ -11,10 +11,47 @@
   height: 70px;
 }
 
+.review-stars .star-wrapper {
+  width: 55px;
+  height: 55px;
+  display: flex;
+}
+
+.rating .star-wrapper {
+  width: 30px;
+  height: 30px;
+}
+
 @media (max-width:1279.97px) {
   .total-rating-stars .star-wrapper {
     width: 40px;
     height: 40px;
+  }
+
+
+}
+
+@media (max-width:1023.97px) {
+  .review-stars .star-wrapper {
+    width: 45px;
+    height: 45px;
+  }
+
+  .review .img-wrapper {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+@media (max-width: 767.97px) {
+  .review .img-wrapper {
+    width: 30px;
+    height: 30px;
+  }
+
+  .review-stars .star-wrapper {
+    width: 35px;
+    height: 35px;
   }
 }
 
@@ -28,4 +65,15 @@
     width: 20px;
     height: 20px;
   }
+
+  .review-stars .star-wrapper {
+    width: 24px;
+    height: 24px;
+  }
+
+  .rating .star-wrapper {
+    width: 24px;
+    height: 24px;
+  }
+
 }

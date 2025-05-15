@@ -21,11 +21,10 @@ export default function Home() {
     <>
       {/* <Landing /> */}
       {/* <ProductsServer /> */}
-      <ProductDetails />
+      {/* <ProductDetails /> */}
       {/* <Blogs /> */}
       {/* <ProductsServer /> */}
-      {/* <ProductDetails /> */}
-
+      <ProductDetails />
       {/* <Checkout /> */}
       {/* <CustomPaddle /> */}
       {/* <TradeYourPaddle /> */}
