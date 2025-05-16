@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useCart } from "../context/CartContext";
 import Link from "next/link";
 import { createCart } from "../api/createCheckout";
+import FrequentlyBoughtWith from "./FrequentlyBoughtWith";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -59,7 +60,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className={`cart-sidebar fixed top-0 right-0 overflow-y-auto w-[50%] h-full bg-white p-7 pt-12 z-50 transition-transform transform ${
+      className={`border border-red-500 cart-sidebar fixed top-0 right-0 overflow-y-auto  h-full bg-white p-5 md:p-7.5 pt-7.5 md:pt-12 z-50 transition-transform transform ${
         isOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
@@ -83,11 +84,11 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
       </div>
 
       {/* CART PRODUCTS */}
-      <div className="mt-7 flex flex-col gap-y-5">
+      <div className="mt-7.5 md:mt-10 lg:mt-12.5 flex flex-col gap-y-3.5 md:gap-y-5">
         {cartProducts.map((product) => (
-          <div key={product.id} className="flex flex-row justify-between">
-            <div className="flex flex-row gap-3.5 items-center justify-start">
-              <div className="img-wrapper w-[100px] aspect-square rounded-[10px] overflow-hidden">
+          <div key={product.id} className="flex flex-row justify-between gap-4">
+            <div className="flex flex-row gap-3 md:gap-3.5 items-center justify-start">
+              <div className="img-wrapper min-w-[70px] md:min-w-[80px] lg:min-w-[100px] aspect-square rounded-[10px] overflow-hidden">
                 <Image
                   src={product.featuredImage?.url || ""}
                   alt={product.featuredImage?.altText || product.title}
@@ -100,7 +101,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                 <p className="product-name text-black leading-normal">
                   {product.title}
                 </p>
-                <h3 className="text-black font-bold! leading-[95.238%] mt-3">
+                <h3 className="text-black font-bold! leading-[95.238%] mt-2 md:mt-3">
                   {product.priceRange.minVariantPrice.amount}{" "}
                   {product.priceRange.minVariantPrice.currencyCode}
                 </h3>
@@ -148,7 +149,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                     />
                   </svg>
                 </button>
-                <span className="quantity-value bg-[#F5F5F5] leading-normal text-black px-6">
+                <span className="quantity-value bg-[#F5F5F5] leading-normal text-black px-4 md:px-6 flex items-center">
                   {product.quantity}
                 </span>
                 <button
@@ -182,8 +183,18 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         ))}
       </div>
 
+      {/* FREQUENTLY BOUGHT WITH */}
+      <div className="mt-7.5 md:mt-10 lg:mt-12.5">
+        <p className="text-[#808080] leading-normal mb-3.5">
+          Frequently bought With
+        </p>
+        <div className="mt-3 md:mt-4">
+          <FrequentlyBoughtWith className="md:grid-cols-2" />
+        </div>
+      </div>
+
       {/* GRAND TOTAL */}
-      <div className="mt-7 border-t border-[#E5E5E5]">
+      <div className="mt-7.5 md:mt-10 lg:mt-12.5 border-t border-[#E5E5E5]">
         <div className="mt-2.5 flex flex-row justify-between items-center">
           <span>Grand Total</span>
           <h3 className="font-bold! text-black leading-[95.238%]">
@@ -196,7 +207,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         </p>
       </div>
 
-      <div className="mt-7 flex flex-row gap-x-2.5">
+      <div className="mt-7.5 flex flex-row gap-x-2.5">
         <Link
           className="btn style-2 btn-outline-green text-center leading-normal cursor-pointer w-full"
           href="/cart"

@@ -290,9 +290,9 @@ const Navbar = () => {
 
             {/* Profile & Cart */}
             <div className="flex gap-2 md:gap-2.5">
-              <button className="w-[32px] md:w-[40px] lg:w-[50px] aspect-square border border-[#00000099] rounded-full p-1.5 md:p-2.5 hover:bg-[#B2FFA9] hover:border-[#1E503F] transition">
+              {/* <button className="w-[32px] md:w-[40px] lg:w-[50px] aspect-square border border-[#00000099] rounded-full p-1.5 md:p-2.5 hover:bg-[#B2FFA9] hover:border-[#1E503F] transition">
                 <Image src={Profile} alt="Profile" />
-              </button>
+              </button> */}
               <button
                 onClick={handleSidebarToggle}
                 className="w-[32px] md:w-[40px] lg:w-[50px] aspect-square border border-[#00000099] rounded-full p-1.5 md:p-2.5 hover:bg-[#B2FFA9] hover:border-[#1E503F] transition"
